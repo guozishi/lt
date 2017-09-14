@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../Laravel/lx/.idea/lx.iml" filepath="$PROJECT_DIR$/../../Laravel/lx/.idea/lx.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/myForum.iml" filepath="$PROJECT_DIR$/.idea/myForum.iml" />
     </modules>
   </component>

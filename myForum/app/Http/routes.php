@@ -15,8 +15,12 @@
 //后台
 Route::group(['middleware'=>'al'], function(){
 
-//后台登录
+//后台主页
 Route::get('/admin', 'Admin\IndexController@index');
+
+//后台管理员密码修改
+Route::get('/admin/pass','Admin\IndexController@pass');
+Route::post('/admin/repass','Admin\IndexController@repass');
 
 //后台退出
 Route::get('/admin/logout', 'Admin\LoginController@logout');
@@ -30,16 +34,34 @@ Route::get('/admin/wait', 'Admin\WaitController@wait');
 //解除挂起  登录后台
 Route::post('/admin/rewait', 'Admin\WaitController@rewait');
 
-//后台添加分类
+//后台分类管理
 Route::resource('/admin/category', 'Admin\CategoryController');
 
+//后台分类排序
+Route::post('/cate/orderby','Admin\CategoryController@orderby');
 
+//后台友情链接管理
+Route::resource('/admin/link', 'Admin\LinkController');
+
+//后台友情链接图片上传处理
+Route::post('admin/upload','Admin\LinkController@upload');
+
+//后台网站配置 add
+Route::resource('admin/config','Admin\ConfigController');
+
+//后台网站配置排序处理
+Route::post('/admin/conf/order','Admin\ConfigController@order');
+
+//配置项修改 update
+Route::post('admin/config/updateContent','Admin\ConfigController@updateContent');
+Route::get('admin/putfile','Admin\ConfigController@putFile');
 });
 
 //后台登录
 Route::match(['get','post'], '/admin/login', 'Admin\LoginController@login');
 //后台登录验证码方法二
 Route::get('/code/captcha/{tmp}', 'Admin\LoginController@captcha');
+
 //前台
 
 

@@ -253,9 +253,9 @@
                 <a ui-sref="app.page.profile">外形</a>
               </li>
               <li>
-                <a ui-sref="app.docs">
+                <a ui-sref="app.docs" href="{{ asset('/admin/pass') }}">
                   <span class="label bg-info pull-right">新的</span>
-                  帮助
+                  密码修改
                 </a>
               </li>
               <li class="divider"></li>
@@ -321,8 +321,12 @@
                 <li class="divider"></li>
                 <li>
                 <li>
+                  <a ui-sref="app.page.profile" href="{{ url('/admin/pass') }}">密码修改</a>
+                </li>
+                <li>
                   <a ui-sref="app.page.profile" href="{{ url('/admin/wait') }}">挂起</a>
                 </li>
+                <li>
                   <a ui-sref="access.signin" href="{{ url('/admin/logout') }}">退出</a>
                 </li>
               </ul>
@@ -394,13 +398,13 @@
                 </a>
                 <ul class="nav nav-sub dk">
                     <li ui-sref-active="active">
-                    <a ui-sref="layout.app">
+                    <a ui-sref="layout.app"  href="{{ url('/admin/category/create') }}">
                      <i class="fa fa-plus"></i>
                       <span>分类添加</span> 
                     </a>
                   </li>   
                   <li ui-sref-active="active">
-                    <a ui-sref="layout.app">
+                    <a ui-sref="layout.app" href="{{ url('/admin/category') }}">
                     <i class="fa fa-columns"></i>
                       <span>分类浏览</span>
                     </a>
@@ -418,13 +422,13 @@
                 </a>
                 <ul class="nav nav-sub dk">
                     <li ui-sref-active="active">
-                    <a ui-sref="layout.app">
+                    <a ui-sref="layout.app" href="{{ url('/admin/link/create') }}">
                      <i class="fa fa-plus"></i>
                       <span>添加链接</span>
                     </a>
                   </li>   
                   <li ui-sref-active="active">
-                    <a ui-sref="layout.app">
+                    <a ui-sref="layout.app" href="{{ url('/admin/link') }}">
                      <i class="fa fa-columns"></i>
                       <span>链接浏览</span>
                     </a>
@@ -471,6 +475,30 @@
                       <span>浏览举报</span>
                     </a>
                   </li>     
+                </ul>
+              </li>
+              <li>
+                <a href class="auto">
+                  <span class="pull-right text-muted">
+                    <i class="fa fa-fw fa-angle-right text"></i>
+                    <i class="fa fa-fw fa-angle-down text-active"></i>
+                  </span>
+                  <i class="icon-wrench"></i>
+                  <span>系统设置</span>
+                </a>
+                <ul class="nav nav-sub dk">
+                  <li ui-sref-active="active">
+                    <a ui-sref="layout.app" href="{{ asset('/admin/config/create') }}">
+                      <i class="fa fa-plus"></i>
+                      <span>添加网站配置</span>
+                    </a>
+                  </li>
+                  <li ui-sref-active="active">
+                    <a ui-sref="layout.app" href="{{ asset('/admin/config') }}">
+                      <i class="fa fa-columns"></i>
+                      <span>网站配置</span>
+                    </a>
+                  </li>
                 </ul>
               </li>
               <li class="line dk hidden-folded"></li>
@@ -603,6 +631,7 @@
   <!-- jQuery -->
   <script src="{{ url('/admin-template/vendor/jquery/jquery.min.js') }}"></script>
   <script src="{{ url('/admin-template/vendor/jquery/bootstrap.js') }}"></script>
+  <script src="{{ url('/layer/layer.js') }}"></script>
   <script type="text/javascript">
     +function ($) {
       $(function(){
@@ -655,5 +684,6 @@
       });
     }(jQuery);
   </script>
+@yield('script')
 </body>
 </html>

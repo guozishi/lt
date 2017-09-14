@@ -51,6 +51,7 @@
                 <div class="col-md-4 col-md-offset-4">
                     <div class="account-box"> 
                         <form role="form" action="{{ url('/admin/login') }}" method="post">
+                            {{ csrf_field() }}
                             <div class="form-group">
                                 @if (count($errors) > 0)
                                     <div class="alert alert-danger" id="error">
@@ -81,7 +82,6 @@
                              <!-- 正确提示信息 -->
 
                                 <!--a href="#" class="pull-right label-forgot">Forgot email?</a-->
-                                 {{ csrf_field() }}
                                 <label for="inputUsernameEmail">用户名</label>
                                 <input type="text" id="inputUsernameEmail" class="form-control" name="name" value="{{ old('name') }}">
                             </div>
@@ -235,6 +235,63 @@
         }
     </script>
 
+    <script type="text/javascript">
+        var h=/^[\u4e00-\u9fa5]{0,}$/;
+        var p = /^.{6,18}\d+$/;
+        $("input").focus(function() {
+            $(this).prev().css("color","#008DE8");
+        });
+
+        $("[name='name']").blur(function() {
+            var v=$(this).val();
+            if (v=='') {
+                $("[name='name']").next().html("姓名不能为空！");
+                $(this).prev().css("color","#f00");
+            }else if(!v.match(h)){
+                $("[name='name']").next().html("姓名不合法！");
+                $("[name='name']").prev().css("color","#f00");
+            }else{
+                $(this).prev().css("color","#0EA74A");
+                $("[name='name']").next().html("");
+            }
+        });
+        $("[password='password']").blur(function() {
+            var v=$(this).val();
+            if (v=='') {
+                $("[password='password']").next().html("密码不能为空！");
+                $(this).prev().css("color","#f00");
+            }else if(!v.match(p)){
+                $("[password='password']").next().html("密码不合法！");
+                $("[password='password']").prev().css("color","#f00");
+            }else{
+                $(this).prev().css("color","#0EA74A");
+                $("[password='password']").next().html("");
+            }
+        });
+
+        $('.button').click(function(){
+            var qiye=$("[name='name']").val();
+            var name=$("[name='password']").val();
+            if (name=="") {
+                $("[name='name']").next().html("姓名不能为空！");
+                return;
+            }else if(!name.match(h)){
+                $("[name='name']").next().html("姓名不合法！");
+                $("[name='name']").prev().css("color","#f00");
+                return;
+            }
+
+
+            // 提交成功后
+            $('input').val("");
+            $(".button").css('background','#0EA74A');
+            $(".button").css('color','#fff');
+            $(".button").css('border','none');
+            $(".button").attr("disabled", true);
+            $(".button").val("预约成功！请等待我们的回电");
+            $('input').prev().css("color","#999");
+        });
+    </script>
 </body>
 
 </html>
