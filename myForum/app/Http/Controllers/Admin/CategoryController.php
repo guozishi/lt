@@ -89,8 +89,6 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
-
 
     }
 
@@ -143,7 +141,6 @@ class CategoryController extends Controller
         }else{
             return back()->with(['info.error'=>'更新失败!']);
         }
-
     }
 
     /**
@@ -154,7 +151,6 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-
         $cate = Category::find($id);
 
         $count = Category::where('cate_pid',$id)->count();

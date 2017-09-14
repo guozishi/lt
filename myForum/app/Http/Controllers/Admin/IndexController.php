@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 
-use App\Models\Index;
 
+use App\Models\Index;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;

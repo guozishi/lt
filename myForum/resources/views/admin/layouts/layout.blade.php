@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <title>兄弟论坛 - {{ $title }}</title>
+
   <meta name="csrf-token" content="{{ csrf_token() }}">
+
   <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <link rel="stylesheet" href="{{ url('/admin-template/css/bootstrap.css') }}" type="text/css" />
@@ -134,17 +136,8 @@
                 <div class="col-sm-4 b-l b-light">
                   <div class="m-l-xs m-t-xs m-b-sm font-bold">Analysis</div>
                   <div class="text-center">
-                    <div class="inline">
 
-
-
-
-
-
-
-
-
-                    </div>
+                    <div class="inline"></div>
                   </div>
                 </div>
               </div>
@@ -254,10 +247,12 @@
                 <a ui-sref="app.page.profile">外形</a>
               </li>
               <li>
+
                 <a ui-sref="app.docs" href="{{ asset('/admin/pass') }}">
                   <span class="label bg-info pull-right">新的</span>
                   密码修改
               </li>
+
                 <a ui-sref="app.docs">
                   <span class="label bg-info pull-right">新的</span>
                   帮助
@@ -326,6 +321,7 @@
                 <li class="divider"></li>
                 <li>
                 <li>
+
                   <a ui-sref="app.page.profile" href="{{ url('/admin/pass') }}">密码修改</a>
                 </li>
                 <li>
@@ -381,17 +377,38 @@
                     <i class="fa fa-fw fa-angle-down text-active"></i>
                   </span>
                   <i class="glyphicon glyphicon-folder-open"></i>
+
                   <span>帖子管理</span>
                 </a>
                 <ul class="nav nav-sub dk">
                   <li ui-sref-active="active">
-                    <a ui-sref="layout.app">
+                    <a href="{{ url('/admin/article') }}">
                     <i class="fa fa-columns"></i>
                       <span>帖子浏览</span>
                     </a>
                   </li>     
                 </ul>
               </li>            
+
+              </li>                                         
+                    <li>
+                <a href class="auto">      
+                  <span class="pull-right text-muted">
+                    <i class="fa fa-fw fa-angle-right text"></i>
+                    <i class="fa fa-fw fa-angle-down text-active"></i>
+                  </span>
+                 <i class="icon-briefcase"></i>
+                  <span>评论管理</span>
+                </a>
+                <ul class="nav nav-sub dk">
+                  <li ui-sref-active="active">
+                    <a  href="{{url('/admin/comment')}}">
+                     <i class="icon-briefcase"></i>
+                      <span>评论浏览</span>
+                    </a>
+                  </li>     
+                </ul>
+              </li>
                 <li>
                 <a href class="auto">      
                   <span class="pull-right text-muted">
@@ -410,6 +427,7 @@
                   </li>   
                   <li ui-sref-active="active">
                     <a ui-sref="layout.app" href="{{ url('/admin/category') }}">
+
                     <i class="fa fa-columns"></i>
                       <span>分类浏览</span>
                     </a>
@@ -429,7 +447,6 @@
                     <li ui-sref-active="active">
                     <a ui-sref="layout.app" href="{{ url('/admin/link/create') }}">
                      <i class="fa fa-plus"></i>
-
                       <span>添加链接</span>
                     </a>
                   </li>   
@@ -448,8 +465,8 @@
                     <i class="fa fa-fw fa-angle-right text"></i>
                     <i class="fa fa-fw fa-angle-down text-active"></i>
                   </span>
-
                   <i class="glyphicon glyphicon-compressed"></i>
+
                   <span>广告管理</span>
                 </a>
                 <ul class="nav nav-sub dk">
@@ -462,6 +479,7 @@
                   <li ui-sref-active="active">
                     <a ui-sref="layout.app" href="{{ url('/admin/advert/index') }}">
                     <span>浏览广告</span>
+
                     </a>
                   </li>     
                 </ul>
@@ -472,6 +490,7 @@
                     <i class="fa fa-fw fa-angle-right text"></i>
                     <i class="fa fa-fw fa-angle-down text-active"></i>
                   </span>
+
 
                   <i class="glyphicon glyphicon-bullhorn"></i>
                   <span>举报管理</span>
@@ -630,6 +649,7 @@
     </div>
     <!-- / aside right -->
 
+
     <!-- footer -->
     <div class="app-footer wrapper b-t bg-light">
       <span class="pull-right">1.0.0 <a href="#app" class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>
@@ -641,6 +661,7 @@
   <script src="{{ url('/admin-template/vendor/jquery/jquery.min.js') }}"></script>
   <script src="{{ url('/admin-template/vendor/jquery/bootstrap.js') }}"></script>
   <script src="{{ url('/layer/layer.js') }}"></script>
+
   <script type="text/javascript">
     +function ($) {
       $(function(){
@@ -694,6 +715,7 @@
     }(jQuery);
   </script>
 
+
 @yield('script')
 
 
@@ -701,3 +723,12 @@
 
 </body>
 </html>
+
+<script type="text/javascript">
+       $('#ale').hide(3000);
+    </script>
+
+</body>
+</html>
+
+

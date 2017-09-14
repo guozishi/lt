@@ -29,21 +29,6 @@ Route::get('/admin/logout', 'Admin\LoginController@logout');
 //后台登录验证码方法一
 //Route::get('/admin/code','Admin\LoginController@code');
 
-
-/*Route::group(['middleware'=>'al'], function(){*/
-
-//后台登录
-Route::get('/admin', 'Admin\IndexController@index');
-
-//后台退出
-Route::get('/admin/logout', 'Admin\LoginController@logout');
-
-//挂起
-Route::get('/admin/wait', 'Admin\WaitController@wait');
-
-//解除挂起  登录后台
-Route::post('/admin/rewait', 'Admin\WaitController@rewait');
-
 //后台分类管理
 Route::resource('/admin/category', 'Admin\CategoryController');
 
@@ -76,12 +61,44 @@ Route::get('admin/putfile','Admin\ConfigController@putFile');
     Route::get('/admin/advert/index', 'Admin\AdvertController@index');
     Route::post('/admin/advert/ajaxchangename','Admin\AdvertController@ajaxChangename');
 
+
+
+    /*});*/
+
+//帖子管理
+    Route::get('/admin/article' ,'Admin\ArticleController@article');
+// 删除
+    Route::get('/admin/article/delete/{id}','Admin\ArticleController@delete');
+//编辑
+    Route::get('/admin/article/edit/{id}','Admin\ArticleController@edit');
+//内容详情
+    Route::get('/admin/article/insert/{id}','Admin\ArticleController@insert');
+    Route::post('/admin/article/update' ,'Admin\ArticleController@update');
+//返回
+    Route::get('/admin/article/back' ,'Admin\ArticleController@article');
+
+
+
+//评论管理
+    Route::get('/admin/comment','Admin\Commentcontroller@comment');
+//内容 评论 回复 详情路由
+    Route::get('/admin/comment/insert/{id}','Admin\Commentcontroller@insert');
+    Route::get('/admin/comment/insert1/{id}','Admin\Commentcontroller@insert1');
+    Route::get('/admin/comment/insert2/{id}','Admin\Commentcontroller@insert2');
+//返回
+    Route::get('/admin/comment/back' ,'Admin\Commentcontroller@comment');
+//删除
+    Route::get('/admin/comment/delete/{id}','Admin\Commentcontroller@delete');
+
 });
 
 //后台登录
 Route::match(['get','post'], '/admin/login', 'Admin\LoginController@login');
 //后台登录验证码方法二
 Route::get('/code/captcha/{tmp}', 'Admin\LoginController@captcha');
+
+
+
 
 
 

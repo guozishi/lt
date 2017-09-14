@@ -11,12 +11,15 @@
     <!-- Le styles -->
     <script type="text/javascript" src="{{ asset('assets/js/jquery.min.js') }}"></script>
 
+
     <!--  <link rel="stylesheet" href="assets/css/style.css"> -->
+
     <link rel="stylesheet" href="{{ asset('assets/css/loader-style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/signin.css') }}">
 
     <link rel="shortcut icon" href="{{ asset('assets/ico/minus.png') }}">
+
     <style>
         #code
         {
@@ -75,6 +78,7 @@
                             <!-- 正确提示信息 -->
                             @if (session('info.success'))
                                 <div class="alert alert-success alert-dismissible" id = "alertSuccess">
+
                                     <h4><i class="icon fa fa-check"></i> 成功!</h4>
                                     {{ session('info.success') }}
                                 </div>
@@ -140,7 +144,7 @@
                                 <a href="index.html" class="btn btn-primary btn-block">第三方登录</a>
                             </div>
                         </div>
-                    </div
+                    </div>
                     <div class="row-block">
                         <div class="row">
                         </div>
@@ -166,6 +170,7 @@
 
 
 
+
 <!-- MAIN EFFECT -->
 <script type="text/javascript" src="{{ asset('assets/js/preloader.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/bootstrap.js') }}"></script>
@@ -175,6 +180,7 @@
 
 <script type="text/javascript" src="assets/js/map/gmap3.js"></script>
 <script type="text/javascript">
+
     $(function() {
 
         $("#test1").gmap3({
@@ -224,6 +230,7 @@
     $("#alertError").fadeOut(3000);
     $("#alertSuccess").fadeOut(3000);
     $("#error").fadeOut(3000);
+
 </script>
 
 

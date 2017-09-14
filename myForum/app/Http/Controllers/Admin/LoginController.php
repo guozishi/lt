@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Gregwar\Captcha\CaptchaBuilder;
@@ -82,6 +83,7 @@ class LoginController extends Controller
             return view('admin.login.login');
         }
 
+
     }
 
     //logout
@@ -124,6 +126,7 @@ class LoginController extends Controller
         header("Content-Type:image/jpeg");
         $builder->output();
     }
+
 }
 
 
