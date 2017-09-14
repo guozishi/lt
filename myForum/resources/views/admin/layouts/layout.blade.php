@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <title>兄弟论坛 - {{ $title }}</title>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <link rel="stylesheet" href="{{ url('/admin-template/css/bootstrap.css') }}" type="text/css" />
@@ -256,6 +257,10 @@
                 <a ui-sref="app.docs" href="{{ asset('/admin/pass') }}">
                   <span class="label bg-info pull-right">新的</span>
                   密码修改
+              </li>
+                <a ui-sref="app.docs">
+                  <span class="label bg-info pull-right">新的</span>
+                  帮助
                 </a>
               </li>
               <li class="divider"></li>
@@ -375,7 +380,7 @@
                     <i class="fa fa-fw fa-angle-right text"></i>
                     <i class="fa fa-fw fa-angle-down text-active"></i>
                   </span>
-                  <i class="glyphicon glyphicon-th"></i>
+                  <i class="glyphicon glyphicon-folder-open"></i>
                   <span>帖子管理</span>
                 </a>
                 <ul class="nav nav-sub dk">
@@ -393,7 +398,7 @@
                     <i class="fa fa-fw fa-angle-right text"></i>
                     <i class="fa fa-fw fa-angle-down text-active"></i>
                   </span>
-                  <i class="glyphicon glyphicon-th"></i>
+                  <i class="glyphicon glyphicon-tasks"></i>
                   <span>分类管理</span>
                 </a>
                 <ul class="nav nav-sub dk">
@@ -424,10 +429,12 @@
                     <li ui-sref-active="active">
                     <a ui-sref="layout.app" href="{{ url('/admin/link/create') }}">
                      <i class="fa fa-plus"></i>
+
                       <span>添加链接</span>
                     </a>
                   </li>   
                   <li ui-sref-active="active">
+
                     <a ui-sref="layout.app" href="{{ url('/admin/link') }}">
                      <i class="fa fa-columns"></i>
                       <span>链接浏览</span>
@@ -441,20 +448,20 @@
                     <i class="fa fa-fw fa-angle-right text"></i>
                     <i class="fa fa-fw fa-angle-down text-active"></i>
                   </span>
-                  <i class="glyphicon glyphicon-th"></i>
+
+                  <i class="glyphicon glyphicon-compressed"></i>
                   <span>广告管理</span>
                 </a>
                 <ul class="nav nav-sub dk">
                     <li ui-sref-active="active">
-                    <a ui-sref="layout.app">
-                     <i class="fa fa-plus"></i>
-                      <span>添加广告</span>
+
+                    <a ui-sref="layout.app" href="{{ url('/admin/advert/add') }}">
+                    <span>添加广告</span>
                     </a>
                   </li>   
                   <li ui-sref-active="active">
-                    <a ui-sref="layout.app">
-                     <i class="fa fa-columns"></i>
-                      <span>浏览广告</span>
+                    <a ui-sref="layout.app" href="{{ url('/admin/advert/index') }}">
+                    <span>浏览广告</span>
                     </a>
                   </li>     
                 </ul>
@@ -465,7 +472,8 @@
                     <i class="fa fa-fw fa-angle-right text"></i>
                     <i class="fa fa-fw fa-angle-down text-active"></i>
                   </span>
-                  <i class="glyphicon glyphicon-th"></i>
+
+                  <i class="glyphicon glyphicon-bullhorn"></i>
                   <span>举报管理</span>
                 </a>
                 <ul class="nav nav-sub dk">
@@ -501,6 +509,7 @@
                   </li>
                 </ul>
               </li>
+
               <li class="line dk hidden-folded"></li>
 
               <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">          
@@ -684,6 +693,11 @@
       });
     }(jQuery);
   </script>
+
 @yield('script')
+
+
+@yield('js')
+
 </body>
 </html>

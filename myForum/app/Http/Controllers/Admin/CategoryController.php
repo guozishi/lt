@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
 use Illuminate\Support\Facades\Crypt;
 use App\Models\Category;
 use Illuminate\Support\Facades\Input;
@@ -20,10 +21,12 @@ class CategoryController extends Controller
      */
     public function index()
     {
+
         //index
 //        $data = Category::get();
         $data = (new Category)->tree();
         return view('admin.category.index', ['title'=>'分类浏览'],compact('data'));
+
     }
 
     /**
@@ -34,8 +37,12 @@ class CategoryController extends Controller
     public function create()
     {
         //add
+
         $cates = (new Category)->tree();
         return view('admin.category.add',['title'=>'分类添加'],compact('cates'));
+
+        return view('admin.category.add', ['title'=>'分类添加']);
+
     }
 
     /**
@@ -46,6 +53,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+
         //insert
         //接收表单传来的数据
         $input = $request->except('_token');
@@ -70,6 +78,7 @@ class CategoryController extends Controller
         }else{
             return back()->with(['info.error'=>'添加失败!']);
         }
+
     }
 
     /**
@@ -82,6 +91,7 @@ class CategoryController extends Controller
     {
         //
 
+
     }
 
     /**
@@ -92,10 +102,12 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
+
         //edit
         $cates = (new Category)->tree();
         $data = Category::find($id);
        return view('admin.category.edit',compact('cates','data'),['title'=>'分类更新']);
+
     }
 
     /**
@@ -107,6 +119,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         //update
         $input = $request->except("_token","_method");
         //判断表单输入是否合法
@@ -130,6 +143,7 @@ class CategoryController extends Controller
         }else{
             return back()->with(['info.error'=>'更新失败!']);
         }
+
     }
 
     /**
@@ -140,6 +154,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
+
         $cate = Category::find($id);
 
         $count = Category::where('cate_pid',$id)->count();
@@ -186,5 +201,6 @@ class CategoryController extends Controller
             ];
         }
         return $data;
+
     }
 }

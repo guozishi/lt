@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Crypt;
 
 class LoginController extends Controller
 {
-   //login
+    //login
     public function login(Request $request)
     {
         if ($request->isMethod('POST')) {
@@ -30,52 +30,52 @@ class LoginController extends Controller
                 return redirect('/admin')->with(['info.success'=>'登录成功!']);
             }
 
-             $data = $request->all();
+            $data = $request->all();
 
             // dd($data);
-        	//表单验证
-        	$this->validate($request,[
-        		'name' =>'required|max:10|min:3',
-        		'password' =>'required|max:18|min:4',
+            //表单验证
+            $this->validate($request,[
+                'name' =>'required|max:10|min:3',
+                'password' =>'required|max:18|min:4',
                 'code' =>'required',
-        		],[
+            ],[
 
-        		'name.required' => '用户名不能为空',
-        		'name.max' => '用户名最大不能超过10位',
-        		'name.min' => '用户名最少不能小于3位',
-        		'password.required' => '密码不能为空',
-        		'password.max' => '密码最大不能超过18位',
-        		'password.min' => '密码最少不能小于4位',
+                'name.required' => '用户名不能为空',
+                'name.max' => '用户名最大不能超过10位',
+                'name.min' => '用户名最少不能小于3位',
+                'password.required' => '密码不能为空',
+                'password.max' => '密码最大不能超过18位',
+                'password.min' => '密码最少不能小于4位',
                 'code.required' =>'验证码不能为空',
-        		]);
+            ]);
 
-	        	//判断用户名是正确
-	        	$res = \DB::table('admin_users')->where('name', $data['name'])->first();
-	        	if (!$res) {
+            //判断用户名是正确
+            $res = \DB::table('admin_users')->where('name', $data['name'])->first();
+            if (!$res) {
 
-                                  $request->flash();
-	        		return back()->with(['info.error'=>'管理员不存在或密码错误']);
-	        	}
+                $request->flash();
+                return back()->with(['info.error'=>'管理员不存在或密码错误']);
+            }
 
-	        	//密码验证
-			if ($data['password'] != Crypt::decrypt($res->password)) {
+            //密码验证
+            if ($data['password'] != Crypt::decrypt($res->password)) {
 
-				return back()->with(['info.error'=>'管理员不存在或密码错误!']);
-			}
+                return back()->with(['info.error'=>'管理员不存在或密码错误!']);
+            }
 
-                        //存储登录信息
-                        session(['master'=>$res]);
+            //存储登录信息
+            session(['master'=>$res]);
 
-                        //存储cookie
-                        if ($request->has('rem')) {
-                            \Cookie::queue('remember_token', $res->remember_token, 1);
-                        }
+            //存储cookie
+            if ($request->has('rem')) {
+                \Cookie::queue('remember_token', $res->remember_token, 1);
+            }
             //判断验证码
             if (session('code') != $data['code']) {
-                            return back()->with(['info.error'=>'验证码错误,请重新输入!']);
+                return back()->with(['info.error'=>'验证码错误,请重新输入!']);
             }
-	        	//验证通过 登录后台
-	        	return redirect('/admin');
+            //验证通过 登录后台
+            return redirect('/admin');
 
         }else{
 
@@ -94,7 +94,7 @@ class LoginController extends Controller
         return redirect('/admin/login')->with(['info.success'=>'退出成功!']);
     }
 
-   //生成验证码
+    //生成验证码
 //    public function code()
 //    {
 //        $code = new Code();

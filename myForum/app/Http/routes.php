@@ -13,6 +13,7 @@
 
 
 //后台
+
 Route::group(['middleware'=>'al'], function(){
 
 //后台主页
@@ -27,6 +28,15 @@ Route::get('/admin/logout', 'Admin\LoginController@logout');
 
 //后台登录验证码方法一
 //Route::get('/admin/code','Admin\LoginController@code');
+
+
+/*Route::group(['middleware'=>'al'], function(){*/
+
+//后台登录
+Route::get('/admin', 'Admin\IndexController@index');
+
+//后台退出
+Route::get('/admin/logout', 'Admin\LoginController@logout');
 
 //挂起
 Route::get('/admin/wait', 'Admin\WaitController@wait');
@@ -55,12 +65,27 @@ Route::post('/admin/conf/order','Admin\ConfigController@order');
 //配置项修改 update
 Route::post('admin/config/updateContent','Admin\ConfigController@updateContent');
 Route::get('admin/putfile','Admin\ConfigController@putFile');
+
+
+// 广告管理 advert
+    Route::get('/admin/advert/add', 'Admin\AdvertController@add');
+    Route::post('/admin/advert/insert', 'Admin\AdvertController@insert');
+    Route::get('/admin/advert/edit/{id}', 'Admin\AdvertController@edit');
+    Route::post('/admin/advert/update', 'Admin\AdvertController@update');
+    Route::get('/admin/advert/delete/{id}', 'Admin\AdvertController@delete');
+    Route::get('/admin/advert/index', 'Admin\AdvertController@index');
+    Route::post('/admin/advert/ajaxchangename','Admin\AdvertController@ajaxChangename');
+
 });
 
 //后台登录
 Route::match(['get','post'], '/admin/login', 'Admin\LoginController@login');
 //后台登录验证码方法二
 Route::get('/code/captcha/{tmp}', 'Admin\LoginController@captcha');
+
+
+
+
 
 //前台
 
