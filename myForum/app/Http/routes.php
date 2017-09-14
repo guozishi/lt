@@ -35,6 +35,7 @@ Route::resource('/admin/category', 'Admin\CategoryController');
 //后台登录
 Route::match(['get','post'], '/admin/login', 'Admin\LoginController@login');
 
+
 // 广告管理 advert
 Route::get('/admin/advert/add', 'Admin\AdvertController@add');
 Route::post('/admin/advert/insert', 'Admin\AdvertController@insert');
