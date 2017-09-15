@@ -36,7 +36,7 @@ class IndexController extends Controller
 //        dd($input);
 
 
-        $user =Index::find(session('master')->id);
+        $user =Index::find(session('master')->user_id);
 //        dd($pass);
 
         if ($input['repassword'] != Crypt::decrypt($user->password)) {

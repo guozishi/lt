@@ -68,14 +68,14 @@
                     <tbody>
                 @foreach($data as $item)
                     <tr>
-                        <td>{{ $item->id }}</td>
+                        <td>{{ $item->link_id }}</td>
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->type }}</td>
                         <td>{{ $item->url }}</td>
                         <td>{{ $item->touch }}</td>
                         <td><img src="/uploads/{{ $item->image }}"/></td>
                         <td>{{ $item->created_at }}</td>
-                        <td><a href="{{ url('/admin/link') }}/{{ $item->id }}/edit"><span class="label bg-success">修改</span>&nbsp; &nbsp;&nbsp;</a><a href="javascript:;" onclick="del({{ $item->id }})"><span class="label bg-danger">删除</span></a></td>
+                        <td><a href="{{ url('/admin/link') }}/{{ $item->link_id }}/edit"><span class="label bg-success">修改</span>&nbsp; &nbsp;&nbsp;</a><a href="javascript:;" onclick="del({{ $item->link_id }})"><span class="label bg-danger">删除</span></a></td>
                     </tr>
                 @endforeach
                     </tbody>

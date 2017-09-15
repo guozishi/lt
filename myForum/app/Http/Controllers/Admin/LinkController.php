@@ -24,7 +24,7 @@ class LinkController extends Controller
         //条件查询
         $input = $request->input('keywords') ?  $request->input('keywords') : '';
 
-        $data = Link::orderBy('id', 'asc')->where('name', 'like', '%'.$input.'%')->paginate($request->input('num',5));
+        $data = Link::orderBy('link_id', 'asc')->where('name', 'like', '%'.$input.'%')->paginate($request->input('num',5));
 //        $data = Link::paginate(5);
 
         return view('admin.link.index',['title'=>'链接浏览','request'=>$request->all()],compact('data','input'));

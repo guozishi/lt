@@ -98,16 +98,16 @@
 
         @foreach($data as $item)
           <tr class="footable-even" style="display: table-row;">
-              <td class="footable-visible footable-first-column"><span class="footable-toggle"></span><font><font>{{ $item->id }}</font></font></td>
+              <td class="footable-visible footable-first-column"><span class="footable-toggle"></span><font><font>{{ $item->article_id }}</font></font></td>
               <td class="footable-visible"><a href=""><font><font>{{ $item->title }}</font></font></a></td>
               <!-- <td class="footable-visible">{{ $item->content }}<font><font></font></font></td> -->
               <td data-value="78025368997" class="footable-visible"><font><font>{{ $item->created }}</font></font></td>
 
-              <td data-value="1" class="footable-visible footable-last-column"><span class="label bg-success" ><font><font><a href="{{ url('/admin/article/insert') }}/{{ $item->id }}" >内容详情</a></font></font></span></td>
+              <td data-value="1" class="footable-visible footable-last-column"><span class="label bg-success" ><font><font><a href="{{ url('/admin/article/insert') }}/{{ $item->article_id }}" >内容详情</a></font></font></span></td>
                 
 
-              <td data-value="1" class="footable-visible footable-last-column"><span class="label bg-warning" ><font><font><a href="{{ url('/admin/article/edit') }}/{{ $item->id }}" >编辑</a></font></font></span></td>
-                <td data-value="1" class="footable-visible footable-last-column"><span class="label bg-danger" ><font><font><a href="{{ url('/admin/article/delete') }}/{{ $item->id }}" onclick="return confirm('您要确定删除吗?')">删除</a></font></font></span></td>
+              <td data-value="1" class="footable-visible footable-last-column"><span class="label bg-warning" ><font><font><a href="{{ url('/admin/article/edit') }}/{{ $item->article_id }}" >编辑</a></font></font></span></td>
+                <td data-value="1" class="footable-visible footable-last-column"><span class="label bg-danger" ><font><font><a href="{{ url('/admin/article/delete') }}/{{ $item->article_id }}" onclick="return confirm('您要确定删除吗?')">删除</a></font></font></span></td>
 
           </tr>
    		@endforeach()

@@ -8,12 +8,12 @@
 
   <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <link rel="stylesheet" href="{{ url('/admin-template/css/bootstrap.css') }}" type="text/css" />
-  <link rel="stylesheet" href="{{ url('/admin-template/css/animate.css') }}" type="text/css" />
-  <link rel="stylesheet" href="{{ url('/admin-template/css/font-awesome.min.css') }}" type="text/css" />
-  <link rel="stylesheet" href="{{ url('/admin-template/css/simple-line-icons.css') }}" type="text/css" />
-  <link rel="stylesheet" href="{{ url('/admin-template/css/font.css') }}" type="text/css" />
-  <link rel="stylesheet" href="{{ url('/admin-template/css/app.css') }}" type="text/css" />
+  <link rel="stylesheet" href="{{ asset('/admin-template/css/bootstrap.css') }}" type="text/css" />
+  <link rel="stylesheet" href="{{ asset('/admin-template/css/animate.css') }}" type="text/css" />
+  <link rel="stylesheet" href="{{ asset('/admin-template/css/font-awesome.min.css') }}" type="text/css" />
+  <link rel="stylesheet" href="{{ asset('/admin-template/css/simple-line-icons.css') }}" type="text/css" />
+  <link rel="stylesheet" href="{{ asset('/admin-template/css/font.css') }}" type="text/css" />
+  <link rel="stylesheet" href="{{ asset('/admin-template/css/app.css') }}" type="text/css" />
 </head>
 <body>
   <div class="app app-header-fixed" id="app">
@@ -238,7 +238,7 @@
                 <progressbar value="60" class="progress-xs m-b-none bg-white"></progressbar>
               </li>
               <li>
-                <a href>
+                <a href="{{ asset('admin/config/create') }}">
                   <span class="badge bg-danger pull-right">30%</span>
                   <span>设置</span>
                 </a>
@@ -247,16 +247,9 @@
                 <a ui-sref="app.page.profile">外形</a>
               </li>
               <li>
-
                 <a ui-sref="app.docs" href="{{ asset('/admin/pass') }}">
                   <span class="label bg-info pull-right">新的</span>
                   密码修改
-              </li>
-
-                <a ui-sref="app.docs">
-                  <span class="label bg-info pull-right">新的</span>
-                  帮助
-                </a>
               </li>
               <li class="divider"></li>
                <li>
@@ -307,13 +300,13 @@
                   <progressbar value="60" type="white" class="progress-xs m-b-none dker"></progressbar>
                 </li>
                 <li>
-                  <a href>设置</a>
+                  <a href="{{ url('/admin/config/create') }}">设置</a>
                 </li>
                 <li>
                   <a ui-sref="app.page.profile">外形</a>
                 </li>
                 <li>
-                  <a href>
+                  <a href="{{ url('/admin/advert/index') }}">
                     <span class="badge bg-danger pull-right">3</span>
                     公告
                   </a>
@@ -658,9 +651,9 @@
     <!-- / footer -->
   </div>
   <!-- jQuery -->
-  <script src="{{ url('/admin-template/vendor/jquery/jquery.min.js') }}"></script>
-  <script src="{{ url('/admin-template/vendor/jquery/bootstrap.js') }}"></script>
-  <script src="{{ url('/layer/layer.js') }}"></script>
+  <script src="{{ asset('/admin-template/vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('/admin-template/vendor/jquery/bootstrap.js') }}"></script>
+  <script src="{{ asset('/layer/layer.js') }}"></script>
 
   <script type="text/javascript">
     +function ($) {

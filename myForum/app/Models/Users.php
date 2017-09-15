@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Index extends Model
+class Users extends Model
 {
     //连接表
     public $table = 'admin_users';

@@ -10,7 +10,7 @@ class Link extends Model
     public $table = 'data_link';
 
     //声明主键
-    public $primaryKey = 'id';
+    public $primaryKey = 'link_id';
 
 
     //定义黑名单

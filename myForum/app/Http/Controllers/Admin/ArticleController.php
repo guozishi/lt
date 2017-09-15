@@ -39,7 +39,7 @@ class ArticleController extends Controller
     {
         // dd($id);
 
-        $data =  \DB::table('data_article')->where('id', $id)->first();
+        $data =  \DB::table('data_article')->where('article_id', $id)->first();
         return view('admin.article.edit', [ 'data' => $data,  'title' => '帖子管理']);
     }
 
@@ -48,10 +48,10 @@ class ArticleController extends Controller
     public  function update(Request $request)
     {
         
-        $id = $request->input('id');
-        $data = $request->except('_token', 'id');
+        $id = $request->input('article_id');
+        $data = $request->except('_token', 'article_id');
 
-      $res =   \DB::table('data_article')->where('id' ,$id)->update($data);
+      $res =   \DB::table('data_article')->where('article_id' ,$id)->update($data);
       if($res)
       {
             return redirect('/admin/article') -> with(['info'=>'编辑成功']);
@@ -67,30 +67,21 @@ class ArticleController extends Controller
     {
         // dd($id);
 
-        $data =  \DB::table('data_article')->where('id', $id)->first();
+        $data =  \DB::table('data_article')->where('article_id', $id)->first();
         return view('admin.article.insert', [ 'data' => $data,  'title' => '帖子管理']);
-           if($res)
-      {
+        if($data)
+        {
             return redirect('/admin/article') -> with(['info'=>'成功']);
-      }else{
-        return back() -> with(['info'=>'失败']);
-      }
-
+        }else{
+            return back() -> with(['info'=>'失败']);
+        }
     }
 
-
-    //back
-    public function back()
-    {
-
-           return view('admin.article.back', [ 'data' => $data,  'title' => '帖子管理']);
-
-    }
 
     //delete
     public function delete($id)
     {
-        $res  =  \DB::table('data_article')->where('id', $id)-> delete();
+        $res  =  \DB::table('data_article')->where('article_id', $id)-> delete();
         if($res){
 
             return  back();

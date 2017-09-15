@@ -30,49 +30,33 @@ public  function  comment(Request $request)
     {
         // dd($id);
 
-        $data =  \DB::table('data_comment')->where('id', $id)->first();
+        $data =  \DB::table('data_comment')->where('comment_id', $id)->first();
         return view('admin.comment.insert', [ 'data' => $data,  'title' => '帖子管理']);
-           if($res)
-      {
-            return redirect('/admin/comment') -> with(['info'=>'成功']);
-      }else{
-        return back() -> with(['info'=>'失败']);
-      }
+
 
     } 
    public function insert1($id)
     {
         // dd($id);
 
-        $data =  \DB::table('data_comment')->where('id', $id)->first();
+        $data =  \DB::table('data_comment')->where('comment_id', $id)->first();
         return view('admin.comment.insert1', [ 'data' => $data,  'title' => '评论管理']);
-           if($res)
-      {
-            return redirect('/admin/comment') -> with(['info'=>'成功']);
-      }else{
-        return back() -> with(['info'=>'失败']);
-      }
+
 
     } 
        public function insert2($id)
     {
         // dd($id);
 
-        $data =  \DB::table('data_comment')->where('id', $id)->first();
+        $data =  \DB::table('data_comment')->where('comment_id', $id)->first();
         return view('admin.comment.insert2', [ 'data' => $data,  'title' => '评论管理']);
-           if($res)
-      {
-            return redirect('/admin/comment') -> with(['info'=>'成功']);
-      }else{
-        return back() -> with(['info'=>'失败']);
-      }
 
     } 
 
     //delete
     public function delete($id)
     {
-        $res  =  \DB::table('data_comment')->where('id', $id)-> delete();
+        $res  =  \DB::table('data_comment')->where('comment_id', $id)-> delete();
         if($res){
 
             return  back();

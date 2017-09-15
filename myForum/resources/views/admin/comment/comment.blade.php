@@ -69,15 +69,15 @@
         </thead>
             @foreach($data as $item)
             <tr>
-            <td><font><font>{{ $item->id }}</font></font></td>
+            <td><font><font>{{ $item->comment_id }}</font></font></td>
             <td><font><font>{{ $item->title }}</font></font></td>
-            <td data-value="1" class="footable-visible footable-last-column"><span class="label bg-success" ><font><font><a href="{{ url('/admin/comment/insert') }}/{{ $item->id }}" >内容详情</a></font></font></span></td>
-            <td data-value="1" class="footable-visible footable-last-column"><span class="label bg-warning" ><font><font><a href="{{ url('/admin/comment/insert1') }}/{{ $item->id }}" >评论内容</a></font></font></span></td>
-            <td data-value="1" class="footable-visible footable-last-column"><span class="label bg-warning" ><font><font><a href="{{ url('/admin/comment/insert2') }}/{{ $item->id }}" >回复内容</a></font></font></span></td>
+            <td data-value="1" class="footable-visible footable-last-column"><span class="label bg-success" ><font><font><a href="{{ url('/admin/comment/insert') }}/{{ $item->comment_id }}" >内容详情</a></font></font></span></td>
+            <td data-value="1" class="footable-visible footable-last-column"><span class="label bg-warning" ><font><font><a href="{{ url('/admin/comment/insert1') }}/{{ $item->comment_id }}" >评论内容</a></font></font></span></td>
+            <td data-value="1" class="footable-visible footable-last-column"><span class="label bg-warning" ><font><font><a href="{{ url('/admin/comment/insert2') }}/{{ $item->comment_id }}" >回复内容</a></font></font></span></td>
             <!-- <td><font><font>{{ $item->reply }}</font></font></td> -->
             <td><font><font>{{ $item->created }}</font></font></td>
            
-        <td data-value="1" class="footable-visible footable-last-column"><span class="label bg-danger" ><font><font><a href="{{ url('/admin/comment/delete') }}/{{ $item->id }}" onclick="return confirm('您要确定删除吗?')">删除</a></font></font></span></td>
+        <td data-value="1" class="footable-visible footable-last-column"><span class="label bg-danger" ><font><font><a href="{{ url('/admin/comment/delete') }}/{{ $item->comment_id }}" onclick="return confirm('您要确定删除吗?')">删除</a></font></font></span></td>
            </tr>
            @endforeach
       </table>

@@ -4,7 +4,7 @@
 
 <div class="col-sm-12 ">
         <form name="form-contact" action="{{ url('/admin/article/update')  }}" method="post"  class="form-validation ng-pristine ng-invalid ng-invalid-required ng-valid-email ng-valid-url">
-        <input type="hidden" name="id"         value="{{$data->id}}"/>
+        <input type="hidden" name="id"         value="{{$data->article_id}}"/>
          {{ csrf_field() }}
                @if (session('info'))
                   <div  id="ale" class="alert alert-danger alert-dismissible" id="alertError">

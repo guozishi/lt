@@ -4,13 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Index extends Model
+class Article extends Model
 {
     //连接表
-    public $table = 'admin_users';
+    public $table = 'data_article';
 
     //声明主键
-    public $primaryKey = 'user_id';
+    public $primaryKey = 'article_id';
 
 
     //定义黑名单
