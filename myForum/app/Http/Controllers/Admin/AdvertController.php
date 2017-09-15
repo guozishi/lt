@@ -59,7 +59,6 @@ class AdvertController extends Controller
         $time = date('Y-m-d H:i:s', time());
         $data['atime'] = $time;
 
-
         // dd($data);
 
         // 执行添加数据库
@@ -68,6 +67,7 @@ class AdvertController extends Controller
         {
             return redirect('/admin/advert/index') -> with(['info' => '添加成功']);
             // return back()->with(['info' => '添加成功']);
+
         }else
         {
             return back()->with(['info' => '添加失败']);
@@ -83,6 +83,7 @@ class AdvertController extends Controller
         // dd($data);
 
         $data = \DB::table('data_advert')->where('atitle', 'like', '%'.$request->input('keywords').'%')->orderby('aid')->paginate($request->input('num', 10));
+
         // dd($data);
         
         return view('admin.advert.index',['data'=>$data,'page'=> $request->input('page'), 'title'=>'广告列表','request' => $request->all()]);
