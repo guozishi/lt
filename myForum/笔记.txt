@@ -1,0 +1,716 @@
+
+    Laravel框架授课笔记
+==============================================================
+ 课程大纲：
+    1. composer的安装
+    2. laravel框架的安装
+    3. 本地域名解析与apapche虚拟主机配置
+    4. 环境配置与数据库连接
+       目录结构介绍
+       路由使用
+       控制器使用
+    5. laravel数据库迁移工具
+    6. laravelDebug安装与调试命令
+    
+一、 composer的安装：
+--------------------------------------------------------------
+  1.Composer是什么？
+    是 PHP 用来管理依赖（dependency）关系的工具。
+    你可以在自己的项目中声明所依赖的外部工具库（libraries），
+    Composer 会帮你安装这些依赖的库文件。
+  2.网址：https://getcomposer.org
+     下载：https://getcomposer.org/download/
+     
+     中国全量镜像：http://pkg.phpcomposer.com/
+        启用本镜像服务命令：
+            composer config -g repo.packagist composer https://packagist.phpcomposer.com
+            或
+            composer config repo.packagist composer https://packagist.phpcomposer.com
+  3.Composer常用命令：
+        composer -v  查看版本
+        composer selfupdate 更新composer
+        
+二、安装Laravel框架
+------------------------------------------------------------------
+    文档网站：http://www.golaravel.com/
+    选择5.1版本：http://www.golaravel.com/laravel/docs/5.1/
+    
+    对运行环境的要求： 
+        PHP >= 7.0.0
+        OpenSSL PHP Extension
+        PDO PHP Extension
+        Mbstring PHP Extension
+        Tokenizer PHP Extension
+        XML PHP Extension
+
+    通过 Composer Create-Project 命令安装 Laravel：
+       命令：	
+            create-project 创建项目。
+            --perfer-dist 生产版。
+            laravel/laravel 框架名称。
+
+    
+三、本地域名解析与apapche虚拟主机配置（window下）
+------------------------------------------------------------------
+    1. 打开：C:\Windows\System32\drivers\etc目录中的hosts文件：
+        配置信息：127.0.0.1 自定义主机名
+        
+    2. 在apache的httpd-vhosts.conf配置文件中配置
+        <VirtualHost *:80>
+            ServerAdmin zhangtao@lampbrother.net
+            DocumentRoot "虚拟主机目录位置"
+            ServerName 虚拟主机名
+            ErrorLog "logs/虚拟主机名-error.log"
+            CustomLog "logs/虚拟主机名-access.log" common
+        </VirtualHost>
+    
+四、应用程序结构介绍:
+-----------------------------------------------------------------------
+    详见手册中《系统架构》的应用程序结构
+    
+五、HTTP 路由
+-----------------------------------------------------------------------
+    1. 基本路由：
+        Route::get('/', function()
+        {
+            return 'Hello World';
+        });
+        Route::post('foo/bar', function()
+        {
+            return 'Hello World';
+        });
+        Route::put('foo/bar', function()
+        {
+            //
+        });
+        Route::delete('foo/bar', function()
+        {
+            //
+        });
+        Route::match(['get', 'post'], '/', function() //多种请求注册路由
+        {
+            return 'Hello World';
+        });
+    2. 路由参数
+        Route::get('user/{id}', function($id)
+        {
+            return 'User '.$id;
+        });
+
+六. 环境配置与数据库连接
+---------------------------------------------------------------------------
+    修改：项目下的.env文件
+    
+        
+六、laravelDebug安装与调试命令
+--------------------------------------------------------------------------
+    网址：https://github.com/barryvdh/laravel-debugbar
+    
+    安装命令：composer require barryvdh/laravel-debugbar
+    进入：config/app.php文件
+        配置：
+            Barryvdh\Debugbar\ServiceProvider::class,
+            'Debugbar' => Barryvdh\Debugbar\Facade::class,
+            
+    执行命令：php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"
+    
+    
+ 
+七、控制器的创建
+----------------------------------------------------------------------------
+    创建一个普通控制器
+    命令：php artisan make:controller StuController
+
+    创建一个RESTful资源控制器
+    命令：php artisan make:controller StuController --resource
+    
+    控制器中代码
+    //在控制器中查询数据,并加载模板输出
+    public function index()
+    {
+        $list = \DB::table('stu')->get();
+        return view('stu.index',["list"=>$list]);
+        //return view('stu.index', compact('list'));
+    }
+    
+    在routes.php的路由文件中配置
+    Route::get('stu/index', 'StuController@index');
+    
+    public function index()
+    {
+        //$list = \DB::table('stu')->get();
+        $list = \DB::table('stu')->paginate(5);
+        
+       
+        //return view('stu.index',['list'=>[]]);
+        return view('stu.index',["list"=>$list]);
+        //return view('stu.index', compact('list'));
+    }
+    
+    public function create()
+    {
+        return view("stu.create");
+    }
+    
+    public function store(Request $request)
+    {   
+        //dd($request);
+        $input = $request->all();
+        unset($input['_token']);
+       
+        $id = \DB::table('stu')->insertGetId($input);
+        return "添加成功！id号".$id;       
+    }
+    
+    public function update()
+    {
+        return "update";
+    }
+    
+    public function show($id)
+    {
+        $stu = \DB::table('stu')->where("id","=",$id)->first();
+        dd($stu);
+    }
+
+    public function destroy($id)
+    {
+        return "delete".$id;
+    }
+    
+    
+八、 Laravel 中Request请求对象的使用
+-----------------------------------------------------------
+    1. 使用方式：
+        1.1 通过 Facade
+            在控制器中使用： use Request导入
+            在控制器的方法中获取参数信息：$name = Request::input('name');
+            
+        1.2 通过依赖注入
+            在控制器中使用：use Illuminate\Http\Request; 导入
+            在控制器的方法中使用参数注入request对象
+                public function store(Request $request)
+                {
+                    $name = $request->input('name');
+                }
+                
+    2. 取得输入数据:
+        2.1 $name = Request::input('name'); 获取请求参数name的值
+        2.2 $name = Request::input('name', 'Sally'); 获取参数name的值，若没有则使用Sally默认值
+        2.3 if (Request::has('name')){ ... }  判断是否有此参数。
+        
+        2.4 Request::all();  获取所有参数值
+        
+        2.5 获取部分参数值
+            $data = $request->only("name","id"); //获取部分参数值
+            $data = $request->except("name"); //获取指定外部分参数值
+            
+        2.6 获取数组中的值
+  
+  九.  Laravel中的响应:Response
+--------------------------------------------------------
+    1. 基本响应
+        1.1 从路由返回字串
+                Route::get("/hh",function(){
+                    return "Hello World!";
+                });
+                
+        1.2 自定义响应:
+              在控制器中使用response: use Illuminate\Http\Response;
+              控制器方法中的代码
+               $content="Hello Laravel!";
+               $status = 200;
+               $value = "text/html";
+               return (new Response($content, $status))->header('Content-Type', $value);
+        
+        1.3 在响应送出视图  
+               return response()->view('hello')->header('Content-Type',"text/html");
+               
+        1.4 附加 Cookies 到响应
+                return response($content)->withCookie(cookie('name', 'value'));
+                
+    2. 重定向
+        2.1 return redirect('user/login');
+        
+        
+ 十 视图
+---------------------------------------------------------
+    视图被保存在 resources/views 文件夹内 
+    实例创捷一个vv.php视图文件
+    
+    //在控制器的方法中加载视图方式:
+        1. return view("vv"); //加载视图
+        2. return view("vv",['name'=>"zhangsan","age"=>20]); //加载视图,并携带参数
+        3. return view("vv")->with("name","lisi")->with("age",30); //通过with携带参数值
+        
+    在视图中如何输出
+        <body>
+            <h2>Laravel框架视图测试</h2>
+            姓名:<?php echo $name; ?>   年龄:<?php echo $age; ?>
+        </body>
+    
+
+ 十一 模板引擎:--Blade
+---------------------------------------------------
+    Blade 模板后缀名都要命名为 .blade.php
+
+    模板导入css等文件可以使用{{asset(‘css/bootstrap.min.css’)}}       
+    <link href="/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <center>
+            @include('stu.menu')
+            <h3>浏览学生信息</h3>
+            <table width="700" border="1">
+                <tr>
+                    <th>学号</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>年龄</th>
+                    <th>班级</th>
+                    <th>操作</th>
+                </tr>
+                @foreach ($list as $ob)
+                    <tr>
+                        <td>{{ $ob->id }}</td>
+                        <td>{{ $ob->name }}</td>
+                        <td>{{ $ob->sex }}</td>
+                        <td>{{ $ob->age }}</td>
+                        <td>{{ $ob->classid }}</td>
+                        <td><a href="/stu/{{ $ob->id}}">查看</a></td>
+                    </tr>
+                @endforeach
+            </table>
+            <br/>
+           {!! $list->render() !!}
+           
+        </center>
+
+十二、模板继承
+----------------------------------------------------------
+    1. 定义一个父模板 Blade 页面布局
+        <!-- Stored in resources/views/layouts/master.blade.php -->
+        <html>
+            <head>
+                <title>App Name - @yield('title')</title>
+            </head>
+            <body>
+                @section('sidebar')
+                    This is the master sidebar.
+                @show
+
+                <div class="container">
+                    @yield('content')
+                </div>
+            </body>
+        </html>
+    2. 在视图模板中使用 Blade 页面布局
+
+        @extends('layouts.master')
+
+        @section('title', 'Page Title')
+
+        @section('sidebar')
+            @@parent
+
+            <p>This is appended to the master sidebar.</p>
+        @stop
+
+        @section('content')
+            <p>This is my body content.</p>
+        @stop
+     
+
+     
+十三  数据迁移
+--------------------------------------------------
+    1. 创建一个新的迁移：
+        命令：php artisan make:migration create_表名_table
+        就会在database/migrations目录下产生一个迁移类文件
+        迁移类包含了两个方法：up和down。
+        up方法用于新增表，列或者索引到数据库，[运行迁移]
+        down方法就是up方法的反操作，[撤销迁移]
+        如下代码：news新闻表
+            public function up()
+            {
+                Schema::create('news', function (Blueprint $table) {
+                    $table->increments('id');
+                    $table->string('title')->index();
+                    $table->string('author',50);
+                    $table->text('content');
+                    $table->integer('addtime')->unsigned();
+                    //$table->timestamps();
+                });
+            }
+
+            public function down()
+            {
+                Schema::drop('news');
+            }
+    2.运行迁移
+      命令：php artisan migrate
+    3.回滚迁移
+      命令：php artisan migrate:rollback 回滚最后一个迁移
+      命令：php artisan migrate:reset 回滚所有迁移
+
+十四、数据填充
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+    1.要生成一个填充器：
+        可以通过Artisan命令make:seeder。所有框架生成的填充器都位于database/seeders目录：
+        命令：php artisan make:seeder 表名TableSeeder
+        如：php artisan make:seeder NewsTableSeeder
+        一个填充器类默认只包含一个方法：run。当Artisan命令db:seed运行时该方法被调用。
+        run方法可以插入任何你想插入数据库的数据。
+        
+        如下代码：news表
+            public function run()
+            {
+                \DB::table('news')->insert([
+                    'title' => str_random(20),
+                    'author' => 内容,
+                    'content' => 内容,
+                    'addtime' => time()+rand(0,100000),
+                ]);
+            }
+            
+      2. 运行填充：
+        php artisan db:seed  //填充DatabaseSeeder器类
+        php artisan db:seed --class=UserTableSeeder  //独立的填充器类
+        php artisan migrate:refresh --seed //回滚并重新运行迁移
+
+
+十五、 数据搜索加分页
+-------------------------------------------------
+   1. 在控制器中分页查询数据（执行每10条数据一页）
+    $users = DB::table('users')->paginate(10);       //标准
+        或
+    $users = DB::table('users')->simplePaginate(10); //显示简单的「下一步」和「上一步」链接
+
+        return view('user.index', ['users' => $users]);  //放置到视图中
+   
+   2.  在视图模版中输出分页信息（导入bootstrap的css样式就好看了）
+
+       {!! $users->render() !!}
+
+       {!! $list->appends($where)->render() !!}  //维持where搜索条件
+   
+   3. 其他自定义分页相见手册文档。
+ 
+
+十六、 文件上传
+--------------------------------------------------
+    //如下一个控制器中执行上传方法代码如下
+    public function doUpload(Request $request)
+    {
+        //判断是否有上传
+        if($request->hasFile("upload")){
+            //获取上传信息
+            $file = $request->file("upload");
+            //确认上传的文件是否成功
+            if($file->isValid()){
+                //$picname = $file->getClientOriginalName(); //获取上传原文件名
+                $ext = $file->getClientOriginalExtension(); //获取上传文件名的后缀名
+                //执行移动上传文件
+                $filename = time().rand(1000,9999).".".$ext;
+                $file->move("./upload/",$filename);
+                                
+                return response($filename); //输出
+                exit();
+            }
+        }
+    }
+
+
+十七、 自定义图片等比缩放类的使用
+---------------------------------------------------
+    1. 将事先定义好的Image.php类放置到App/Org/目录下(其中Org自定义目录).
+       在类中定义命名空间:namespace App\Org;
+       
+    2. 在使用的控制类中引入当前类: use App\Org\Image;
+        具体使用:
+            //执行缩放
+            $img = new Image();
+            $img->open("./uploads/".$filename)->thumb(100,100)->save("./uploads/s_".$filename);
+ 
+
+十八、 使用第三方图片处理插件:intervention/image
+-------------------------------------------------------
+    1. 安装:使用Composer命令,需要在你的Laravel框架目录下执行如下命令执行安装
+        
+        $ php composer.phar require intervention/image 
+        或 composer require intervention/imarge
+        
+    2. 添加配置
+        修改/config/app.php配置文件
+            在$providers属性中添加: Intervention\Image\ImageServiceProvider::class,
+            在$aliases属性中添加:'Image'=>Intervention\Image\Facades\Image::class,
+            
+    3. 执行命令让当前Laravel使用当前插件(原使用的是GD库)
+        $ php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLaravel5"
+        
+        
+    4. 测试: 在当前项目控制器中就可以使用下面代码测试
+        use Intervention\Image\ImageManagerStatic as Image;
+    
+        $img = Image::make("./uploads/".$filename)->resize(100,100);
+        $img->save("./uploads/s_".$filename); //另存为
+        return $img->response("jpg"); //输出
+        
+        //执行等比缩放
+        $img->resize(null, 400, function ($constraint) {
+                                    $constraint->aspectRatio();
+                                    $constraint->upsize();
+                                });
+        
+
+十九、 表单验证
+------------------------------------------------------------------------------------
+    一、表单验证：
+    1. 控制器验证：
+      public function store(Request $request)
+      {   
+        //验证
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'age' => 'required|numeric|max:100|min:10',
+        ]);
+        ...
+      }
+      
+    2. 在表单页上显示：
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul style="color:red;">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+                </ul>
+            </div>
+        @endif
+        
+   
+二十、在Laravel框架中使用验证码扩展（gregwar/captcha）
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+
+     首先呢在laravel5中默认是没有提供验证码的，这里我们需要使用第三方提供的库:gregwar/captcha
+
+     通过composer安装：
+
+     在composer.json的require中加入"gregwar/captcha": "dev-master"，具体代码如下
+
+      "require": {
+            "laravel/framework": "5.0.*",
+            "gregwar/captcha": "dev-master"
+      },
+
+      然后运行:＃ composer update命令
+
+      使用gregwar/captcha库
+
+      使用就非常简单了，直接上代码
+      记得在顶部use Gregwar\Captcha\CaptchaBuilder;
+
+      function captch(){
+        $builder = new CaptchaBuilder;
+        $builder->build(150,32);
+        //Session::set('phrase',$builder->getPhrase()); //存储验证码
+        return response($builder->output())->header('Content-type','image/jpeg');
+      }
+
+      在视图中调用
+       <img src="{{ url('你定义的captch函数的路由') }}" >
+
+      验证就更简单了
+      function index(){
+          $yanzhengma = Session::get('phrase');
+          if($_POST['yanzhengma'] == $yanzhengma){
+             echo 'success';//验证成功
+          }
+
+      }
+      若验证码显示乱码:在之前定义ob_get_clean(); <------- 清除laravel缓存区
+
+      记得别忘了在顶部use Session 
+
+      还有 验证码需要你的环境安装gd库，要不然不会正常显示
+
+
+
+二十一：   在 Laravel 中使用 SMTP 发送邮件
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+    1. 配置:
+         修改邮件发送配置。4.2 在 app/config/mail.php，5 在 config/mail.php，修改以下配置：
+
+        'host' => 'smtp.163.com',
+        'port' => 25,
+        'from' => array('address' => '***@163.com', 'name' => 'TestMail'),
+        'username' => '***@163.com', // 注意，这里必须和上一行配置里面的邮件地址一致
+        'password' => '****',
+
+     2. 发送:
+           在控制器或者模型里，调用以下代码：
+
+    $data = ['email'=>$email, 'name'=>$name, 'uid'=>$uid, 'activationcode'=>$code];
+    Mail::send('activemail', $data, function($message) use($data)
+    {
+            $message->to($data['email'], $data['name'])->subject('欢迎注册我们的网站，请激活您的账号！');
+    });
+
+
+二十二：  Model的定义使用
+---------------------------------------------------------------------
+    1. 自定义模型：
+       命令：php artisan make:model Models/模型名
+       会在app目录下新建一个Models目录，并创建一个模型类
+       
+       如：php artisan make:model Models/Stu
+       这样就会在app目录下生成一个Models目录，并且在Models目录下生成一个Stu模型类。
+       Laravel 中所有模型类继承自Illuminate\Database\Eloquent\Model类。
+       代码如下：
+       <?php
+            namespace App\Models;
+
+            use Illuminate\Database\Eloquent\Model;
+
+            class Stu extends Model
+            {
+                //设置表名
+                public $table = 'stu';
+
+                //设置主键
+                public $primaryKey = 'id';
+
+                //设置日期时间格式
+                public $dateFormat = 'U';
+                
+                //批量赋值属性
+                protected $guarded = ['name','sex','age','classid'];
+            }
+    2. 自定义Model类常用操作
+        Stu::all(); 获取所有信息方法
+        Stu::where('id','<',3)->orderBy('id','desc')->get(); 获取多个
+        
+        Stu::where('id',1)->first(); 获取单个模型
+        Stu::find(1); 获取单个模型
+        
+        Stu::where('id','>',0)->count();  聚合查询使用
+        Stu::where('id','>',0)->max('age');
+        
+        添加：
+            $stu = new Stu;
+            $stu->name = 'xiaoli';
+            $stu->age = 22;
+            $stu->sex = "m";
+            $stu->classid = 'lamp110';
+            if($stu->save()){
+                echo '添加成功！';
+            }else{
+                echo '添加失败！';
+            }
+            
+            或者
+            $input = [
+                'name'=>'xiaoli',
+                'age'=>21,
+                'sex'=>'m',
+                'classid'=>'lamp118',
+            ];
+            $stu = Stu::create($input);
+            $stu->save();
+            
+        更新：
+            $stu = Stu::find(1);
+            $stu->name = 'xiaozhang';
+            if($stu->save()){
+                echo '更新成功！';
+            }else{
+                echo '更新失败！';
+            }
+            或
+            $input = [
+                'name'=>'xiaoli',
+                'age'=>21,
+                'sex'=>'m',
+                'classid'=>'lamp118',
+            ];
+            $stu = Stu::find(6);
+            $stu->update($input);
+            
+        删除：
+            $stu = Stu::find(5); 
+            if($stu->delete()){
+                echo '删除成功！';
+            }else{
+                echo '删除失败！';
+            }
+
+
+
+    Laravel框架中配置文件
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+   文件的文件夹
+   /app/config/
+     配置应用程序的运行时规则、 数据库、 session等等。包含大量的用来更改框架的各个方面的配置文件。
+     大部分的配置文件中返回的选项关联PHP数组。
+
+   /app/config/app.php
+     各种应用程序级设置，即时区、 区域设置（语言环境）、 调试模式和独特的加密密钥。
+
+   /app/config/auth.php 控制在应用程序中如何进行身份验证，即身份验证驱动程序。
+
+   /app/config/cache.php 如果应用程序利用缓存来加快响应时间，要在此配置该功能。
+
+   /app/config/compile.php
+      在此处可以指定一些额外类，去包含由‘artisan optimize’命令声称的编译文件。
+      这些应该是被包括在基本上每个请求到应用程序中的类。
+
+   /app/config/database.php 包含数据库的相关配置信息，即默认数据库引擎和连接信息。
+
+   /app/config/mail.php  为电子邮件发件引擎的配置文件，即 SMTP 服务器，From:标头
+
+   /app/config/session.php
+      控制Laravel怎样管理用户sessions,即session driver, session lifetime。
+
+   /app/config/view.php  模板系统的杂项配置。
+
+
+   其他目录结构介绍：
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+   /app/controllers－－包含用于提供基本的逻辑、 数据模型交互以及加载应用程序的视图文件的控制器类。
+
+   /app/database/migrations/
+      包含一些 PHP 类，允许 Laravel更新当前数据库的架构并同时保持所有版本的数据库的同步。
+      迁移文件是使用Artisan工具生成的。
+
+   /app/database/seeds/－－包含允许Artisan工具用关系数据来填充数据库表的 PHP 文件。
+
+   /app/lang/
+      PHP文件，其中包含使应用程序易于本地化的字符串的数组。默认情况下目录包含英语语言的分页和表单验证的语言行。
+
+   /app/models/
+      模型是代表应用程序的信息（数据）和操作数据的规则的一些类。在大多数情况下，
+      数据库中的每个表将对应应用中的一个模型。应用程序业务逻辑的大部分将集中在模型中。
+
+   /app/start/
+      包含与Artisan工具以及全球和本地上下文相关的自定义设置。
+
+   /app/storage/
+      该目录存储Laravel各种服务的临时文件，如session, cache,  compiled view templates。
+      这个目录在web服务器上必须是可以写入的。该目录由Laravel维护，我们可以不关心。
+
+   /app/tests/
+      该文件夹给你提供了一个方便的位置，用来做单元测试。如果你使用PHPUnit，
+      你可以使用Artisan工具一次执行所有的测试。
+
+   /app/views/
+      该文件夹包含了控制器或者路由使用的HTML模版。请注意，这个文件夹下你只能放置模版文件。
+      其他的静态资源文件如css, javascript和images文件应该放在/public文件夹下。
+
+    /app/routes.php
+
+这是您的应用程序的路由文件，其中包含路由规则，告诉 Laravel 如何将传入的请求连接到路由处理的闭包函数、 控制器和操作。该文件还包含几个事件声明，包括错误页的，可以用于定义视图的composers。
+
+    /app/filters.php
+
+此文件包含各种应用程序和路由筛选方法，用来改变您的应用程序的结果。Laravel 具有访问控制和 XSS 保护的一些预定义筛选器。
+
+
+
