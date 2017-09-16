@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Crypt;
 use App\Models\Category;
 use Illuminate\Support\Facades\Input;
 
-
 class CategoryController extends Controller
 {
     /**
@@ -21,7 +20,6 @@ class CategoryController extends Controller
      */
     public function index()
     {
-
         //index
 //        $data = Category::get();
         $data = (new Category)->tree();
@@ -40,8 +38,6 @@ class CategoryController extends Controller
 
         $cates = (new Category)->tree();
         return view('admin.category.add',['title'=>'分类添加'],compact('cates'));
-
-        return view('admin.category.add', ['title'=>'分类添加']);
 
     }
 
@@ -78,7 +74,6 @@ class CategoryController extends Controller
         }else{
             return back()->with(['info.error'=>'添加失败!']);
         }
-
     }
 
     /**
@@ -100,7 +95,6 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-
         //edit
         $cates = (new Category)->tree();
         $data = Category::find($id);

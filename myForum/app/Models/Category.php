@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class category extends Model
+class Category extends Model
 {
     //当前模型关联表
     public $table = 'data_category';
@@ -51,5 +51,10 @@ class category extends Model
             }
         }
         return $arr;
+    }
+
+    public function article(){
+
+        return $this->hasMany('App\Models\Article','category_id','cate_id');
     }
 }

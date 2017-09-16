@@ -4,21 +4,19 @@
 	<!-- 编辑表单 -->
 
 
-	<div class="app-content-body fade-in-up ng-scope" ui-view=""><!-- uiView:  -->
-		<div ui-view="" class="fade-in-up ng-scope">
-		<section class="content-header">
-	      <ol class="breadcrumb">
-	        <h1>
-	        广告管理
-	        <small>编辑广告</small>
-	      </h1>
-	      </ol>
-	    </section>
+	<div class="bg-light lter b-b wrapper-md">
+        <h1 class="m-n font-thin h3">{{ $title }}</h1>
+    </div>
+    <div class="wrapper-md">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                编辑
+            </div>
 
 
 		<!-- form start -->
         <form role="form" action="{{ url('/admin/advert/update') }}" method="post" enctype="multipart/form-data">
-        	<input type="hidden" name="id" value="{{ $data->id }}">
+        	<input type="hidden" name="aid" value="{{ $data->aid }}">
         	<input type="hidden" name="page" value="{{ $page }}">
 
 			@if(session('info'))

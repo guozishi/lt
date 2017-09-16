@@ -4,16 +4,14 @@
 	<!-- 添加表单 -->
 
 
-	<div class="app-content-body fade-in-up ng-scope" ui-view=""><!-- uiView:  -->
-		<div ui-view="" class="fade-in-up ng-scope">
-		<section class="content-header">
-	      <ol class="breadcrumb">
-	        <h1>
-	        广告管理
-	        <small>添加广告</small>
-	      </h1>
-	      </ol>
-	    </section>
+	<div class="bg-light lter b-b wrapper-md">
+        <h1 class="m-n font-thin h3">{{ $title }}</h1>
+    </div>
+    <div class="wrapper-md">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                添加
+            </div>
 
 
 		<!-- form start -->
@@ -30,9 +28,8 @@
             @endif
 
             @if (count($errors) > 0)
-
 			    <div id="alertError2" class="alert alert-danger alert-dismissible">
-          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                 <h4><i class="icon fa fa-ban"></i><font><font> 错误！</font></font></h4>
 			            @foreach ($errors->all() as $error)
 			                <li>{{ $error }}</li>

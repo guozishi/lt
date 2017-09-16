@@ -1,7 +1,8 @@
 @extends('admin.layouts.layout')
 
 @section('content')
-
+    <div class="col-sm-12" style="padding-top: 50px;">
+    <div class="panel panel-default">
     <div class="panel-body">
         <form role="form" class="ng-pristine ng-valid" action="{{ asset('/admin/repass') }}" method="post">
            {{ csrf_field() }}
@@ -28,7 +29,8 @@
             <button type="submit" class="btn btn-sm btn-primary">提交</button>
         </form>
     </div>
-
+    </div>
+    </div>
 @endsection
 
 @section('script')

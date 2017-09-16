@@ -18,4 +18,10 @@ class Article extends Model
 
     //关闭字段create_at update_at
     public $timestamps = false;
+
+    public function category()
+    {
+//        return $this->hasOne('App\Models\Category', 'art_id', 'article_id');
+        return $this->belongsTo('App\Models\Category', 'category_id', 'cate_id');
+    }
 }

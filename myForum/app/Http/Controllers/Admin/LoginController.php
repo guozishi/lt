@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Gregwar\Captcha\CaptchaBuilder;
@@ -30,7 +29,6 @@ class LoginController extends Controller
 
                 return redirect('/admin')->with(['info.success'=>'登录成功!']);
             }
-
             $data = $request->all();
 
             // dd($data);
@@ -82,8 +80,6 @@ class LoginController extends Controller
 
             return view('admin.login.login');
         }
-
-
     }
 
     //logout
