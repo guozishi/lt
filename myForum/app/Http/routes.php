@@ -41,8 +41,12 @@ Route::resource('/admin/link', 'Admin\LinkController');
 //后台友情链接图片上传处理
 Route::post('admin/upload','Admin\LinkController@upload');
 
-//后台网站配置 add
+//后台网站配置
 Route::resource('admin/config','Admin\ConfigController');
+
+
+//角色管理
+Route::resource('admin/roles','Admin\RolesController');
 
 //后台网站配置排序处理
 Route::post('/admin/conf/order','Admin\ConfigController@order');
@@ -51,6 +55,8 @@ Route::post('/admin/conf/order','Admin\ConfigController@order');
 Route::post('admin/config/updateContent','Admin\ConfigController@updateContent');
 Route::get('admin/putfile','Admin\ConfigController@putFile');
 
+
+    Route::get('/admin/abc' ,'Admin\ArticleController@index');
 
 // 广告管理 advert
     Route::get('/admin/advert/add', 'Admin\AdvertController@add');
@@ -63,7 +69,23 @@ Route::get('admin/putfile','Admin\ConfigController@putFile');
 
 
 
-    /*});*/
+// 后台管理员模块
+    Route::get('/admin/user/add','Admin\UserController@add');
+    Route::get('/admin/user/add','Admin\UserController@add');
+    Route::post('/admin/user/insert','Admin\UserController@insert');
+    Route::get('/admin/user/edit/{id}','Admin\UserController@edit');
+    Route::post('/admin/user/update','Admin\UserController@update');
+    Route::delete('/admin/user/delete/{id}','Admin\UserController@delete');
+    Route::get('/admin/user/index','Admin\UserController@index');
+
+
+
+    //前台用户管理
+    Route::get('/admin/user/xianshi','Admin\UserController@xianshi');
+    Route::get('/admin/user/xiugai/{id}','Admin\UserController@xiugai');
+    Route::delete('/admin/user/del/{id}','Admin\UserController@del');
+    Route::post('/admin/user/cr','Admin\UserController@cr');
+
 
 //帖子管理
     Route::get('/admin/article' ,'Admin\ArticleController@article');
@@ -76,6 +98,7 @@ Route::get('admin/putfile','Admin\ConfigController@putFile');
     Route::post('/admin/article/update' ,'Admin\ArticleController@update');
 //返回
     Route::get('/admin/article/back' ,'Admin\ArticleController@article');
+
 
 
 
@@ -96,13 +119,6 @@ Route::get('admin/putfile','Admin\ConfigController@putFile');
 Route::match(['get','post'], '/admin/login', 'Admin\LoginController@login');
 //后台登录验证码方法二
 Route::get('/code/captcha/{tmp}', 'Admin\LoginController@captcha');
-
-
-
-
-
-
-
 
 //前台
 

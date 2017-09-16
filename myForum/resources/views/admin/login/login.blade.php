@@ -78,7 +78,6 @@
                             <!-- 正确提示信息 -->
                             @if (session('info.success'))
                                 <div class="alert alert-success alert-dismissible" id = "alertSuccess">
-
                                     <h4><i class="icon fa fa-check"></i> 成功!</h4>
                                     {{ session('info.success') }}
                                 </div>

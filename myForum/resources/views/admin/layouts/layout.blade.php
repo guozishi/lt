@@ -31,6 +31,7 @@
         <a href="#/" class="navbar-brand text-lt">
           <img src="{{ url('/admin-template/img/logo.png') }}" alt="." class="hide">
           <span class="hidden-folded m-l-xs">{{ $title }}</span>
+
         </a>
         <!-- / brand -->
       </div>
@@ -239,6 +240,7 @@
               </li>
               <li>
                 <a href="{{ asset('admin/config/create') }}">
+
                   <span class="badge bg-danger pull-right">30%</span>
                   <span>设置</span>
                 </a>
@@ -301,12 +303,14 @@
                 </li>
                 <li>
                   <a href="{{ url('/admin/config/create') }}">设置</a>
+
                 </li>
                 <li>
                   <a ui-sref="app.page.profile">外形</a>
                 </li>
                 <li>
                   <a href="{{ url('/admin/advert/index') }}">
+
                     <span class="badge bg-danger pull-right">3</span>
                     公告
                   </a>
@@ -350,17 +354,47 @@
                 </a>
                 <ul class="nav nav-sub dk">
                     <li ui-sref-active="active">
-                    <a ui-sref="layout.app">
-                      <i class="fa fa-plus"></i>
-                      <span>用户添加</span>
+                    <a ui-sref="layout.app" href={{ url('/admin/user/add') }}>
+                     <i class="fa icon-users"></i>
+                      <span>管理员添加</span>
                     </a>
-                  </li>   
+                  </li>
                   <li ui-sref-active="active">
-                    <a ui-sref="layout.app">
-                     <i class="fa fa-columns"></i>
-                      <span>用户浏览</span>
+                    <a ui-sref="layout.app"  href={{ url('/admin/user/xianshi') }}>
+                      <i class="fa fa-columns"></i>
+                      <span>管理员浏览</span>
+                    </a>
+                  </li>
+                  <li ui-sref-active="active">
+                    <a ui-sref="layout.app"  href={{ url('admin/user/index') }}>
+                      <i class="fa fa-columns"></i>
+                      <span>前台用户浏览</span>
                     </a>
                   </li>     
+                </ul>
+              </li>
+              <li>
+                <a href class="auto">
+                  <span class="pull-right text-muted">
+                    <i class="fa fa-fw fa-angle-right text"></i>
+                    <i class="fa fa-fw fa-angle-down text-active"></i>
+                  </span>
+                  <i class="fa  fa-user"></i>
+                  <span>权限管理</span>
+                </a>
+                <ul class="nav nav-sub dk">
+                  <li ui-sref-active="active">
+                    <a ui-sref="layout.app" href={{ url('/admin/roles/create') }}>
+                      <i class="fa icon-users"></i>
+                      <span>角色添加</span>
+                    </a>
+                  </li>
+                  <li ui-sref-active="active">
+                    <a ui-sref="layout.app"  href={{ url('/admin/roles') }}>
+                      <i class="fa fa-columns"></i>
+                      <span>角色浏览</span>
+                    </a>
+                  </li>
                 </ul>
               </li>
               <li>
@@ -371,17 +405,19 @@
                   </span>
                   <i class="glyphicon glyphicon-folder-open"></i>
 
+
                   <span>帖子管理</span>
                 </a>
                 <ul class="nav nav-sub dk">
                   <li ui-sref-active="active">
                     <a href="{{ url('/admin/article') }}">
                     <i class="fa fa-columns"></i>
+
                       <span>帖子浏览</span>
                     </a>
                   </li>     
                 </ul>
-              </li>            
+              </li>
 
               </li>                                         
                     <li>
@@ -409,6 +445,7 @@
                     <i class="fa fa-fw fa-angle-down text-active"></i>
                   </span>
                   <i class="glyphicon glyphicon-tasks"></i>
+
                   <span>分类管理</span>
                 </a>
                 <ul class="nav nav-sub dk">
@@ -420,11 +457,10 @@
                   </li>   
                   <li ui-sref-active="active">
                     <a ui-sref="layout.app" href="{{ url('/admin/category') }}">
-
                     <i class="fa fa-columns"></i>
                       <span>分类浏览</span>
                     </a>
-                  </li>     
+                  </li>
                 </ul>
               </li>              
               <li>
@@ -434,12 +470,14 @@
                     <i class="fa fa-fw fa-angle-down text-active"></i>
                   </span>
                   <i class="fa fa-chain"></i>
+
                   <span>友情链接</span>
                 </a>
                 <ul class="nav nav-sub dk">
                     <li ui-sref-active="active">
                     <a ui-sref="layout.app" href="{{ url('/admin/link/create') }}">
                      <i class="fa fa-plus"></i>
+
                       <span>添加链接</span>
                     </a>
                   </li>   
@@ -447,6 +485,7 @@
 
                     <a ui-sref="layout.app" href="{{ url('/admin/link') }}">
                      <i class="fa fa-columns"></i>
+
                       <span>链接浏览</span>
                     </a>
                   </li>     
@@ -460,18 +499,21 @@
                   </span>
                   <i class="glyphicon glyphicon-compressed"></i>
 
+
                   <span>广告管理</span>
                 </a>
                 <ul class="nav nav-sub dk">
                     <li ui-sref-active="active">
 
                     <a ui-sref="layout.app" href="{{ url('/admin/advert/add') }}">
+                      <i class="fa fa-plus"></i>
                     <span>添加广告</span>
                     </a>
                   </li>   
                   <li ui-sref-active="active">
                     <a ui-sref="layout.app" href="{{ url('/admin/advert/index') }}">
-                    <span>浏览广告</span>
+                      <i class="fa fa-columns"></i>
+                      <span>浏览广告</span>
 
                     </a>
                   </li>     
@@ -483,7 +525,6 @@
                     <i class="fa fa-fw fa-angle-right text"></i>
                     <i class="fa fa-fw fa-angle-down text-active"></i>
                   </span>
-
 
                   <i class="glyphicon glyphicon-bullhorn"></i>
                   <span>举报管理</span>
@@ -651,6 +692,7 @@
     <!-- / footer -->
   </div>
   <!-- jQuery -->
+
   <script src="{{ asset('/admin-template/vendor/jquery/jquery.min.js') }}"></script>
   <script src="{{ asset('/admin-template/vendor/jquery/bootstrap.js') }}"></script>
   <script src="{{ asset('/layer/layer.js') }}"></script>
@@ -723,5 +765,3 @@
 
 </body>
 </html>
-
-

@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Article;
+use App\Models\Category;
+use App\Models\Users;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Crypt;
 
 class ArticleController extends Controller
 {
@@ -14,9 +18,26 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request  $request)
     {
         //
+//        $cate = Article::find(6)->category;
+//        $art = Category::find(14)->article;
+//        dd($art);
+
+//        $cate =Category::find(31)->article;
+//        dd($cate);
+
+//            $data = Article::find(1)->category;
+//            dd($data);
+//        $data = Users::find(1)->roles;
+//        dd($data);
+//        $arr = [];
+//        foreach ($data as $v)
+//        {
+//            $arr[] = $v->role_name;
+//        }
+//        dd($arr);
     }
 
  
@@ -60,7 +81,6 @@ class ArticleController extends Controller
       }
 
     }
-
 
 //insert
     public function insert($id)

@@ -4,13 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Users extends Model
+class Roles extends Model
 {
+    //
     //连接表
-    public $table = 'admin_users';
+    public $table = 'admin_roles';
 
     //声明主键
-    public $primaryKey = 'user_id';
+    public $primaryKey = 'role_id';
 
 
     //定义黑名单
@@ -19,8 +20,8 @@ class Users extends Model
     //关闭字段create_at update_at
     public $timestamps = false;
 
-    public function roles()
+    public function users()
     {
-        return $this->belongsToMany('App\Models\Roles', 'role_user', 'user_id', 'role_id');
+        return $this->belongsToMany('App\Models\Users', 'role_user', 'role_id', 'user_id');
     }
 }

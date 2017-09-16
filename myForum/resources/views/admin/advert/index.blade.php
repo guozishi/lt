@@ -2,41 +2,19 @@
 
 @section('content')        
     <!-- 广告表格 -->
-      <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <ol class="breadcrumb">
-        <h1>
-        广告管理
-        <small>广告列表</small>
-      </h1>
-      </ol>
-    </section>
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="box">
-            
-            <!-- /.box-header -->
-            <div class="box-body">
-            
-            @if(session('info'))
-            <div id="alertError" class="alert ng-isolate-scope alert-success alert-dismissable" ng-class="['alert-' + (type || 'warning'), closeable ? 'alert-dismissable' : null]" role="alert" ng-repeat="alert in alerts" type="success" close="closeAlert($index)">
-                <button ng-show="closeable" type="button" class="close" ng-click="close()">
-                    <span aria-hidden="true"><font><font>× </font></font></span>
-                    <span class="sr-only"><font><font>关闭</font></font></span>
-                </button>
-                <div ng-transclude=""><span class="ng-binding ng-scope"><font><font>提示！</font><font>{{ session('info') }}</font></font></span></div>
+  <div class="bg-light lter b-b wrapper-md">
+        <h1 class="m-n font-thin h3">{{ $title }}</h1>
+    </div>
+    <div class="wrapper-md">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                浏览
             </div>
-            @endif
-
             <form action="{{ url('/admin/advert/index') }}" method="get">
-            <div class="col-md-2">
-                <div class="form-group">
-                    <select name="num" class="form-control">
+            <div class="row wrapper">
+                <div class="col-sm-5 m-b-xs">
+                    <select class="input-sm form-control w-sm inline v-middle" name="num">
                       <option
                       @if(!empty($request['num']) && $request['num'] == 10)
                         selected="selected"
@@ -59,66 +37,70 @@
                        value="100">100</option>
                     </select>
                 </div>
-            </div>
-            <div class="col-md-offset-7 col-md-3">
-              
-                <div class="input-group">
-                  <input name="keywords" type="text" class="form-control" value="@if(!empty($request['keywords'])){{ $request['keywords'] }}@endif">
-                  <span class="input-group-btn">
-                    <button class="btn btn-default" type="submit"><font><font>搜索</font></font></button>
-                  </span>
+                <div class="col-sm-4">
                 </div>
+                <div class="col-sm-3">
+                  <div class="input-group">
+                    <input name="keywords" type="text" class="input-sm form-control" placeholder="请输入内容" value="@if(!empty($request['keywords'])){{ $request['keywords'] }}@endif">
+                    <span class="input-group-btn">
+                      <button class="btn btn-sm btn-default" type="submit">搜索</button>
+                    </span>
+                  </div>
 
+
+                </div>
             </div>
             </form>
-            
-            
+            <div class="table-responsive">
 
-              <table id="example2" class="table table-bordered table-hover">
-                <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>广告名称</th>
-                  <th>广告图片</th>
-                  <th>广告描述</th>
-                  <th>操作</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($data as $item)
-                <tr>
-                  <td>{{ $item->id }}</td>
-                  <td class="name">{{ $item->atitle }}</td> 
-                  <td><img src="/uploads/{{ $item->apic }}" width="45" /></td>
-                  <td>{{ $item->adesc }}</td>
-                  <td><span class="label bg-success"><a href="{{ url('/admin/advert/edit') }}/{{ $item->id }}?page={{ $page }}">编辑</a></span> <span class="label bg-danger"><a href="{{ url('/admin/advert/delete') }}/{{ $item->id }}">删除</a></span></td>
-                </tr>
-                @endforeach
-                </tbody>
-              </table>
-              {!! $data->appends($request)->render() !!}
+            @if(session('info'))
+            <div id="alertError2" class="alert ng-isolate-scope alert-success alert-dismissable" ng-class="['alert-' + (type || 'warning'), closeable ? 'alert-dismissable' : null]" role="alert" ng-repeat="alert in alerts" type="success" close="closeAlert($index)">
+                <button ng-show="closeable" type="button" class="close" ng-click="close()">
+                    <span aria-hidden="true"><font><font>× </font></font></span>
+                    <span class="sr-only"><font><font>关闭</font></font></span>
+                </button>
+                <div ng-transclude=""><span class="ng-binding ng-scope"><font><font>提示！</font><font>{{ session('info') }}</font></font></span></div>
             </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
+            @endif
 
-          
-          <!-- /.box -->
+                <table class="table table-striped b-t b-light">
+                    <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>广告名称</th>
+                      <th>图片</th>
+                      <th>描述</th>
+                      <th>更新时间</th>
+                      <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                 @foreach($data as $item)
+                    <tr>
+                      <td>{{ $item->aid }}</td>
+                      <td class="name">{{ $item->atitle }}</td> 
+                      <td><img src="/uploads/{{ $item->apic }}" width="45" /></td>
+                      <td>{{ $item->adesc }}</td>
+                      <td>{{ $item->atime }}</td>
+                      <td><span class="label bg-success"><a href="{{ url('/admin/advert/edit') }}/{{ $item->aid }}?page={{ $page }}">编辑</a></span>&nbsp;&nbsp;<span class="label bg-danger"><a href="{{ url('/admin/advert/delete') }}/{{ $item->aid }}">删除</a></span></td>
+                    </tr>
+                @endforeach
+                    </tbody>
+                </table>
+            </div>
+            <footer class="panel-footer">
+                {!! $data->appends($request)->render() !!}
+            </footer>
         </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+    </div>
+
 
 @stop
 
 @section('js')
     <script type="text/javascript">
-
-        $("#alertError").fadeOut(3000);
+        
+        $("#alertError2").fadeOut(2000);
 
         $.ajaxSetup({
                 headers: {
@@ -133,7 +115,7 @@
               var td = $(this);
 
               // 获取 ID
-              var id = $(this).prev().html();
+              var aid = $(this).prev().html();
 
               // 获取原来的值
               var value = $(this).text();
@@ -159,7 +141,7 @@
                 $.ajax({
                   type:'POST',
                   url:'{{ url("/admin/advert/ajaxchangename") }}',
-                  data:{id:id,value:newValue},
+                  data:{aid:aid,value:newValue},
                   success:function(data)
                   {
                       if(data == '0')

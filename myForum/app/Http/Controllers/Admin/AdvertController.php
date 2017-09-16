@@ -29,10 +29,11 @@ class AdvertController extends Controller
         $this->validate($request,[
             'atitle' => 'required',
             'adesc' => 'required',
-            'apic' => 'image',
+            'apic' => 'required|image',
             ],[
             'atitle.required' => '广告名不能为空',
             'adesc.required' => '广告描述不能为空',
+            'apic.required' => '广告图片不能为空',
             'apic.image' => '请上传一个图片文件',
             ]);
         
@@ -56,8 +57,8 @@ class AdvertController extends Controller
 
         $data['remember_token'] = str_random(50);
         $time = date('Y-m-d H:i:s', time());
-        $data['created_at'] = $time;
-        $data['updated_at'] = $time;
+        $data['atime'] = $time;
+
 
         // dd($data);
 
@@ -65,8 +66,8 @@ class AdvertController extends Controller
         $res = \DB::table('data_advert')->insert($data);
         if($res)
         {
-            // return redirect('/admin/advert/index') -> with(['info' => '添加成功']);
-            return back()->with(['info' => '添加成功']);
+            return redirect('/admin/advert/index') -> with(['info' => '添加成功']);
+            // return back()->with(['info' => '添加成功']);
         }else
         {
             return back()->with(['info' => '添加失败']);
@@ -81,17 +82,17 @@ class AdvertController extends Controller
         // $data = $request->all();
         // dd($data);
 
-        $data = \DB::table('data_advert')->where('atitle', 'like', '%'.$request->input('keywords').'%')->orderby('id')->paginate($request->input('num', 10));
+        $data = \DB::table('data_advert')->where('atitle', 'like', '%'.$request->input('keywords').'%')->orderby('aid')->paginate($request->input('num', 10));
         // dd($data);
         
         return view('admin.advert.index',['data'=>$data,'page'=> $request->input('page'), 'title'=>'广告列表','request' => $request->all()]);
     }
 
     // edit
-    public function edit(Request $request, $id)
+    public function edit(Request $request, $aid)
     {
-        // dd($id);
-        $data = \DB::table('data_advert')->where("id" , $id)->first();
+        // dd($aid);
+        $data = \DB::table('data_advert')->where("aid" , $aid)->first();
         return view('admin.advert.edit', ['data'=>$data, 'title'=> '广告编辑', 'page'=> $request->input('page')]);
     }
 
@@ -103,15 +104,16 @@ class AdvertController extends Controller
         $this->validate($request,[
             'atitle' => 'required',
             'adesc' => 'required',
-            'apic' => 'image',
+            'apic' => 'required|image',
             ],[
             'atitle.required' => '广告名不能为空',
             'adesc.required' => '广告描述不能为空',
+            'apic.required' => '广告图片不能为空',
             'apic.image' => '请上传一个图片文件',
             ]);
 
-         $id = $request->input('id');
-         $data = $request->except('_token', 'id', 'page');
+         $aid = $request->input('aid');
+         $data = $request->except('_token', 'aid', 'page');
 
 
         // 上传图片
@@ -120,7 +122,7 @@ class AdvertController extends Controller
             if($request->file('apic')->isValid())
             {   
                 // 查询图片路径
-                $oldApic = \DB::table('data_advert')->where('id', $id)->first()->apic;
+                $oldApic = \DB::table('data_advert')->where('aid', $aid)->first()->apic;
                 // dd($oldApic);
                 if(file_exists('./uploads/'.$oldApic))
                 {
@@ -140,7 +142,7 @@ class AdvertController extends Controller
         }
 
         // 更新数据
-        $res = \DB::table('data_advert')->where('id', $id)->update($data);
+        $res = \DB::table('data_advert')->where('aid', $aid)->update($data);
         if($res)
         {
             return redirect('/admin/advert/index?page='.$request->input('page')) -> with(['info' => '更新成功']);
@@ -151,9 +153,9 @@ class AdvertController extends Controller
     }
 
     // delete
-    public function delete($id)
+    public function delete($aid)
     {
-        $res = \DB::table('data_advert')->where('id', $id)->delete();
+        $res = \DB::table('data_advert')->where('aid', $aid)->delete();
         if($res)
         {
             return redirect('/admin/advert/index')->with(['info'=>'删除成功']);
@@ -163,9 +165,16 @@ class AdvertController extends Controller
         }
     }
 
+
+
+
+
+
+
+
     public function ajaxChangename(Request $request)
     {
-        $id = $request->input('id');
+        $aid = $request->input('aid');
         $value = $request->input('value');
 
         $res = \DB::table('data_advert')->where('atitle', $value)->first();
@@ -174,7 +183,7 @@ class AdvertController extends Controller
             return response()->json(0); 
         }else
         {
-            $res1 = \DB::table('data_advert')->where('id', $id)->update(['atitle'=>$value]);
+            $res1 = \DB::table('data_advert')->where('aid', $aid)->update(['atitle'=>$value]);
             if($res1)
             {
                 return response()->json(1); 
