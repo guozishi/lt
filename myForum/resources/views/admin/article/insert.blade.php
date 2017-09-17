@@ -18,6 +18,8 @@
             <footer class="panel-footer text-right bg-light lter">
              <a href="{{ url('/admin/article/back') }}"><button type="submit" class="btn btn-success"> 返回</button></a>
             </footer>
+              </div>
+          </div>
         </form>
       </div>
 @endsection()

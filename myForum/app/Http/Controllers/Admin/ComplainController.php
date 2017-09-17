@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Model\article;
-use App\Model\Complain;
-use App\Model\User;
+use App\Models\article;
+use App\Models\Complain;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;

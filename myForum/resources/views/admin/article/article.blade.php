@@ -14,8 +14,6 @@
                   </div>
                @endif
 
-          
-
     <div class="panel-heading"><font><font>
       帖子管理
     </font></font></div>
