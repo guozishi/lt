@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectPlainTextFileTypeManager">
+<<<<<<< HEAD
+    <file url="file://$PROJECT_DIR$/app/Http/Controllers/ComplainController.php" />
+=======
+    <file url="file://$PROJECT_DIR$/app/Models/comment.php" />
+>>>>>>> 2ab4f8e66229138dec3d67878ecb7f9dec6dec39
+  </component>
+</project>
