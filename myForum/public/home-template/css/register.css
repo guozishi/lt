@@ -1,0 +1,19 @@
+/* Code tidied up by ScrapBook */
+#head { padding-bottom: 10px; }
+.head_top { height: 24px; }
+.regTitle { border-bottom: 1px solid rgb(237, 237, 237); padding: 0px 5px 10px; margin-bottom: 30px; }
+.regTitle h5 { font-size: 16px; font-weight: 700; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; padding: 0px; color: rgb(102, 102, 102); }
+.regForm-wrap { float: left; width: 99%; min-height: 80px; padding-top: 10px; padding-bottom: 50px; }
+.regForm { position: relative; margin-right: 200px; width: auto; }
+.regForm dl { min-height: 43px; }
+.regForm dt { float: left; width: 130px; text-align: right; margin-right: 15px; line-height: 28px; font-size: 14px; }
+.regForm dd { float: left; }
+.regForm .ip { width: 230px; margin-right: 5px; }
+.regForm .ip div { padding: 3px 3px 5px; float: left; border-width: 1px; border-style: solid; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-color: rgb(153, 153, 153) rgb(204, 204, 204) rgb(204, 204, 204) rgb(153, 153, 153); background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+.regForm .ip div.hover, .regForm .ip div:hover { background: rgb(255, 251, 222) none repeat scroll 0% 0%; border-width: 1px; border-style: solid; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-color: rgb(85, 85, 85) rgb(170, 170, 170) rgb(170, 170, 170) rgb(85, 85, 85); }
+.regForm .ip input { border: 0px none; padding: 0px; margin: 0px 5px 0px 0px; font: 100 12px/15px Arial; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; width: auto; color: rgb(51, 51, 51); }
+.regForm .ip .input { border: 0px none; padding: 2px 0px 0px; margin: 0px; font: 700 14px/15px Arial; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; width: 222px; color: rgb(51, 51, 51); }
+.regForm .tp { width: 300px; }
+.regForm .tp div { padding: 5px 10px 5px 20px; position: absolute; line-height: 16px; max-width: 290px; }
+.regLogin { float: left; margin-left: -190px; width: 190px; border-left: 1px dotted rgb(221, 221, 221); min-height: 200px; }
+.regForm .btn, .regLogin .bt { margin-left: 0px; }

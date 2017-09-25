@@ -1,0 +1,91 @@
+/* Code tidied up by ScrapBook */
+#hd { height: 95px; }
+.hue-blue { background-color: rgb(189, 226, 248); }
+#foot { color: rgb(255, 255, 255); clear: both; }
+#foot a:link, #foot a:visited, #foot a:hover { color: rgb(255, 255, 255); font-size: 12px; margin: 0px 4px; }
+.skin-c119 { background-color: rgb(6, 124, 170); }
+#hd { position: relative; height: 240px; z-index: 50; }
+.alpha-bar { background-color: rgba(0, 0, 0, 0.5); }
+#hd .alpha-bar { height: 45px; width: 1000px; position: absolute; bottom: 0px; left: 0px; z-index: 51; }
+.header-profile { position: relative; top: 65px; margin-left: 20px; z-index: 53; }
+.header-profile .img-left { position: relative; width: 160px; float: left; display: inline; }
+.header-profile .user-pic { border-radius: 5px; border: 1px solid rgb(204, 204, 204); padding: 4px; background-color: rgb(255, 255, 255); box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); display: block; }
+.header-profile .user-pic, .header-profile .user-pic img { width: 150px; height: 150px; }
+#hd .header-profile .edit_avatar { height: 25px; width: 150px; left: 5px; bottom: 65px; text-align: center; line-height: 25px; display: none; }
+.header-profile .text-right { padding-top: 30px; margin-left: 180px; color: rgb(255, 255, 255); font-size: 14px; width: 780px; }
+.self-profile .text-right { padding-top: 0px !important; }
+.header-profile h1 { font-family: Arial,"微软雅黑"; font-weight: 400; font-size: 30px; margin-bottom: 4px; height: 40px; line-height: 40px; }
+.header-profile .text-right, .header-profile a { color: rgb(255, 255, 255) !important; }
+.header-profile .text-right { position: relative; }
+.header-profile .user-name { margin-right: 10px; float: left; display: inline; }
+.header-profile .info-bar { width: 100%; height: 18px; position: absolute; top: 145px; left: 0px; }
+.header-profile .info-bar .logout-btn { float: right; margin-right: -5px; }
+.header-profile .info-bar ul li { float: left; display: inline; height: 18px; line-height: 18px; margin-right: 16px; }
+.header-profile .info-bar ul li.my-purse { position: relative; z-index: 55; }
+.header-profile .info-bar ul li.my-purse .my-purse-toggle:hover { text-decoration: none; }
+.header-profile .info-bar ul li.my-purse .my-purse-toggle .arrow-icon { font-size: 0px; display: inline-block; width: 9px; height: 6px; vertical-align: middle; margin: -2px 0px 0px 6px; background: rgba(0, 0, 0, 0) url("ico_2317294.png") no-repeat scroll 0px -1100px; }
+.header-profile .info-bar ul li.my-purse .my-purse-box { display: none; position: absolute; z-index: 56; top: 33px; left: -15px; padding: 0px 15px 15px; width: 150px; background-color: rgba(0, 0, 0, 0.5); }
+.header-profile .info-bar ul li.my-purse .my-purse-box p { height: 35px; line-height: 35px; width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; border-bottom: 1px solid rgb(153, 153, 153); }
+.header-profile .info-bar ul li.my-service { position: relative; z-index: 55; }
+.header-profile .info-bar ul li.my-service .my-service-toggle:hover { text-decoration: none; }
+.header-profile .info-bar ul li.my-service .my-service-toggle .arrow-icon { font-size: 0px; display: inline-block; width: 9px; height: 6px; vertical-align: middle; margin: -2px 0px 0px 6px; background: rgba(0, 0, 0, 0) url("ico_2317294.png") no-repeat scroll 0px -1100px; }
+.header-profile .info-bar ul li.my-service .my-service-box { display: none; position: absolute; z-index: 56; top: 33px; left: -15px; padding: 0px 15px 15px; width: 220px; background-color: rgba(0, 0, 0, 0.5); }
+.header-profile .info-bar ul li.my-service .my-service-box p { height: 30px; line-height: 35px; width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.skinCorner { display: inline-block; position: absolute; right: 0px; top: 0px; width: 20px; height: 20px; background: rgba(0, 0, 0, 0) url("skin-btn_2049aa6.png") no-repeat scroll 0px 0px; }
+.skinCorner:hover { width: 22px; height: 22px; background-position: 0px -28px; }
+.member-link { text-align: center; cursor: pointer; }
+.member-link a { color: rgb(253, 208, 45) !important; }
+.module-block { margin-bottom: 10px; font-family: Arial,"微软雅黑"; background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+.module-block .mod-hd { background: rgb(216, 234, 255) none repeat scroll 0% 0%; height: 38px; line-height: 38px; padding: 0px 10px; overflow: hidden; }
+.module-block .mod-hd h2 { font-weight: 400; color: rgb(68, 68, 68); height: 38px; line-height: 38px; font-size: 16px; float: left; display: inline; }
+.module-block .mod-hd .more { float: right; display: inline; }
+.module-block .mod-bd { padding: 0px 10px; }
+.header-profile .more-medal { text-decoration: none; font-size: 20px; vertical-align: bottom; margin-left: 10px; }
+#sign-wrapper { height: 50px; }
+.can-sign-btn a:hover { background-color: rgb(47, 127, 199); }
+.can-sign-btn, .cannot-sign-btn { margin: 5px 5px 0px -5px; width: 100px; float: left; }
+.can-sign-btn a, .cannot-sign-btn a { height: 40px; padding: 10px; color: rgb(255, 255, 255); line-height: 40px; border-radius: 5px; font-size: 18px; font-weight: 700; text-decoration: none; }
+.can-sign-btn a { background: rgb(48, 142, 227) none repeat scroll 0% 0%; padding: 10px 30px; }
+.cannot-sign-btn a { background-color: rgb(118, 180, 237); padding: 10px 21px; }
+.sign-today { display: block; font-size: 14px; }
+.sign-today, .sign-days { color: rgb(51, 51, 51); }
+.sign-days span { color: red; }
+.sign-content { padding-top: 5px; height: 45px; }
+.sign-days { color: rgb(48, 142, 227); }
+#calendar { display: none; width: 500px; position: relative; right: 205px; z-index: 999; }
+@keyframes slideInLeft {
+0% { opacity: 0; transform: translateX(-2000px); }
+100% { transform: translateX(0px); }
+}
+@keyframes slideInLeft {
+0% { opacity: 0; transform: translateX(-2000px); }
+100% { transform: translateX(0px); }
+}
+@keyframes slideInLeft {
+0% { opacity: 0; transform: translateX(-2000px); }
+100% { transform: translateX(0px); }
+}
+@keyframes slideOutLeft {
+0% { transform: translateX(0px); }
+100% { opacity: 0; transform: translateX(-2000px); }
+}
+@keyframes slideOutLeft {
+0% { transform: translateX(0px); }
+100% { opacity: 0; transform: translateX(-2000px); }
+}
+@keyframes slideOutLeft {
+0% { transform: translateX(0px); }
+100% { opacity: 0; transform: translateX(-2000px); }
+}
+@keyframes bounce {
+0%, 20%, 53%, 80%, 100% { transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); transform: translate3d(0px, 0px, 0px); }
+40%, 43% { transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06); transform: translate3d(0px, -30px, 0px); }
+70% { transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06); transform: translate3d(0px, -15px, 0px); }
+90% { transform: translate3d(0px, -4px, 0px); }
+}
+@keyframes bounce {
+0%, 20%, 53%, 80%, 100% { transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); transform: translate3d(0px, 0px, 0px); }
+40%, 43% { transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06); transform: translate3d(0px, -30px, 0px); }
+70% { transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06); transform: translate3d(0px, -15px, 0px); }
+90% { transform: translate3d(0px, -4px, 0px); }
+}

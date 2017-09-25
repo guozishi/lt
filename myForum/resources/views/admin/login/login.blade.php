@@ -93,60 +93,51 @@
                             <label for="inputPassword">密码</label>
                             <input type="password" id="inputPassword" class="form-control" name="password">
                         </div>
-                        <div  style="width: 150px;">
+                        <div  style="width: 100px;">
                             <!--a href="#" class="pull-right label-forgot">Forgot password?</a-->
                             <label for="inputPassword">验证码</label>
-                            <input type="text" id="inputCode" class="form-control" name="code">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <input style="width: 170px;" type="text" id="inputCode" class="form-control" name="code">
+                                    </td>
+                                    <td>
+                                        <a onclick="javascript:re_captcha();" id="code">
+                                         <img style="margin-left:-25px;" src="{{ URL('/code/captcha/1') }}" id="127ddf0de5a04167a9e427d883690ff6" />
+                                         </a>
+                                    </td>
+                                </tr>
+                            </table>
+
+
                             {{--<img src="{{ url('/admin/code') }}" onclick="this.src='{{ url('/admin/code') }}?/'+Math.random()">--}}
+
+
+
+
                         </div>
-                        <a onclick="javascript:re_captcha();" id="code">
-                            <img src="{{ URL('/code/captcha/1') }}" id="127ddf0de5a04167a9e427d883690ff6">
-                        </a>
+
                         <div class="checkbox pull-left">
                             <label>
-                                <input type="checkbox" name="rem">记住用户名</label>
+                                <input type="checkbox" name="rem">记住我</label>
                         </div>
-                        <button class="btn btn btn-primary pull-right" type="submit">
-                            登 录
+                        <div class="row-block">
+                            <div class="row">
+                                <div class="col-md-12 row-block">
+                                    <button class="btn btn-primary btn-block" type="submit">
+                                    登 录
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                         </button>
                     </form>
                     <a class="forgotLnk" href="index.html"></a>
                     <div class="or-box">
 
                         <center><span class="text-center login-with">登录 或<b> 注册</b></span></center>
-                        <div class="row">
-                            <div class="col-md-6 row-block">
-                                <a href="index.html" class="btn btn-facebook btn-block">
-                                    <span class="entypo-facebook space-icon"></span>Facebook</a>
-                            </div>
-                            <div class="col-md-6 row-block">
-                                <a href="index.html" class="btn btn-twitter btn-block">
-                                    <span class="entypo-twitter space-icon"></span>Twitter</a>
 
-                            </div>
 
-                        </div>
-                        <div style="margin-top:25px" class="row">
-                            <div class="col-md-6 row-block">
-                                <a href="index.html" class="btn btn-google btn-block"><span class="entypo-gplus space-icon"></span>Google +</a>
-                            </div>
-                            <div class="col-md-6 row-block">
-                                <a href="index.html" class="btn btn-instagram btn-block"><span class="entypo-instagrem space-icon"></span>Instagram</a>
-                            </div>
-
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row-block">
-                        <div class="row">
-                            <div class="col-md-12 row-block">
-                                <a href="index.html" class="btn btn-primary btn-block">第三方登录</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row-block">
-                        <div class="row">
-                        </div>
                     </div>
                 </div>
             </div>

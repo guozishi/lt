@@ -21,7 +21,7 @@
                 <div class="form-group pull-in clearfix">
                   <div class="col-sm-8">
                     <label><font><font>作者</font></font></label>
-                    <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" value="{{$data->user_id}}" name="user_id" ng-model="contact.name" required="">
+                    <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" value="{{$data->login_id}}" name="user_id" ng-model="contact.name" required="">
                   </div>
         
                   <div class="col-sm-8">

@@ -47,7 +47,7 @@ class ArticleController extends Controller
     {
 
 
-       $data =  \DB::table('data_article')->where('user_id' , 'like' , '%' . $request->input('keywords'). '%')->paginate($request->input('num', 5));
+       $data =  \DB::table('data_article')->where('login_id' , 'like' , '%' . $request->input('keywords'). '%')->paginate($request->input('num', 5));
 
 
     return view('admin.article.article',[ 'data'=>$data , 'title'=>'帖子管理' ,  'request' => $request->all()]);

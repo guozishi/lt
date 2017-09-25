@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +14,7 @@
 
 //后台
 
-Route::group(['middleware'=>'al'], function(){
+ Route::group(['middleware'=>'auth'], function(){
 
 //后台主页
 Route::get('/admin', 'Admin\IndexController@index');
@@ -25,6 +25,14 @@ Route::post('/admin/repass','Admin\IndexController@repass');
 
 //后台退出
 Route::get('/admin/logout', 'Admin\LoginController@logout');
+
+
+
+//挂起
+Route::get('/admin/wait', 'Admin\WaitController@wait');
+
+//解除挂起  登录后台
+Route::post('/admin/rewait', 'Admin\WaitController@rewait');
 
 //后台登录验证码方法一
 //Route::get('/admin/code','Admin\LoginController@code');
@@ -48,6 +56,14 @@ Route::resource('admin/config','Admin\ConfigController');
 //角色管理
 Route::resource('admin/roles','Admin\RolesController');
 
+//角色权限
+Route::get('/admin/roles/auth/{id}','Admin\RolesController@roles');
+Route::post('/admin/roles/doauth/','Admin\RolesController@doroles');
+
+//用户拥有的角色
+Route::get('/admin/user/auth/{id}','Admin\UserController@roles');
+Route::post('/admin/user/doauth/','Admin\UserController@doroles');
+
 //后台网站配置排序处理
 Route::post('/admin/conf/order','Admin\ConfigController@order');
 
@@ -56,7 +72,8 @@ Route::post('admin/config/updateContent','Admin\ConfigController@updateContent')
 Route::get('admin/putfile','Admin\ConfigController@putFile');
 
 
-    Route::get('/admin/abc' ,'Admin\ArticleController@index');
+//测试
+// Route::get('/admin/abc' ,'Admin\ArticleController@index');
 
 // 广告管理 advert
     Route::get('/admin/advert/add', 'Admin\AdvertController@add');
@@ -79,6 +96,12 @@ Route::get('admin/putfile','Admin\ConfigController@putFile');
     Route::get('/admin/user/index','Admin\UserController@index');
 
 
+//举报模块
+    Route::get('/admin/complain', 'Admin\ComplainController@index');
+    Route::post('/admin/cmplain/del/{art_id}','Admin\ComplainController@del');
+    Route::get('/admin/complain/detail','Admin\ComplainController@detail');
+    Route::post('/admin/complain/sendBack/{cmpl_id}','Admin\ComplainController@sendBack');
+
 
     //前台用户管理
     Route::get('/admin/user/xianshi','Admin\UserController@xianshi');
@@ -100,6 +123,11 @@ Route::get('admin/putfile','Admin\ConfigController@putFile');
     Route::get('/admin/article/back' ,'Admin\ArticleController@article');
 
 
+    //随记管理
+    Route::resource('admin/record','Admin\RecordController');
+    //内容详情
+    Route::get('/admin/derecord/{id}','Admin\RecordController@derecord');
+
 
 
 //评论管理
@@ -113,14 +141,44 @@ Route::get('admin/putfile','Admin\ConfigController@putFile');
 //删除
     Route::get('/admin/comment/delete/{id}','Admin\Commentcontroller@delete');
 
-});
+ });
 
 //后台登录
 Route::match(['get','post'], '/admin/login', 'Admin\LoginController@login');
 //后台登录验证码方法二
 Route::get('/code/captcha/{tmp}', 'Admin\LoginController@captcha');
 
-//前台
+
+
+
+//====================================前台==================================================
+//前台登录
+Route::match(['get','post'],'/home/login','Home\LoginController@login');
+Route::post('/home/index', 'Home\LoginController@login');
+
+//前台注册
+Route::match(['get','post'],'/home/register','Home\RegisterController@register');
+
+//用户退出
+Route::get('home/logout','Home\LoginController@logout');
+//首页
+Route::get('/home/index' , 'Home\IndexController@index');
+
+//列表
+Route::get('/home/list', 'Home\ListController@lists');
+//详情页
+Route::get('/home/detail/{article_id}','Home\detailController@detail');
+
+Route::get('/home/sin' ,'Home\SinController@sin');
+
+
+//个人中心页
+Route::get('/home/users' , 'Home\UsersController@users');
+//帖子管理
+Route::get('/home/articles/articles','Home\ArticlesController@articles');
+//随记管理
+Route::resource('home/record','Home\RecordController');
+
 
 
 

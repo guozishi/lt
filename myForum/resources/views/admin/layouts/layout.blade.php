@@ -14,6 +14,15 @@
   <link rel="stylesheet" href="{{ asset('/admin-template/css/simple-line-icons.css') }}" type="text/css" />
   <link rel="stylesheet" href="{{ asset('/admin-template/css/font.css') }}" type="text/css" />
   <link rel="stylesheet" href="{{ asset('/admin-template/css/app.css') }}" type="text/css" />
+  <link rel="stylesheet" href="{{ asset('/admin-template/motai/css/common.css') }}"/>
+  <link rel="stylesheet" href="{{ url('layer/skin/layer.css') }}" type="text/css" />
+  <link rel="icon" href="{{ url('/logo/favicon.ico') }}" type="image/x-icon">
+  <!-- <link rel="stylesheet" href="{{ url('style/css/ch-ui.admin.css') }}"> -->
+  <link rel="stylesheet" href="{{ url('style/font/css/font-awesome.min.css') }}">
+  <script type="text/javascript" src="style/js/jquery.js"></script>
+  <script type="text/javascript" src="style/js/ch-ui.admin.js"></script>
+  <script type="text/javascript" src="{{ asset('layer/layer.js') }}"></script>
+
 </head>
 <body>
   <div class="app app-header-fixed" id="app">
@@ -419,7 +428,25 @@
                 </ul>
               </li>
 
-              </li>                                         
+              </li>
+                   <li>
+                <a href class="auto">
+                  <span class="pull-right text-muted">
+                    <i class="fa fa-fw fa-angle-right text"></i>
+                    <i class="fa fa-fw fa-angle-down text-active"></i>
+                  </span>
+                  <i class=" icon-book-open "></i>
+                  <span>随记管理</span>
+                </a>
+                <ul class="nav nav-sub dk">
+                  <li ui-sref-active="active">
+                    <a href="{{ url('/admin/record') }}">
+                      <i class="fa fa-columns"></i>
+                      <span>随记浏览</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>  
                     <li>
                 <a href class="auto">      
                   <span class="pull-right text-muted">
@@ -531,7 +558,7 @@
                 </a>
                 <ul class="nav nav-sub dk">
                   <li ui-sref-active="active">
-                    <a ui-sref="layout.app">
+                    <a href="/admin/complain">
                      <i class="fa fa-columns"></i>
                       <span>浏览举报</span>
                     </a>

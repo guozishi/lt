@@ -1,0 +1,62 @@
+/* Code tidied up by ScrapBook */
+html { overflow-y: scroll; }
+body { font-size: 14px; line-height: 1.5; color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); }
+body, button, input, div, p, a, em { font-family: Arial,Helvetica,"宋体",sans-serif; }
+img { border: 0px none; vertical-align: middle; }
+body, ul, ol, li, dl, dd, form, p { margin: 0px; padding: 0px; }
+ul, ol { list-style: outside none none; }
+em { font-style: normal; }
+a { color: rgb(41, 101, 177); text-decoration: none; }
+a:link { color: rgb(153, 153, 153); }
+a:hover { color: rgb(255, 51, 0); text-decoration: underline; }
+a:visited { color: rgb(153, 153, 153); }
+.fl { float: left; display: inline; }
+.fr { float: right; display: inline; }
+.clearfix {  }
+.clearfix::before, .clearfix::after { content: ""; display: table; font: 0px/0 a; }
+.clearfix::after { clear: both; }
+body { position: relative; }
+.wrap { margin: 0px auto; position: relative; }
+.bd { width: 100%; height: 490px; background-color: rgb(247, 247, 247); margin-top: 5px; }
+.ft { margin-bottom: 60px; }
+.tianya-footer li { float: left; }
+.tianya-footer a:hover { text-decoration: underline; color: rgb(255, 51, 0); }
+.zj { text-align: center; }
+.zj a { color: rgb(150, 150, 150); font-size: 12px; }
+.footer-pic-link { text-align: center; }
+.tianya-footer { position: relative; background: rgba(0, 0, 0, 0) none repeat scroll -1px -69px; margin-top: -20px; height: 20px; }
+.ft { position: relative; width: 950px; margin: 100px auto 0px; }
+.tianya-footer ul { margin-left: 135px; }
+.tianya-footer li { border-right: 1px solid rgb(204, 204, 204); float: left; font-size: 12px; line-height: 14px; padding: 0px 5px; text-align: center; width: 64px; }
+.tianya-footer .footend { border-right: 0px none; width: 180px; }
+.zj p { line-height: 24px; }
+.footer-pic-link { margin-top: 15px; margin-left: 0px; text-align: center; width: 1050px; overflow: hidden; float: left; }
+.footer-pic-link a { background: rgba(0, 0, 0, 0) url("ft-logoV4_aea6915.jpg") no-repeat scroll 0% 0%; display: block; width: 90px; height: 47px; float: left; margin-right: 4px; }
+.footer-pic-link .jc { background-position: 0px 0px; width: 45px; }
+.footer-pic-link .hngs { background-position: -48px 0px; width: 50px; }
+.footer-pic-link .wm { background-position: -98px 0px; width: 50px; }
+.footer-pic-link .gs { background-position: -156px 0px; width: 90px; }
+.footer-pic-link .kx { background-position: -251px 0px; }
+.footer-pic-link .jb { background-position: -344px 0px; }
+.footer-pic-link .bl { background-position: -434px 0px; width: 115px; }
+.footer-pic-link .bl2 { background-position: -848px 0px; width: 105px; }
+.footer-pic-link .xz { background-position: -557px 0px; width: 115px; }
+.footer-pic-link .bk { background-position: -670px 0px; margin-right: 0px; width: 120px; }
+.footer-pic-link .gab { background-position: -802px 0px; width: 45px; }
+.footer-pic-link-gov { text-align: left; }
+#top_banner { width: 1000px; height: 70px; margin: 75px auto 0px; position: relative; z-index: 1000; }
+#top_nav_wrap_login { height: 70px; margin: 0px auto; overflow: hidden; }
+#top_nav_login .top-nav-logo { float: left; display: inline-block; width: 110px; height: 100%; }
+#top_nav_login .top-nav-logo a { display: block; width: 100px; height: 44px; background: rgba(0, 0, 0, 0) url("top-login-logo_87e1fb9.png") no-repeat scroll 0px 0px; margin-top: 5px; }
+.online-info { height: 70px; color: rgb(0, 113, 185); line-height: 32px; padding: 15px 10px; }
+.online-info .welcome { color: rgb(153, 153, 153); height: 70px; line-height: 80px; position: relative; right: 45px; font-family: Arial,微软雅黑; }
+.ty-info { float: left; height: 20px; width: 220px; margin-top: 30px; background: rgba(0, 0, 0, 0) url("login-word_a27ca1b.png") no-repeat scroll 0px 0px; }
+.u_line { color: rgb(51, 51, 51) !important; font-size: 14px; font-family: Arial,微软雅黑; }
+.onLine-num .online { font-family: Arial,微软雅黑; }
+.tianya-footer .footend a { text-decoration: none; cursor: default; }
+.tianya-footer .footend a:hover { color: rgb(153, 153, 153); }
+.middle-content { width: 1100px; margin: 0px auto; }
+#adsp_center_banner { float: left; position: relative; top: 40px; left: 40px; }
+#middle .area { float: right; width: 350px; height: 380px; position: relative; top: 45px; right: 105px; }
+#middle .login-area { margin-bottom: 15px; }
+#middle .onLine-num { position: relative; color: rgb(195, 195, 195); font-size: 12px; clear: both; }

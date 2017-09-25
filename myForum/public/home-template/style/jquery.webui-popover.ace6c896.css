@@ -1,0 +1,7 @@
+/* Code tidied up by ScrapBook */
+@keyframes rotate {
+100% { transform: rotate(360deg); }
+}
+@keyframes rotate {
+100% { transform: rotate(360deg); }
+}

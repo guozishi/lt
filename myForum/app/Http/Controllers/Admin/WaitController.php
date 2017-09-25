@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Crypt;
 
 class WaitController extends Controller
 {
@@ -31,8 +32,9 @@ class WaitController extends Controller
                 'password.min' => '密码最少不能小于6位',
                 ]);
 
-            $res = \DB::table('admin_users')->where('password', $data['password'])->first();
-            if ($res) {
+            $user = session('master');
+//            dd($user);
+            if ($data['password'] == Crypt::decrypt($user->password) ) {
 
                 return redirect('/admin');
                 

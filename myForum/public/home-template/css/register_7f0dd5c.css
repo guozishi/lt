@@ -1,0 +1,73 @@
+/* Code tidied up by ScrapBook */
+body, button, input, select, textarea { font: 12px/20px "微软雅黑",Arial; }
+body { background: rgba(0, 0, 0, 0) url("new_body_65af291.jpg") no-repeat scroll center top; }
+a { color: rgb(41, 101, 177); text-decoration: none; }
+a:hover { text-decoration: underline; }
+#container { width: 1000px; margin: 0px auto; overflow: hidden; }
+.user-ico, .password-ico { background: rgba(0, 0, 0, 0) url("register_icon_645689a.png") no-repeat scroll 0% 0%; }
+.header { margin: 80px 0px 0px; }
+.header .logo { margin: 0px auto; width: 160px; height: 50px; background: rgba(0, 0, 0, 0) url("tianya_0818d6e.png") no-repeat scroll 0% 0%; }
+.header .logo-des { margin: 0px auto; width: 300px; height: 30px; background: rgba(0, 0, 0, 0) url("ty_6ccdab4.png") no-repeat scroll 0% 0%; }
+.content-login { text-align: center; }
+.content-login .l-line { border-top: 1px solid rgb(238, 238, 238); width: 30%; position: relative; top: 20px; left: 90px; box-shadow: 0px 0px 1px rgb(238, 238, 255); }
+.content-login .r-line { border-top: 1px solid rgb(238, 238, 238); width: 30%; position: relative; left: 600px; top: 19px; box-shadow: 0px 0px 1px rgb(238, 238, 255); }
+.tab-navs { margin-bottom: 10px; font-size: 18px; text-align: center; position: relative; right: 0px; }
+.tab-navs .active { color: rgb(41, 101, 177); }
+.navs-slider a { color: rgb(51, 51, 51); }
+.content-login .tab-navs { position: relative; display: inline-block; }
+.tab-navs a { float: left; width: 90px; line-height: 35px; text-decoration: none; }
+.tab-navs .nav-slider-bar { position: absolute; left: 15px; bottom: 0px; width: 60px; height: 3px; background-color: rgb(48, 155, 235); }
+.content { width: 860px; margin: 0px auto; }
+.content .form-wrapper { padding: 20px 0px 0px 70px; width: 740px; }
+.form-item { padding: 0px 0px 15px 210px; }
+.form-item .form-label { font-size: 18px; color: rgb(51, 51, 51); line-height: 36px; float: left; display: inline; margin-left: -210px; width: 200px; height: 36px; text-align: right; overflow: hidden; }
+.form-item .form-field .form-text, .login-form-item .form-field .form-text, .vcode-form-item .form-field .form-text { border-radius: 5px; font-size: 14px; line-height: 28px; border: 1px solid rgb(222, 222, 222); padding: 3px 10px; width: 255px; height: 28px; vertical-align: middle; transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s; }
+.form-item .form-field .form-text:focus, .login-form-item .form-field .form-text:focus { outline: 0px none; border-color: rgba(82, 168, 236, 0.8); box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1) inset, 0px 0px 8px rgba(82, 168, 236, 0.6); }
+.form-item .form-field .form-tips { margin-left: 5px; font-size: 12px; line-height: 20px; display: inline-block; vertical-align: middle; text-align: justify; min-height: 20px; max-height: 40px; overflow: hidden; }
+.form-item .form-field .tips-des { width: 240px; color: rgb(153, 153, 153); }
+.form-item .form-field .tips-error { width: 217px; padding-left: 23px; color: rgb(225, 87, 56); background: rgba(0, 0, 0, 0) url("error-icon_7aca293.png") no-repeat scroll 0px 0px; }
+.form-item .form-field .form-checkbox { width: 13px; height: 13px; font-size: 13px; font-family: tahoma,Helvetica,Arial; vertical-align: middle; margin: -2px 5px 0px 0px; }
+.form-item .form-field .form-select { border-width: 0px 1px 0px 0px; border-style: none solid none none; border-color: currentcolor rgb(223, 223, 223) currentcolor currentcolor; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-top-left-radius: 5px; border-bottom-left-radius: 5px; }
+.form-item .form-field .mobile-text { position: relative; width: 277px; display: inline-block; vertical-align: middle; }
+.form-item .form-field .mobile-text .form-text { padding-left: 99px; width: 168px; }
+.form-item .form-field .mobile-vcode-text { width: 277px; display: inline-block; vertical-align: middle; }
+.form-item .form-field .mobile-vcode-text .form-text { width: 105px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; }
+.form-item .form-field .mobile-vcode-text .get-mobile-vcode { margin-left: -4px; text-decoration: none; display: inline-block; padding: 3px 40px; height: 30px; line-height: 30px; text-align: center; font-size: 14px; color: rgb(255, 255, 255); vertical-align: middle; border-top-right-radius: 5px; border-bottom-right-radius: 5px; background-color: rgb(145, 193, 53); }
+.form-item .form-field .mobile-vcode-text .get-mobile-vcode:hover { text-decoration: none; background-color: rgb(125, 173, 34); }
+.form-action { margin-left: -30px; }
+.form-action .register-btn { width: 277px; }
+.btn { border: 0px none; border-radius: 3px; color: rgb(255, 255, 255); cursor: pointer; display: inline-block; font-size: 18px; height: 40px; text-align: center; vertical-align: middle; }
+.btn-blue { background: rgb(75, 160, 215) none repeat scroll 0% 0%; }
+.btn-blue:hover { background: rgb(47, 141, 237) none repeat scroll 0% 0%; }
+.footer { padding-top: 40px; }
+.footer p { text-align: center; margin: 5px; color: rgb(85, 85, 85); }
+.footer p a { margin: 0px 5px; color: rgb(85, 85, 85); }
+#area { position: absolute; left: 1px; top: 1px; width: 80px; height: 34px; line-height: 34px; font-size: 16px; text-align: center; overflow: hidden; }
+#guize { margin-left: -260px; }
+.login-form-item { padding: 0px 0px 15px; }
+.jump-passport { padding-left: 120px; color: rgb(41, 101, 177); border: 0px none; }
+.user-ico { background-position: -37px -112px; width: 25px; height: 20px; position: relative; display: inline-block; left: 35px; top: 8px; border-right: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 1px 0px 0px rgba(255, 255, 255, 0.7); color: rgb(119, 119, 119); line-height: 40px; }
+.password-ico { background-position: -37px -79px; width: 25px; height: 20px; position: relative; display: inline-block; left: 35px; top: 8px; border-right: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 1px 0px 0px rgba(255, 255, 255, 0.7); color: rgb(119, 119, 119); line-height: 40px; }
+#vwriter, #vpassword { padding: 3px 0px 3px 35px; }
+#sign_in { padding: 20px 0px 0px 40px; }
+.form-login-action { margin-left: 30px; }
+.form-login-action .submit-btn { border: 0px none; width: 292px; height: 30px; line-height: 30px; font-size: 16px; color: rgb(255, 255, 255); text-align: center; background: rgb(61, 155, 216) none repeat scroll 0% 0%; border-radius: 3px; cursor: pointer; vertical-align: middle; }
+.form-login-action .submit-btn:hover { background-color: rgb(47, 141, 237); }
+.other-login { font-size: 12px; height: 16px; line-height: 16px; color: rgb(119, 119, 119); width: 270px; margin: 15px 0px 0px 190px; }
+.other-login a { display: inline-block; }
+.other-login .weibologin em, .other-login .qqlogin em, .other-login .wxlogin em { background: rgba(0, 0, 0, 0) url("register_icon_645689a.png") no-repeat scroll 0px 0px; width: 19px; height: 17px; display: block; position: relative; top: 3px; padding-left: 7px; }
+.other-login .weibologin em { background-position: -37px -30px; }
+.other-login .qqlogin em { background-position: -38px 0px; position: relative; top: 2px; }
+.other-login .wxlogin em { background-position: -38px -55px; }
+#qrcode_login_in { padding: 2px 0px 0px 70px; }
+@media not all {
+  #qrcode_login_in { padding: 3px 0px 0px 70px; }
+}
+.login-quick { position: relative; left: 510px; margin-top: -70px; cursor: pointer; width: 102px; height: 97px; background: rgba(0, 0, 0, 0) url("c_qrcode_d29bb50.png") no-repeat scroll 0% 0%; display: none; }
+.login-pc { position: relative; left: 480px; margin-top: -70px; cursor: pointer; width: 102px; height: 97px; background: rgba(0, 0, 0, 0) url("c_pc_e6b91ff.png") no-repeat scroll 0% 0%; display: none; }
+.qrcode-img { width: 170px; height: 170px; margin: 0px auto; }
+.app-link { width: 175px; color: rgb(51, 51, 51); text-decoration: none; display: block; margin: 0px auto; }
+.app-link:hover { text-decoration: none; }
+.app-link span { color: rgb(41, 101, 177); font-size: 14px; }
+#tips { position: relative; margin: 0px auto -110px; top: -210px; width: 90px; height: 90px; padding: 10px; background: rgb(255, 153, 0) none repeat scroll 0% 0%; border-radius: 3px; color: rgb(255, 255, 255); text-align: center; overflow: hidden; }
+select { border: 1px solid rgb(0, 0, 0); -moz-appearance: none; background: transparent url("arrow_8f4759b.png") no-repeat scroll right center; padding-right: 14px; }

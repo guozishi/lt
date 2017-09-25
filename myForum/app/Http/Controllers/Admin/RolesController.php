@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Auth;
 use App\Models\Roles;
 use Illuminate\Http\Request;
 
@@ -133,5 +134,42 @@ class RolesController extends Controller
             ];
         }
         return $data;
+    }
+
+
+    public function roles(Request $request, $id)
+    {
+        $roles = Roles::find($id);
+//        dd($roles);
+        $auth = Auth::orderBy('auth_id','asc')->get();
+
+        //获取当前角色拥有的权限
+        $cuauth = \DB::table('auth_role')->where('role_id',$id)->get();
+
+        //遍历当前角色拥有的权限
+        $arr = [];
+        foreach ($cuauth as $uauth){
+            $arr[] = $uauth->auth_id;
+        }
+        return view('admin.roles.roles',['title'=>'角色权限列表'],compact('roles','auth','arr'));
+    }
+
+    public function doroles(Request $request)
+    {
+            $input = $request->except("_token");
+
+        //删除当前角色的权限
+        \DB::table('auth_role')->where('role_id',$input['role_id'])->delete();
+
+//            dd($input);
+        //遍历选中的权限,添加到角色表中
+        foreach ($input['auth_id'] as $auth)
+        {
+            \DB::table('auth_role')->insert(
+
+                ['role_id' => $input['role_id'], 'auth_id' => $auth]
+            );
+        }
+        return redirect('/admin/roles')->with(['info.success'=>'添加成功']);
     }
 }

@@ -1,0 +1,6 @@
+/* Code tidied up by ScrapBook */
+.TY_view_page { display: block; font-size: 14px; float: right; margin-right: 12px; line-height: 22px; color: rgb(102, 102, 102); }
+.TY_view_page a { text-decoration: none; display: inline-block; padding: 0px 8px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; float: left; margin: 2px; border: 1px solid rgb(204, 204, 204); color: rgb(38, 28, 220); }
+.TY_view_page a.on { text-decoration: none; background: rgb(16, 92, 182) none repeat scroll 0% 0%; color: rgb(255, 255, 255); }
+.TY_view_page font.num, .TY_view_page span.num { border: medium none; float: left; padding-top: 3px; height: 22px; line-height: 22px; vertical-align: middle; }
+.TY_view_page a:hover { color: rgb(225, 121, 42); }

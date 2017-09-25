@@ -18,6 +18,8 @@ class LoginController extends Controller
     //login
     public function login(Request $request)
     {
+
+        // dd(111);
         if ($request->isMethod('POST')) {
 
             $cookie = $request->cookie('remember_token');
@@ -26,6 +28,8 @@ class LoginController extends Controller
                 $res1 = \DB::table('admin_users')->where('remember_token', $cookie)->first();
 
                 session(['master'=>$res1]);
+
+                // dd($res1);
 
                 return redirect('/admin')->with(['info.success'=>'登录成功!']);
             }

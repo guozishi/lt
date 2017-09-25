@@ -24,4 +24,10 @@ class Roles extends Model
     {
         return $this->belongsToMany('App\Models\Users', 'role_user', 'role_id', 'user_id');
     }
+
+
+    public function auth()
+    {
+        return $this->belongsToMany('App\Models\Auth', 'auth_role', 'role_id', 'auth_id');
+    }
 }

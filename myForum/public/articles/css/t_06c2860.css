@@ -1,0 +1,47 @@
+/* Code tidied up by ScrapBook */
+#huebox { background-position: center top; background-repeat: no-repeat; margin-top: -60px; padding-top: 60px; }
+.TY_view_page { display: block; font-size: 14px; float: right; margin-right: 12px; line-height: 22px; color: rgb(102, 102, 102); font-family: "宋体"; }
+.TY_view_page a { text-decoration: none; display: inline-block; padding: 0px 8px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; float: left; margin: 2px; border: 1px solid rgb(204, 204, 204); color: rgb(38, 28, 220); }
+.TY_view_page a.on { text-decoration: none; background: rgb(16, 92, 182) none repeat scroll 0% 0%; color: rgb(255, 255, 255); }
+.TY_view_page font.num, .TY_view_page span.num { border: medium none; float: left; padding-top: 3px; height: 22px; line-height: 22px; vertical-align: middle; }
+.TY_view_page a:hover { color: rgb(225, 121, 42); }
+a * { cursor: pointer; }
+#left_nav { background: rgb(255, 255, 255) none repeat scroll 0% 0%; font-family: Arial,"微软雅黑"; padding-bottom: 10px; border-bottom: 1px solid rgb(216, 216, 216); }
+#left_nav ul {  }
+#left_nav ul li { margin-bottom: 2px; height: 32px; line-height: 32px; overflow: hidden; }
+#left_nav ul li a { display: block; padding-left: 40px; font-size: 14px; background: rgba(0, 0, 0, 0) url("ico_2317294.png") no-repeat scroll 1000px 1000px; }
+#left_nav ul li a span { color: rgb(153, 153, 153); font-size: 12px; font-family: Verdana,"宋体"; }
+#left_nav ul li a.index { background-position: 15px -3792px; }
+#left_nav ul li a.post { background-position: 15px -3842px; }
+#left_nav ul li a.reply { background-position: 15px -3892px; }
+#left_nav ul li a.album { background-position: 15px -3942px; }
+#left_nav ul li a.wenda { background-position: 15px -3992px; }
+#left_nav ul li a.weilun { background-position: 15px -4042px; }
+#left_nav ul li a.weibo { background-position: 15px -4142px; }
+#left_nav ul li a.blog { background-position: 15px -4242px; }
+#left_nav ul li a.medal { background-position: 14px -4797px; }
+#left_nav ul li a.orders { background-position: 15px -4843px; }
+#left_nav ul li.curr span { color: rgb(255, 255, 255); }
+#left_nav ul li.curr a, #left_nav ul li a:hover { color: rgb(255, 255, 255); text-decoration: none; background-color: rgb(76, 160, 215); }
+#left_nav ul li a:hover span { color: rgb(255, 255, 255); }
+.left-nav-link { border-top: 1px solid rgb(216, 216, 216); }
+#left_nav ul li a.nong { background-position: 12px -4602px; }
+#left_nav ul li a.financial { background-position: 12px -4653px; }
+#left_nav ul li a.game { background-position: 12px -4707px; }
+#left_nav ul li a.ebook { background-position: 12px -4749px; }
+#left_nav ul li a.crowdfunding { background-position: 12px -4893.5px; }
+#left_2dcode { background: rgb(255, 255, 255) none repeat scroll 0% 0%; font-family: Arial,"微软雅黑"; position: relative; }
+#left_2dcode .qrcode-wrapper { padding: 20px 25px 30px; }
+#left_2dcode .qrcode-wrapper li { display: none; }
+#left_2dcode .qrcode-wrapper li.curr { display: block; }
+#left_2dcode .qrcode-wrapper li .name { font-size: 14px; height: 28px; line-height: 28px; text-align: center; overflow: hidden; margin-bottom: 10px; }
+#left_2dcode .qrcode-wrapper li img { width: 100px; height: 100px; display: block; margin-bottom: 20px; }
+#left_2dcode .qrcode-wrapper li .download { display: block; height: 26px; line-height: 26px; color: rgb(255, 255, 255); text-align: center; background: rgb(76, 160, 215) none repeat scroll 0% 0%; }
+#left_2dcode .qrcode-wrapper li .download:hover { text-decoration: none; background: rgb(41, 101, 177) none repeat scroll 0% 0%; }
+#left_2dcode .prev-btn { position: absolute; left: 5px; top: 100px; display: block; font-size: 0px; width: 0px; height: 0px; border-width: 10px 10px 10px 0px; border-style: solid; border-color: rgb(255, 255, 255) rgb(153, 153, 153) rgb(255, 255, 255) rgb(255, 255, 255); }
+#left_2dcode .prev-btn:hover { border-right-color: rgb(102, 102, 102); }
+#left_2dcode .next-btn { position: absolute; right: 5px; top: 100px; display: block; font-size: 0px; width: 0px; height: 0px; border-width: 10px 0px 10px 10px; border-style: solid; border-color: rgb(255, 255, 255) rgb(255, 255, 255) rgb(255, 255, 255) rgb(153, 153, 153); }
+#left_2dcode .next-btn:hover { border-left-color: rgb(102, 102, 102); }
+#left_feedback { background: rgb(255, 255, 255) none repeat scroll 0% 0%; font-family: Arial,"微软雅黑"; border-top: 1px solid rgb(216, 216, 216); }
+#left_feedback .feedback { padding: 10px 15px; }
+#left_feedback .feedback a { color: rgb(68, 68, 68); line-height: 16px; text-decoration: none; font-size: 14px; padding-left: 20px; background: rgba(0, 0, 0, 0) url("ico_2317294.png") no-repeat scroll 0px -4199px; }

@@ -1,0 +1,71 @@
+/* Code tidied up by ScrapBook */
+#huebox { background-position: center top; background-repeat: no-repeat; margin-top: -60px; padding-top: 60px; }
+#twitter_area { min-height: 85px; width: 550px; padding: 15px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+#q_banner_550_90 {  }
+#q_rect_250_250_1, #q_rect_250_250_2 { display: none; background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px; }
+a * { cursor: pointer; }
+#right_interested, #right_place, #right_gifts { display: none; }
+#left_nav { background: rgb(255, 255, 255) none repeat scroll 0% 0%; font-family: Arial,"微软雅黑"; padding-bottom: 10px; border-bottom: 1px solid rgb(216, 216, 216); }
+#left_nav ul {  }
+#left_nav ul li { margin-bottom: 2px; height: 32px; line-height: 32px; overflow: hidden; }
+#left_nav ul li a { display: block; padding-left: 40px; font-size: 14px; background: rgba(0, 0, 0, 0) url("ico_011b733.png") no-repeat scroll 1000px 1000px; }
+#left_nav ul li a span { color: rgb(153, 153, 153); font-size: 12px; font-family: Verdana,"宋体"; }
+#left_nav ul li a.index { background-position: 15px -3792px; }
+#left_nav ul li a.post { background-position: 15px -3842px; }
+#left_nav ul li a.reply { background-position: 15px -3892px; }
+#left_nav ul li a.album { background-position: 15px -3942px; }
+#left_nav ul li a.wenda { background-position: 15px -3992px; }
+#left_nav ul li a.weilun { background-position: 15px -4042px; }
+#left_nav ul li a.weibo { background-position: 15px -4142px; }
+#left_nav ul li a.blog { background-position: 15px -4242px; }
+#left_nav ul li a.medal { background-position: 14px -4797px; }
+#left_nav ul li a.orders { background-position: 15px -4843px; }
+#left_nav ul li.curr a, #left_nav ul li a:hover { color: rgb(255, 255, 255); text-decoration: none; background-color: rgb(76, 160, 215); }
+#left_nav ul li a:hover span { color: rgb(255, 255, 255); }
+.left-nav-link { border-top: 1px solid rgb(216, 216, 216); }
+#left_nav ul li a.nong { background-position: 12px -4602px; }
+#left_nav ul li a.financial { background-position: 12px -4653px; }
+#left_nav ul li a.game { background-position: 12px -4707px; }
+#left_nav ul li a.ebook { background-position: 12px -4749px; }
+#left_nav ul li a.crowdfunding { background-position: 12px -4893.5px; }
+#left_2dcode { background: rgb(255, 255, 255) none repeat scroll 0% 0%; font-family: Arial,"微软雅黑"; position: relative; }
+#left_2dcode .qrcode-wrapper { padding: 20px 25px 30px; }
+#left_2dcode .qrcode-wrapper li { display: none; }
+#left_2dcode .qrcode-wrapper li.curr { display: block; }
+#left_2dcode .qrcode-wrapper li .name { font-size: 14px; height: 28px; line-height: 28px; text-align: center; overflow: hidden; margin-bottom: 10px; }
+#left_2dcode .qrcode-wrapper li img { width: 100px; height: 100px; display: block; margin-bottom: 20px; }
+#left_2dcode .qrcode-wrapper li .download { display: block; height: 26px; line-height: 26px; color: rgb(255, 255, 255); text-align: center; background: rgb(76, 160, 215) none repeat scroll 0% 0%; }
+#left_2dcode .qrcode-wrapper li .download:hover { text-decoration: none; background: rgb(41, 101, 177) none repeat scroll 0% 0%; }
+#left_2dcode .prev-btn { position: absolute; left: 5px; top: 100px; display: block; font-size: 0px; width: 0px; height: 0px; border-width: 10px 10px 10px 0px; border-style: solid; border-color: rgb(255, 255, 255) rgb(153, 153, 153) rgb(255, 255, 255) rgb(255, 255, 255); }
+#left_2dcode .prev-btn:hover { border-right-color: rgb(102, 102, 102); }
+#left_2dcode .next-btn { position: absolute; right: 5px; top: 100px; display: block; font-size: 0px; width: 0px; height: 0px; border-width: 10px 0px 10px 10px; border-style: solid; border-color: rgb(255, 255, 255) rgb(255, 255, 255) rgb(255, 255, 255) rgb(153, 153, 153); }
+#left_2dcode .next-btn:hover { border-left-color: rgb(102, 102, 102); }
+#left_feedback { background: rgb(255, 255, 255) none repeat scroll 0% 0%; font-family: Arial,"微软雅黑"; border-top: 1px solid rgb(216, 216, 216); }
+#left_feedback .feedback { padding: 10px 15px; }
+#left_feedback .feedback a { color: rgb(68, 68, 68); line-height: 16px; text-decoration: none; font-size: 14px; padding-left: 20px; background: rgba(0, 0, 0, 0) url("ico_011b733.png") no-repeat scroll 0px -4199px; }
+#right_interested {  }
+#right_interested ul { padding: 15px 0px; }
+#right_interested ul li { height: 50px; overflow: hidden; margin-bottom: 10px; position: relative; }
+#right_interested ul .pic { float: left; display: inline; margin-right: 8px; }
+#right_interested ul .pic img { display: block; width: 50px; height: 50px; }
+#right_interested ul .text { float: left; display: inline; width: 120px; }
+#right_interested ul .text .name { width: 120px; line-height: 20px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+#right_interested ul .text .desc { margin-top: 6px; color: rgb(153, 153, 153); width: 120px; line-height: 20px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+#right_interested ul .addtofocus { position: absolute; top: 0px; right: 0px; width: auto; height: 20px; line-height: 20px; padding: 0px 6px; color: rgb(255, 255, 255); }
+#right_interested ul .addtofocus:hover { text-decoration: none; }
+#right_interested ul .t-notfocus { background: rgb(86, 165, 234) none repeat scroll 0% 0%; }
+#right_interested ul .t-notfocus:hover { background: rgb(47, 141, 237) none repeat scroll 0% 0%; }
+#right_guide {  }
+#right_guide ul { padding-bottom: 10px; }
+#right_guide .guide-item { margin-top: 10px; }
+#right_guide .guide-item a { display: block; width: 230px; height: 50px; font-size: 0px; line-height: 0; background: rgba(0, 0, 0, 0) url("guide-bg_96e1199.png") no-repeat scroll 0px 0px; box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4); }
+#right_guide .guide-item a.face { background-position: 0px -60px; }
+#right_guide .guide-item a.info { background-position: 0px -120px; }
+#right_guide .guide-item a.activate { background-position: 0px -180px; }
+#right_tags {  }
+#right_tags .tags-wrapper { padding: 10px 0px; }
+#right_tags .tag-search { border: 1px solid rgb(218, 218, 218); height: 24px; padding: 4px 38px 4px 8px; position: relative; margin-bottom: 10px; }
+#right_tags .tag-search .search-ipt { border: 0px none; height: 24px; line-height: 24px; font-size: 14px; width: 100%; }
+#right_tags .tag-search .search-btn { background: rgb(86, 165, 234) url("ico_011b733.png") no-repeat scroll 11px -4339px; border: 0px none; font-size: 0px; cursor: pointer; width: 34px; height: 34px; position: absolute; right: -1px; top: -1px; }
+#right_tags .tag-list .tag { float: left; display: inline; background: rgb(238, 238, 238) none repeat scroll 0% 0%; color: rgb(102, 102, 102); margin: 0px 5px 8px 0px; padding: 2px 8px; line-height: 18px; height: 18px; max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#right_tags .tag-list .tag:hover { text-decoration: none; background: rgb(86, 165, 234) none repeat scroll 0% 0%; color: rgb(255, 255, 255); }

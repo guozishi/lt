@@ -92,7 +92,7 @@
                       <td>{{ $item->tel }}</td>
                       <td><img src="/admin-uploads/{{ $item->img }}" width="60px;" /></td>
                       <td>{{ $item->created_at }}</td>
-                      <td><a href="{{ url('/admin/user/xiugai') }}/{{ $item->user_id}}"><span class="label bg-success">修改</span></a> <a href=""><span class="label bg-success">查看角色</span></a>  <a href="javascript:;" onclick="del({{ $item->user_id }})"><span class="label bg-danger">删除</span></a></td>
+                      <td><a href="{{ url('/admin/user/xiugai') }}/{{ $item->user_id}}"><span class="label bg-success">修改</span></a> <a href="{{ url('admin/user/auth/'.$item->user_id) }}"><span class="label bg-success">用户授权</span></a>  <a href="javascript:;" onclick="del({{ $item->user_id }})"><span class="label bg-danger">删除</span></a></td>
                   </tr>
                 @endforeach
                     </tbody>

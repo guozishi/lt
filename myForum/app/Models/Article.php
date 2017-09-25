@@ -24,4 +24,10 @@ class Article extends Model
 //        return $this->hasOne('App\Models\Category', 'art_id', 'article_id');
         return $this->belongsTo('App\Models\Category', 'category_id', 'cate_id');
     }
+
+    public function login()
+    {
+//
+        return $this->belongsTo('App\Models\Login', 'login_id', 'id');
+    }
 }

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Roles;
+use App\Models\Users;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -194,4 +196,43 @@ class UserController extends Controller
             return back()->with(['info.error'=>'修改失败']);
         }
   }
+
+    public function roles(Request $request, $id)
+    {
+//        //获取用户信息
+        $user_id = session('master')->user_id;
+        $user = Users::find($user_id);
+
+        //获取所有的角色
+        $roles = Roles::orderBy('role_id','asc')->get();
+//        dd($roles);
+        //获取当用户所拥有的角色
+        $curoles = \DB::table('role_user')->where('user_id',$user_id)->get();
+
+        //遍历当前角色拥有的权限
+        $arr = [];
+        foreach ($curoles as $uroles){
+            $arr[] = $uroles->role_id;
+        }
+        return view('admin.userRoles.roles',['title'=>'角色权限列表'],compact('user','roles','arr'));
+    }
+
+    public function doroles(Request $request)
+    {
+        $input = $request->except("_token");
+//        dd($input);
+        //删除当前用户的角色
+        \DB::table('role_user')->where('user_id',$input['user_id'])->delete();
+
+//            dd($input);
+        //遍历选中的权限,添加到角色表中
+        foreach ($input['role_id'] as $role)
+        {
+            \DB::table('role_user')->insert(
+
+                ['user_id' => $input['user_id'], 'role_id' => $role]
+            );
+        }
+        return redirect('/admin/user/xianshi')->with(['info.success'=>'添加成功']);
+    }
 }

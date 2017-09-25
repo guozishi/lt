@@ -1,0 +1,290 @@
+/* Code tidied up by ScrapBook */
+.excellent { margin-bottom: 20px; min-height: 369px; }
+.excellent .a-w40 { width: 40px; height: 40px; }
+.excellent .title { color: rgb(85, 86, 89); font-size: 14px; overflow: hidden; margin-bottom: 20px; }
+.excellent .title .tab { float: right; }
+.excellent .title .tab span { float: left; height: 20px; font-size: 12px; line-height: 22px; margin-left: 5px; color: rgb(138, 138, 138); }
+.excellent .title .tab span i { font-style: normal; }
+.excellent .title .tab span button { width: 20px; height: 20px; padding: 0px; text-align: center; line-height: 10px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; color: rgb(85, 86, 89); font-size: 14px; text-shadow: none; }
+.excellent li { margin-bottom: 15px; overflow: hidden; }
+.excellent li .avatar { float: left; margin-right: 10px; }
+.excellent li .area { margin-left: 50px; }
+.excellent li .area h5 { margin: 0px 0px 2px; line-height: 18px; font-weight: 400; }
+.excellent li .area h5 a { color: rgb(0, 0, 0); }
+.excellent li .area h5 a:hover { color: rgb(230, 47, 23); }
+.excellent li .area h6 { margin: 0px; line-height: 20px; }
+.excellent li .area h6 a { color: rgb(61, 133, 204); }
+.excellent li .area h6 a:hover { color: rgb(230, 47, 23); }
+.bbsfooter { clear: both; text-align: center; font-size: 12px; background: rgb(192, 223, 224) none repeat scroll 0% 0%; color: rgb(85, 86, 89); line-height: 22px; padding: 20px 0px 30px; }
+.bbsfooter .links a { color: rgb(85, 86, 89); margin: 0px 5px; }
+.bbsfooter .links a:hover { color: rgb(230, 47, 23); }
+.bbsfooter .state { margin-top: 10px; margin-bottom: 30px; }
+.bbsfooter .copyright { margin-bottom: 15px; }
+.bbsfooter .copyright a { color: rgb(85, 86, 89); margin: 0px 5px; }
+.bbsfooter .copyright a:hover { color: rgb(230, 47, 23); }
+.bbsfooter .copyright i { margin: 0px 5px; font-style: normal; }
+.bbsfooter .app-download-btn .btn { height: 30px; padding: 5px 12px; color: rgb(85, 86, 89); background: rgb(229, 242, 242) none repeat scroll 0% 0%; font-size: 12px; }
+.bbsfooter .app-download-btn .btn i { vertical-align: 0px; font-size: 16px; }
+.bbsfooter .follow-info a { margin: 0px 5px; color: rgb(85, 86, 89); font-size: 16px; }
+.bbsfooter .privatelink { width: 700px; border-top: 1px solid rgb(161, 178, 179); line-height: 20px; font-size: 12px; color: rgb(161, 178, 179); margin: 0px auto; padding-top: 15px; }
+.bbsfooter .privatelink a { color: rgb(85, 86, 89); padding: 0px 8px; }
+.popover-mask { position: fixed; left: 0px; top: 0px; z-index: 10; width: 100%; height: 100%; display: none; }
+.popover-qrcode { width: 252px; height: 166px; padding: 9px 10px; position: absolute; left: 10px; top: 10px; text-align: center; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 1px solid rgba(0, 0, 0, 0.2); border-radius: 6px; font-size: 10px; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); display: none; z-index: 10; }
+.popover-qrcode p { font-size: 10px; color: rgb(85, 86, 89); }
+.popover-qrcode::before { content: ""; position: absolute; left: 50%; bottom: -11px; width: 0px; height: 0px; border-width: 11px 11px 0px; border-style: solid; border-color: rgba(0, 0, 0, 0.2) transparent transparent; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; margin-left: -12px; }
+.popover-qrcode::after { content: ""; position: absolute; left: 50%; bottom: -10px; width: 0px; height: 0px; border-width: 11px 11px 0px; border-style: solid; border-color: rgb(255, 255, 255) transparent transparent; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; margin-left: -12px; }
+body { padding-top: 40px; }
+.bbsheader { background: rgb(77, 153, 153) none repeat scroll 0% 0%; height: 40px; line-height: 40px; position: fixed; width: 100%; z-index: 11; top: 0px; }
+.bbsheader .topnav { color: rgb(255, 255, 255); }
+.bbsheader .topnav a { color: rgb(255, 255, 255); display: block; }
+.bbsheader .topnav a:hover { color: rgb(230, 47, 23); }
+.bbsheader .topnav li { float: left; margin-right: 20px; }
+.bbsheader .topnav li.hover { margin-left: -10px; }
+.bbsheader .topnav li i { display: inline-block; width: 4px; height: 4px; margin-right: 3px; border-radius: 50%; vertical-align: middle; background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+.bbsheader .topnav li .more-menu { width: 110px; left: -1px; padding: 10px 15px; }
+.bbsheader .topnav li .more-menu a { line-height: 29px; display: block; }
+.bbsheader .rightnav { float: right; }
+.bbsheader .rightnav > div { float: left; margin-left: 20px; }
+.bbsheader .rightnav > div a { color: rgb(255, 255, 255); }
+.bbsheader .rightnav > div a:hover { color: rgb(230, 47, 23); }
+.bbsheader .rightnav .send-note { display: inline-block; height: 100%; padding: 0px 15px; font-size: 16px; }
+.bbsheader .rightnav .send-note:hover { color: rgb(255, 255, 255); }
+.bbsheader .rightnav .search-box { position: relative; margin-right: 40px; }
+.bbsheader .rightnav .search-box form { margin-top: 5px; width: 120px; }
+.bbsheader .rightnav .search-box form .form-control { width: 100%; height: 30px; border: 0px none; color: rgb(184, 203, 217); background-color: rgb(228, 240, 240); transition: all 0.5s ease 0s; }
+.bbsheader .rightnav .search-box form .form-control:hover, .bbsheader .rightnav .search-box form .form-control:focus { background-color: rgb(255, 255, 255); color: rgb(85, 86, 89); }
+.bbsheader .rightnav .search-box form .form-control:hover + .btn, .bbsheader .rightnav .search-box form .form-control:focus + .btn { color: rgb(30, 78, 82); }
+.bbsheader .rightnav .search-box form .btn { position: absolute; right: 0px; top: 5px; height: 30px; background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px; border: 0px none; color: rgb(83, 125, 128); transition: all 0.5s ease 0s; }
+.bbsheader .rightnav .search-box form .btn .fa { vertical-align: 1px; }
+.bbsheader .rightnav .nav-message { margin-left: 0px; }
+.bbsheader .rightnav .nav-message > a { color: rgb(255, 255, 255); }
+.bbsheader .rightnav .nav-message > a:hover { color: rgb(230, 47, 23); }
+.bbsheader .rightnav .nav-message i { font-size: 13px; margin: 0px 5px; vertical-align: 0px; }
+.bbsheader .rightnav .nav-message .unread { display: inline-block; border-radius: 10px; background: rgb(230, 47, 23) none repeat scroll 0% 0%; padding: 0px 5.5px; line-height: 18px; color: rgb(255, 255, 255); font-size: 12px; margin-left: 5px; }
+.bbsheader .rightnav .nav-message .more-menu { right: -1px; width: 142px; padding: 14px 6px 14px 16px; }
+.bbsheader .rightnav .nav-message .more-menu i { margin-right: 10px; }
+.bbsheader .rightnav .nav-message .more-menu .unread { margin-left: 5px; }
+.bbsheader .rightnav .user-info { margin-left: 0px; }
+.bbsheader .rightnav .user-info .a-w26 { width: 26px; height: 26px; margin-right: 5px; }
+.bbsheader .rightnav .user-info .angledown { font-size: 12px; margin-left: 5px; }
+.bbsheader .rightnav .user-info .more-menu { width: 280px; right: -1px; padding: 10px 0px; }
+.bbsheader .rightnav .user-info .more-menu a { color: rgb(85, 86, 89); }
+.bbsheader .rightnav .user-info .more-menu .level { position: absolute; font-size: 10px; font-weight: 400; top: 10px; right: 10px; padding: 0px 5px; background-color: rgb(74, 144, 226); color: rgb(255, 255, 255); border-radius: 10px; line-height: 16px; }
+.bbsheader .rightnav .user-info .more-menu .user-img { text-align: center; }
+.bbsheader .rightnav .user-info .more-menu .user-img .avatar { display: block; margin: 0px auto 10px; }
+.bbsheader .rightnav .user-info .more-menu .user-atten { margin: 0px; padding: 15px 0px; list-style: outside none none; }
+.bbsheader .rightnav .user-info .more-menu .user-atten::before, .bbsheader .rightnav .user-info .more-menu .user-atten::after { content: " "; display: table; }
+.bbsheader .rightnav .user-info .more-menu .user-atten::after { clear: both; }
+.bbsheader .rightnav .user-info .more-menu .user-atten li { font-size: 12px; line-height: 16px; float: left; width: 33%; text-align: center; border-right: 1px solid rgb(230, 231, 235); }
+.bbsheader .rightnav .user-info .more-menu .user-atten li:first-child { width: 34%; }
+.bbsheader .rightnav .user-info .more-menu .user-atten li:last-child { border-right: 0px none; }
+.bbsheader .rightnav .user-info .more-menu .user-atten li b { margin-left: 5px; }
+.bbsheader .rightnav .user-info .more-menu .user-atten li a { padding: 0px 10px; color: rgb(85, 86, 89); }
+.bbsheader .rightnav .user-info .more-menu .user-atten li a:hover { color: rgb(230, 47, 23); }
+.bbsheader .rightnav .user-info .more-menu .user-nav { margin: 0px; padding: 10px 0px; list-style: outside none none; background-color: rgb(242, 243, 245); }
+.bbsheader .rightnav .user-info .more-menu .user-nav::before, .bbsheader .rightnav .user-info .more-menu .user-nav::after { content: " "; display: table; }
+.bbsheader .rightnav .user-info .more-menu .user-nav::after { clear: both; }
+.bbsheader .rightnav .user-info .more-menu .user-nav li { line-height: 26px; float: left; width: 50%; text-align: center; }
+.bbsheader .rightnav .user-info .more-menu .user-nav li a { color: rgb(77, 153, 153); }
+.bbsheader .rightnav .user-info .more-menu .user-nav li a:hover { color: rgb(230, 47, 23); }
+.bbsheader .rightnav .user-info .more-menu .user-nav li a i { width: 18px; margin-right: 6px; text-align: center; }
+.bbsheader .rightnav .user-info .more-menu .user-operate { font-size: 12px; line-height: 16px; margin: 12px 0px 0px; text-align: right; }
+.bbsheader .rightnav .user-info .more-menu .user-operate a { padding: 0px 8px; color: rgb(85, 86, 89); border-right: 1px solid rgb(230, 231, 235); }
+.bbsheader .rightnav .user-info .more-menu .user-operate a:hover { color: rgb(230, 47, 23); }
+.bbsheader .rightnav .user-info .more-menu .user-operate a i { margin-right: 6px; }
+.bbsheader .rightnav .user-info .more-menu .user-operate a:last-child { border-right: 0px none; }
+.bbsheader .rightnav .login-box { margin-left: -10px; }
+.bbsheader .rightnav .login-box a { float: left; margin-left: 20px; color: rgb(255, 255, 255); }
+.bbsheader .rightnav .login-box a:hover { color: rgb(230, 47, 23); }
+.bbsheader .rightnav .header-checkbtn { display: inline-block; padding: 0px 20px; height: 30px; line-height: 30px; border: 0px none; color: rgb(255, 255, 255); background-color: rgb(255, 128, 0); text-align: center; border-radius: 4px; margin-top: 5px; }
+.bbsheader .more-menu { position: absolute; line-height: 26px; border-width: 0px 1px 1px; border-style: none solid solid; border-color: currentcolor rgb(193, 196, 203) rgb(193, 196, 203); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1); background: rgb(255, 255, 255) none repeat scroll 0% 0%; border-radius: 0px 0px 4px 4px; opacity: 0; display: none; }
+.bbsheader .more-menu a { color: rgb(85, 86, 89); }
+.bbsheader .more-menu a:hover { color: rgb(230, 47, 23); }
+.bbsheader .hover { padding: 0px 12px; position: relative; z-index: 1; color: rgb(255, 255, 255); }
+.bbsheader .hover .hand .kd-bell { font-size: 16px; vertical-align: -2px; }
+.bbsheader .hover.on { background: rgb(255, 255, 255) none repeat scroll 0% 0%; color: rgb(85, 86, 89); transition: background 0.3s ease 0s; }
+.bbsheader .hover.on > i { background: rgb(85, 86, 89) none repeat scroll 0% 0%; }
+.bbsheader .hover.on .hand { cursor: pointer; }
+.bbsheader .hover.on .more-menu { display: block; animation: 0.5s ease 0s normal forwards 1 running menushow; }
+.bbsheader .hover.on a { color: rgb(85, 86, 89); }
+.bbsheader .hover.on a:hover { color: rgb(230, 47, 23); }
+.bbsheader .hover.on .angledown { transform: rotate(180deg); }
+@keyframes menushow {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+@keyframes menushow {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+@media (max-width: 1119px) {
+  .bbsheader .bbsCont { width: 100%; }
+}
+@media (max-width: 843px) {
+  body { padding-top: 80px; }
+  .bbsheader { height: 80px; }
+}
+.link-group { margin-bottom: 30px; }
+.link-group .btn { width: 100%; text-align: left; font-size: 16px; height: 40px; line-height: 25px; margin-bottom: 10px; }
+.link-group .btn i { float: right; line-height: 26px; font-size: 12px; }
+.postlist { width: 100%; }
+.postlist .postlist-topic li { width: 100%; height: 41px; border-bottom: 1px solid rgb(212, 228, 228); padding: 10px 0px; }
+.postlist .postlist-topic li em { float: left; width: 40px; height: 20px; line-height: 20px; color: rgb(255, 255, 255); background: rgb(92, 161, 230) none repeat scroll 0% 0%; text-align: center; border-radius: 2px; font-size: 11px; margin-right: 10px; font-style: normal; }
+.postlist .postlist-topic li .title { font-size: 14px; line-height: 20px; max-width: 60%; float: left; }
+.postlist .postlist-topic li .title.text-danger { color: rgb(230, 47, 23); }
+.postlist .postlist-topic li .title.text-primary { color: rgb(46, 138, 230); }
+.postlist .postlist-topic li .title.text-muted { color: rgb(28, 140, 140); }
+.postlist .postlist-topic li.topic-vip em { background: rgb(182, 219, 222) url("topic_vip.1c27184f.png") no-repeat scroll center center; }
+.postlist .postlist-topic li .topic-info { line-height: 20px; font-size: 12px; float: right; }
+.postlist .postlist-topic li .topic-info a { color: rgb(85, 86, 89); font-size: inherit; }
+.postlist .postlist-topic li .topic-info a:hover { color: rgb(230, 47, 23); }
+.postlist .postlist-topic li .topic-info span { color: rgb(119, 119, 119); padding-left: 6px; position: relative; }
+.postlist .postlist-topic li .topic-info span::before { content: ""; position: absolute; left: 0px; top: 8px; width: 2px; height: 2px; border-radius: 50%; background: rgb(119, 119, 119) none repeat scroll 0% 0%; overflow: hidden; }
+.postlist .postlist-main li { width: 100%; height: 194px; border-bottom: 1px solid rgb(212, 228, 228); padding: 20px 0px; }
+.postlist .postlist-main li .postlist-main-top { height: 30px; line-height: 30px; font-size: 12px; }
+.postlist .postlist-main li .postlist-main-top .userpic { float: left; width: 30px; height: 30px; margin-right: 10px; }
+.postlist .postlist-main li .postlist-main-top .userpic img { width: 30px; height: 30px; vertical-align: 0px; border-radius: 50%; }
+.postlist .postlist-main li .postlist-main-top .username { float: left; color: rgb(85, 86, 89); font-size: inherit; }
+.postlist .postlist-main li .postlist-main-top .username:hover { color: rgb(230, 47, 23); }
+.postlist .postlist-main li .postlist-main-top span { color: rgb(119, 119, 119); padding-left: 7px; margin-left: 6px; position: relative; }
+.postlist .postlist-main li .postlist-main-top span::before { content: ""; position: absolute; left: 0px; top: 8px; width: 2px; height: 2px; border-radius: 50%; background: rgb(119, 119, 119) none repeat scroll 0% 0%; overflow: hidden; }
+.postlist .postlist-main li .postlist-main-title { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; line-height: 25px; margin-top: 5px; }
+.postlist .postlist-main li .postlist-main-title a { color: rgb(0, 0, 0); font-size: 18px; }
+.postlist .postlist-main li .postlist-main-title a:hover { color: rgb(230, 47, 23); }
+.postlist .postlist-main li .postlist-main-title a:visited { color: rgb(51, 153, 255); }
+.postlist .postlist-main li .postlist-main-title a.text-danger { color: rgb(230, 47, 23); }
+.postlist .postlist-main li .postlist-main-title a.text-primary { color: rgb(46, 138, 230); }
+.postlist .postlist-main li .postlist-main-title a.text-muted { color: rgb(28, 140, 140); }
+.postlist .postlist-main li .postlist-main-content { display: block; height: 60px; line-height: 20px; overflow: hidden; margin-top: 9px; }
+.postlist .postlist-main li .postlist-main-content a { font-size: 13px; color: rgb(60, 61, 63); }
+.postlist .postlist-main li .postlist-main-content a:hover { color: rgb(230, 47, 23); }
+.postlist .postlist-main li .postlist-main-bottom { color: rgb(138, 138, 138); font-size: 12px; line-height: 12px; margin-top: 11px; }
+.postlist .postlist-main li .postlist-main-bottom a { color: inherit; font-size: inherit; cursor: pointer; }
+.postlist .postlist-main li .postlist-main-bottom a:hover { color: rgb(230, 47, 23); }
+.postlist .postlist-main li .postlist-main-bottom .adbtn { background: rgb(92, 161, 230) none repeat scroll 0% 0%; color: rgb(255, 255, 255); display: none; width: 44px; height: 18px; line-height: 18px; text-align: center; border-radius: 2px; text-decoration: none; opacity: 0.5; }
+.postlist .postlist-main li .postlist-main-bottom .adbtn:hover { color: rgb(255, 255, 255); opacity: 1; }
+.postlist .postlist-main li .postlist-main-photo { float: right; width: 120px; height: 120px; border-radius: 2px; overflow: hidden; margin: 32px 0px 0px 50px; }
+.postlist .postlist-main li .postlist-main-photo img { width: 120px; height: 120px; vertical-align: middle; }
+.postlist .postlist-main .list-ad .postlist-main-title a::before { content: ""; display: inline-block; width: 40px; height: 20px; background: rgba(0, 0, 0, 0) url("pic_list_ad.53712047.png") no-repeat scroll center center; margin-right: 10px; vertical-align: -3px; }
+.postlist .postlist-main .list-ad .postlist-main-bottom { margin-top: 4px; }
+.postlist .postlist-main .list-ad:hover .postlist-main-bottom .adbtn { display: inline-block; }
+.postlist .postlist-main .getMore { display: block; height: 46px; line-height: 46px; background: rgb(229, 240, 241) none repeat scroll 0% 0%; text-align: center; color: rgb(85, 86, 89); font-size: 16px; border: 1px solid rgba(195, 217, 217, 0.5); border-radius: 4px; margin: 20px 0px; cursor: pointer; }
+.postlist .postlist-main .getMore:hover { background: rgb(236, 244, 245) none repeat scroll 0% 0%; border-color: rgb(201, 221, 221); }
+.bbsnav { background: rgb(198, 231, 231) none repeat scroll 0% 0%; height: 90px; min-width: 1120px; }
+.bbsnav .bbs-logo { float: left; }
+.bbsnav .bbs-logo img { display: inline-block; height: 50px; margin-top: 20px; }
+.bbsnav .bbs-cloumnname { float: left; font-size: 16px; color: rgb(85, 86, 89); font-weight: 700; margin: 33px 0px 0px 10px; text-decoration: none; }
+.bbsnav .bbs-cloumnname:hover { color: rgb(230, 47, 23); }
+.bbsnav ul { float: left; margin-left: 150px; font-size: 16px; }
+.bbsnav ul li { display: inline-block; line-height: 90px; }
+.bbsnav ul li a { color: rgb(53, 126, 134); display: block; margin-right: 30px; }
+.bbsnav ul li a:hover { color: rgb(230, 47, 23); }
+.bbsnav .bbsdata { float: right; font-size: 12px; color: rgb(138, 138, 138); }
+.bbsnav .bbsdata i { display: block; background: rgba(0, 0, 0, 0) url("slogan2.10d85fde.png") repeat scroll 0% 0%; width: 170px; height: 23px; margin: 18px auto 12px; }
+.bbsnav .bbsdata span { margin: 0px 5px; }
+.postlist-footer-top { width: 100%; height: 53px; padding: 10px 0px; border-bottom: 1px solid rgb(243, 248, 249); }
+.postlist-footer-top .newpostbtn { width: 110px; height: 32px; line-height: 32px; color: rgb(255, 255, 255); background: rgb(77, 153, 153) none repeat scroll 0% 0%; font-size: 14px; float: left; text-align: center; border-radius: 2px; text-decoration: none; }
+.postlist-footer-top .newpostbtn i { margin-right: 10px; display: inline-block; width: 20px; height: 20px; background: rgba(0, 0, 0, 0) url("kd-write.221e0f5b.png") no-repeat scroll center center; vertical-align: -4px; }
+.postlist-footer-top .newpostbtn:hover { background-color: rgb(68, 136, 136); }
+.postlist-footer-top .postlist-page { float: right; color: rgb(85, 86, 89); font-size: 12px; height: 30px; line-height: 30px; margin-top: 1px; }
+.postbox-pic .postlist-footer-top { border-color: rgb(212, 228, 228); }
+.postlist-footer-bottom { margin: 15px 0px 20px; height: 40px; }
+.postlist-footer-bottom p { height: 20px; line-height: 20px; color: rgb(85, 86, 89); font-size: 12px; margin: 0px; }
+.postlist-footer-bottom .postlist-skip { float: right; color: rgb(85, 86, 89); font-size: 12px; height: 40px; padding: 5px 0px; line-height: 30px; position: relative; }
+.postlist-footer-bottom .postlist-skip span { display: inline-block; width: 97px; height: 30px; line-height: 30px; vertical-align: top; position: relative; font-size: 14px; color: rgb(85, 86, 89); border-radius: 2px; text-align: center; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 1px solid rgb(193, 196, 203); cursor: pointer; }
+.postlist-footer-bottom .postlist-skip span em { font-style: normal; margin: 0px 5px; }
+.postlist-footer-bottom .postlist-skip span i { vertical-align: 0px; transition: all 1s ease 0s; font-size: 10px; }
+.postlist-footer-bottom .postlist-skip.open span { background: rgb(243, 243, 243) none repeat scroll 0% 0%; }
+.postlist-footer-bottom .postlist-skip.open a i { transform: rotate(180deg); }
+.postlist-footer-bottom .postlist-skip-list { width: 97px; position: absolute; right: 0px; bottom: 36px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border-radius: 2px; box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2); z-index: -1; height: 30px; overflow: hidden; opacity: 0; padding: 8px 0px; transition: all 1s ease 0s; border: 1px solid rgb(193, 196, 203); max-height: 210px; }
+.postlist-footer-bottom .postlist-skip-list a { display: block; height: 24px; line-height: 24px; text-align: center; font-size: 14px; color: rgb(85, 86, 89); text-decoration: none; }
+.postlist-footer-bottom .postlist-skip-list a:hover { background: rgb(243, 243, 243) none repeat scroll 0% 0%; }
+.postlist-footer-bottom .postlist-skip-list.open { z-index: 2; height: auto; opacity: 1; }
+.bbsshortcut-box { width: 100%; border-bottom: 1px solid rgb(243, 248, 249); position: relative; }
+.bbsshortcut-box .bbsshortcut { width: 100%; overflow: hidden; font-size: 13px; line-height: 20px; color: rgb(85, 86, 89); margin-bottom: 10px; }
+.bbsshortcut-box .bbsshortcut em { float: left; color: inherit; font-size: inherit; font-style: normal; font-weight: 400; }
+.bbsshortcut-box .bbsshortcut a { float: left; font-size: inherit; color: inherit; border-left: 1px solid rgb(188, 183, 191); padding: 0px 6px; height: 14px; line-height: 14px; margin-top: 3px; }
+.bbsshortcut-box .bbsshortcut a:hover { color: rgb(230, 47, 23); }
+.bbsshortcut-box .bbsshortcut a:nth-of-type(1) { border: 0px none; padding-left: 0px; }
+.bbsshortcut-box .bbsshortcut-list { width: 100%; padding: 16px 17.5px 10px; overflow: hidden; background: rgb(222, 236, 237) none repeat scroll 0% 0%; display: none; }
+.bbsshortcut-box .bbsshortcut-list a { float: left; width: 80px; height: 30px; line-height: 28px; margin: 5px 2.5px; text-align: center; font-size: 13px; color: rgb(0, 0, 0); border: 1px solid rgba(12, 12, 12, 0.2); border-radius: 40px; text-decoration: none; }
+.bbsshortcut-box .bbsshortcut-list a:hover { color: rgb(230, 47, 23); }
+.bbsshortcut-box .bbsshortcut-list a:hover { border-color: rgb(230, 47, 23); }
+.bbsshortcut-box .bbsshortcut-list .area { color: rgb(230, 47, 23); border-color: rgba(230, 47, 23, 0.2); }
+.bbsshortcut-box .bbsshortcut-morebtn { float: right; border: 0px none; margin: 0px 5px; text-decoration: none; cursor: pointer; font-size: 13px; color: rgb(85, 86, 89); position: absolute; right: 0px; top: 0px; }
+.bbsshortcut-box .bbsshortcut-morebtn i { color: rgb(255, 128, 0); margin-left: 5px; vertical-align: 0px; transition: all 0.3s ease 0s; }
+.bbsshortcut-box .bbsshortcut-morebtn.open i { transform: rotate(180deg); }
+.c_spread + .postbox { margin-top: 10px; }
+.postbox-pic .bbsshortcut-box { border-color: rgb(212, 228, 228); }
+.postlist-header { width: 100%; }
+.postlist-header .postlist-header-top { width: 100%; height: 53px; padding: 10px 0px; border-bottom: 1px solid rgb(243, 248, 249); position: relative; }
+.postlist-header .postlist-header-top .newpostbtn { width: 110px; height: 32px; line-height: 32px; color: rgb(255, 255, 255); background: rgb(77, 153, 153) none repeat scroll 0% 0%; font-size: 14px; float: left; text-align: center; border-radius: 2px; text-decoration: none; }
+.postlist-header .postlist-header-top .newpostbtn i { margin-right: 10px; display: inline-block; width: 20px; height: 20px; background: rgba(0, 0, 0, 0) url("kd-write.221e0f5b.png") no-repeat scroll center center; vertical-align: -4px; }
+.postlist-header .postlist-header-top .newpostbtn:hover { background-color: rgb(68, 136, 136); }
+.postlist-header .postlist-header-top .frbtn { float: right; color: rgb(85, 86, 89); height: 14px; line-height: 14px; font-size: 13px; margin: 8px 6px 0px 0px; border-right: 1px solid rgb(188, 183, 191); padding-right: 6px; cursor: pointer; }
+.postlist-header .postlist-header-top .frbtn:hover { color: rgb(230, 47, 23); }
+.postlist-header .postlist-header-top .frbtn.reloadbtn { padding: 0px; border: 0px none; }
+.postlist-header .postlist-header-top > p { font-size: 13px; float: left; width: 50%; height: 14px; line-height: 14px; margin: 8px 20px 8px 15px; color: rgb(85, 86, 89); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.postlist-header .postlist-header-top > p em { font-style: normal; border-left: 1px solid rgb(188, 183, 191); height: 14px; line-height: 14px; margin-left: -1px; padding-left: 5px; }
+.postlist-header .postlist-header-top > p a { color: inherit; margin-right: 6px; }
+.postlist-header .postlist-header-top > p a:hover { color: rgb(230, 47, 23); }
+.postlist-header .postlist-header-top > p i { color: rgb(188, 183, 191); font-style: normal; margin-right: 5px; }
+.postlist-header .postlist-header-top .postshow-btn { float: right; }
+.postlist-header .postlist-header-top .postshow-btn a { float: left; width: 70px; height: 32px; line-height: 32px; color: rgb(255, 255, 255); background: rgb(83, 110, 168) none repeat scroll 0% 0%; text-align: center; font-size: 13px; text-decoration: none; }
+.postlist-header .postlist-header-top .postshow-btn a i { margin-right: 6px; vertical-align: 0px; }
+.postlist-header .postlist-header-top .postshow-btn a:first-child { border-radius: 2px 0px 0px 2px; background: rgb(77, 153, 153) none repeat scroll 0% 0%; }
+.postlist-header .postlist-header-top .postshow-btn a:hover:first-child { background-color: rgb(68, 136, 136); }
+.postlist-header .postlist-header-top .postshow-btn a:last-child { border-radius: 0px 2px 2px 0px; }
+.postlist-header .postlist-header-top .postshow-btn a:hover:last-child { background-color: rgb(75, 99, 149); }
+.postlist-header .postfilter { width: 100%; height: 53px; border-bottom: 1px solid rgb(212, 228, 228); padding: 10px 0px; }
+.postlist-header .postfilter .postfilter-nav { float: left; }
+.postlist-header .postfilter .postfilter-nav a { font-size: 13px; color: rgb(255, 255, 255); float: left; height: 32px; line-height: 32px; border-radius: 2px; padding: 0px 19.5px; margin-right: 10px; text-decoration: none; background: rgb(83, 110, 168) none repeat scroll 0% 0%; }
+.postlist-header .postfilter .postfilter-nav a:hover { background: rgb(75, 99, 149) none repeat scroll 0% 0%; }
+.postlist-header .postfilter .postfilter-nav a.active { background: rgb(255, 128, 0) none repeat scroll 0% 0%; }
+.postlist-header .postfilter-order { float: right; width: 132px; height: 34px; position: relative; }
+.postlist-header .postfilter-order .postfilter-order-btn { display: block; width: 132px; height: 34px; line-height: 32px; border: 1px solid rgba(193, 196, 203, 0.5); border-radius: 2px; padding-left: 15px; color: rgb(85, 86, 89); font-size: 13px; text-decoration: none; cursor: pointer; }
+.postlist-header .postfilter-order .postfilter-order-btn i { margin-left: 10px; font-size: 10px; vertical-align: 2px; }
+.postlist-header .postfilter-order .postfilter-order-list { position: absolute; left: 0px; top: 0px; width: 132px; overflow: hidden; border: 1px solid rgba(193, 196, 203, 0.5); border-radius: 2px; z-index: 1; background: rgb(244, 249, 249) none repeat scroll 0% 0%; display: none; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); }
+.postlist-header .postfilter-order .postfilter-order-list.open { border-color: rgb(193, 196, 203); }
+.postlist-header .postfilter-order .postfilter-order-list a { display: block; height: 32px; line-height: 32px; color: rgb(85, 86, 89); font-size: 13px; text-decoration: none; cursor: pointer; padding-left: 15px; }
+.postlist-header .postfilter-order .postfilter-order-list a i { margin-left: 10px; font-size: 10px; vertical-align: 2px; transition: all 0.3s ease 0s; display: none; }
+.postlist-header .postfilter-order .postfilter-order-list a.active { background: rgb(243, 243, 243) none repeat scroll 0% 0%; }
+.postlist-header .postfilter-order .postfilter-order-list a.active i { display: inline-block; }
+.postlist-header .postfilter-order .postfilter-order-list a:hover { background: rgb(243, 243, 243) none repeat scroll 0% 0% !important; }
+.postlist-header .postfilter-order .postfilter-order-list:hover .active { background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px; }
+.postbox-pic .postlist-header .postlist-header-top { border-color: rgb(212, 228, 228); }
+.sellgroup { margin-bottom: 25px; overflow: hidden; }
+.sellgroup .title { font-size: 14px; color: rgb(85, 86, 89); margin-bottom: 20px; }
+.sellgroup .a-w50 { width: 50px; height: 50px; }
+.sellgroup li { overflow: hidden; margin-bottom: 15px; }
+.sellgroup li .avatar { float: left; margin-right: 10px; }
+.sellgroup li h5 { margin: 0px 0px 10px; height: 20px; overflow: hidden; font-weight: 400; }
+.sellgroup li h5 a { color: rgb(0, 0, 0); }
+.sellgroup li h5 a:hover { color: rgb(230, 47, 23); }
+.sellgroup li h6 { margin: 0px; }
+.sellgroup li h6 span { margin-right: 10px; }
+.sellgroup li h6 a { color: rgb(138, 138, 138); }
+.sellgroup li h6 a:hover { color: rgb(230, 47, 23); }
+.sellgroup { margin-bottom: 25px; overflow: hidden; }
+.sellgroup .title { font-size: 14px; color: rgb(85, 86, 89); margin-bottom: 20px; }
+.sellgroup .a-w50 { width: 50px; height: 50px; }
+.sellgroup li { overflow: hidden; margin-bottom: 15px; }
+.sellgroup li .avatar { float: left; margin-right: 10px; }
+.sellgroup li h5 { margin: 0px 0px 10px; height: 20px; overflow: hidden; font-weight: 400; }
+.sellgroup li h5 a { color: rgb(0, 0, 0); }
+.sellgroup li h5 a:hover { color: rgb(230, 47, 23); }
+.sellgroup li h6 { margin: 0px; }
+.sellgroup li h6 span { margin-right: 10px; }
+.sellgroup li h6 a { color: rgb(138, 138, 138); }
+.sellgroup li h6 a:hover { color: rgb(230, 47, 23); }
+.c_pager { clear: both; display: block; text-align: right; }
+.c_pager a.btn { color: rgb(77, 153, 153); font-size: 12px; height: 30px; width: 80px; border-color: rgb(230, 231, 235); }
+.c_pager a.btn i { font-size: 10px; }
+.c_pager a.btn.prev i { margin-right: 8px; }
+.c_pager a.btn.next { margin-left: 5px; }
+.c_pager a.btn.next i { margin-left: 8px; }
+.c_pager a.btn.disabled { color: rgb(230, 231, 235); border-color: rgb(230, 231, 235); }
+.c_pager .input-group { float: right; margin-left: 10px; }
+.c_pager .input-group .form-control { width: 50px; height: 30px; float: left; border-color: rgb(230, 231, 235); }
+.c_pager .input-group button { float: left; width: 40px; height: 30px; line-height: 0; padding-left: 10px; border-radius: 0px 4px 4px 0px; background: rgb(77, 153, 153) none repeat scroll 0% 0%; border-color: rgb(77, 153, 153); font-size: 12px; }
+.c_pager .numInfo { font-size: 12px; color: rgb(85, 86, 89); margin-right: 5px; }
