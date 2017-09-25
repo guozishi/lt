@@ -1,0 +1,282 @@
+/* Code tidied up by ScrapBook */
+button { padding: 0px; font: inherit; color: inherit; cursor: pointer; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; border: medium none; outline: medium none; -moz-appearance: none; }
+body, button, p, pre { margin: 0px; }
+h1, h2, h3 { margin: 0px; font: inherit; }
+ol, ul { padding: 0px; margin: 0px; }
+li { list-style-type: none; }
+a { color: inherit; text-decoration: none; }
+.Sticky.is-fixed { position: fixed; z-index: 2; }
+.Sticky.is-absolute, .Sticky.is-fixed { box-sizing: border-box; }
+.Sticky--holder { visibility: hidden; }
+.Button { display: inline-block; padding: 0px 16px; font-size: 14px; line-height: 32px; color: rgb(133, 144, 166); text-align: center; cursor: pointer; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; border: 1px solid rgb(204, 216, 225); border-radius: 3px; }
+.Button::-moz-focus-inner { padding: 0px; border: 0px none; }
+.Button:focus { outline: medium none; }
+.Button:disabled { cursor: default; opacity: 0.5; }
+.Button:hover { background-color: rgba(207, 216, 230, 0.1); }
+.Button:hover:disabled { background-color: initial; }
+.Button--blue { color: rgb(15, 136, 235); border: 1px solid rgb(15, 136, 235); }
+.Button--blue:hover { background-color: rgba(13, 121, 209, 0.06); }
+.Button--blue:disabled { background-color: initial; }
+.Button--primary { background: rgb(204, 216, 225) none repeat scroll 0% 0%; }
+.Button--primary.Button--blue { color: rgb(255, 255, 255); }
+.Button--primary.Button--blue:hover { background-color: rgb(13, 121, 209); }
+.Button--primary.Button--blue, .Button--primary.Button--blue:disabled { background: rgb(15, 136, 235) none repeat scroll 0% 0%; }
+.Button--link, .Button--plain { height: auto; padding: 0px; line-height: inherit; background-color: transparent; border: medium none; border-radius: 0px; }
+.Button--link:hover, .Button--plain:hover { background-color: transparent; }
+.Button--link { color: rgb(23, 81, 153); }
+@keyframes spring-in {
+0% { transform: translate3d(-50%, -100%, 0px); }
+60% { transform: translate3d(-50%, -10%, 0px); }
+100% { transform: translate3d(-50%, 0px, 0px); }
+}
+@keyframes spring-in {
+0% { transform: translate3d(-50%, -100%, 0px); }
+60% { transform: translate3d(-50%, -10%, 0px); }
+100% { transform: translate3d(-50%, 0px, 0px); }
+}
+@keyframes spring-out {
+0% { transform: translate3d(-50%, 0px, 0px); }
+100% { transform: translate3d(-50%, -100%, 0px); }
+}
+@keyframes spring-out {
+0% { transform: translate3d(-50%, 0px, 0px); }
+100% { transform: translate3d(-50%, -100%, 0px); }
+}
+.Input-wrapper { position: relative; display: flex; width: 180px; height: 34px; padding: 4px 10px; font-size: 14px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 1px solid rgb(231, 234, 241); border-radius: 3px; box-sizing: border-box; transition: background 0.2s ease 0s, border 0.2s ease 0s; }
+.Input-wrapper.Input-wrapper--grey { background: rgb(247, 248, 250) none repeat scroll 0% 0%; }
+.Input { -moz-box-flex: 1; flex: 1 1 0%; padding: 0px; overflow: hidden; font-family: inherit; font-size: inherit; font-weight: inherit; background: transparent none repeat scroll 0% 0%; border: medium none; outline: medium none; resize: none; }
+input.Input { height: 24px; }
+.Input:not(input), input.Input { line-height: 24px; }
+.Input .public-DraftEditorPlaceholder-root, .Input::placeholder { color: rgb(159, 173, 199); }
+.Input-after { position: absolute; top: 50%; right: 10px; display: flex; -moz-box-orient: vertical; -moz-box-direction: normal; flex-direction: column; -moz-box-pack: center; justify-content: center; margin: auto; transform: translate3d(0px, -50%, 0px); }
+.Icon { vertical-align: text-bottom; fill: rgb(159, 173, 199); }
+.Icon--left { margin-right: 6px; }
+.Popover { position: relative; display: inline-block; }
+.LoadingBar { position: fixed; top: 0px; right: 0px; left: 0px; z-index: 101; display: none; height: 2px; pointer-events: none; background: rgb(65, 151, 255) none repeat scroll 0% 0%; transform: translateX(-100%); }
+@keyframes LoadingBarForward {
+0% { transform: translateX(-100%); }
+40% { transform: translateX(0px); }
+60% { transform: translateX(0px); }
+100% { transform: translateX(100%); }
+}
+@keyframes LoadingBarForward {
+0% { transform: translateX(-100%); }
+40% { transform: translateX(0px); }
+60% { transform: translateX(0px); }
+100% { transform: translateX(100%); }
+}
+.Avatar { background: rgb(255, 255, 255) none repeat scroll 0% 0%; border-radius: 2px; }
+.Avatar--large { border-radius: 4px; }
+@media print {
+}
+@keyframes Bounce {
+0%, 100% { transform: translateY(-100%); }
+50% { transform: translateY(100%); }
+}
+@keyframes Bounce {
+0%, 100% { transform: translateY(-100%); }
+50% { transform: translateY(100%); }
+}
+.CornerButtons { position: fixed; bottom: 0px; right: 12px; display: flex; -moz-box-orient: vertical; -moz-box-direction: normal; flex-direction: column; transition: transform 0.2s ease 0s, -webkit-transform 0.2s ease 0s; will-change: transfrom; }
+.CornerAnimayedFlex { width: 40px; height: 52px; transition: height 0.2s ease 0s; }
+.CornerAnimayedFlex--hidden { height: 0px; }
+.CornerButton { background: rgb(255, 255, 255) none repeat scroll 0% 0%; border-radius: 4px; width: 40px; height: 40px; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1); }
+.CornerButton:hover { background: rgb(213, 219, 231) none repeat scroll 0% 0%; }
+.CornerButton .Icon { fill: rgb(154, 170, 191); }
+.CornerButton .Icon:hover { fill: rgb(141, 158, 179); }
+@keyframes linear-double {
+0% { transform: translateX(-56%); }
+100% { transform: translateX(56%); }
+}
+@keyframes linear-double {
+0% { transform: translateX(-56%); }
+100% { transform: translateX(56%); }
+}
+.ModifyButton { font-size: 15px; }
+.ModifyButton-icon { margin-right: 4px; fill: currentcolor; }
+.Messages-icon { cursor: pointer; }
+.Messages-icon:hover .Icon { fill: rgb(149, 161, 186); }
+@keyframes highlight {
+0% { background: rgb(225, 230, 240) none repeat scroll 0% 0%; }
+100% { background: initial; }
+}
+@keyframes highlight {
+0% { background: rgb(225, 230, 240) none repeat scroll 0% 0%; }
+100% { background: initial; }
+}
+@media (min-width: 360px) {
+}
+.PushNotifications-icon { cursor: pointer; }
+.PushNotifications-icon:hover .Icon { fill: rgb(149, 161, 186); }
+.SearchBar { display: flex; }
+.SearchBar-toolWrapper { position: relative; z-index: 104; width: 326px; }
+.SearchBar-tool { position: relative; float: left; overflow: hidden; }
+.SearchBar-tool .Popover { display: block; }
+.SearchBar-askButton { z-index: 103; padding: 0px 14px; margin-left: 16px; transition: opacity 0.3s ease 0s, transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s; line-height: 30px; }
+.SearchBar-input { width: 326px; transition: width 0.2s ease 0s, background 0.3s ease 0s; }
+.SearchBar-searchIcon { position: absolute; right: -11px; top: -17px; bottom: -17px; background: transparent none repeat scroll 0% 0%; border: medium none transparent; padding: 0px 12px; border-bottom-left-radius: 0px; border-top-left-radius: 0px; transition: fill 0.3s ease 0s; }
+.SearchBar-searchIcon .Icon { fill: rgb(175, 189, 207); }
+.SearchBar-searchIcon:hover { background-color: transparent; }
+.AppHeader-profileAvatar { vertical-align: top; }
+.AppHeader { position: relative; min-width: 1032px; overflow: hidden; background: rgb(255, 255, 255) none repeat scroll 0% 0% padding-box content-box; border-bottom: 1px solid rgba(30, 35, 42, 0.06); box-shadow: 0px 1px 3px 0px rgba(0, 34, 77, 0.05); }
+.AppHeader, .AppHeader.is-fixed { z-index: 100; }
+.AppHeader-inner { position: relative; display: flex; width: 1000px; height: 52px; padding: 0px 16px; margin: 0px auto; -moz-box-align: center; align-items: center; transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s; }
+.AppHeader-nav { display: flex; -moz-box-pack: justify; justify-content: space-between; height: 30px; margin-right: 18px; margin-left: 27px; color: rgb(153, 153, 153); }
+.AppHeader-navItem { padding: 0px 15px; font-size: 15px; line-height: 30px; color: rgb(133, 144, 166); }
+.AppHeader-navItem:hover { color: rgb(23, 81, 153); }
+.AppHeader-navItem:first-child { padding-left: 0px; }
+.AppHeader-userInfo { -moz-box-flex: 1; flex: 1 1 0%; -moz-box-pack: end; justify-content: flex-end; display: flex; -moz-box-align: center; align-items: center; }
+.AppHeader-messages, .AppHeader-notifications { margin-right: 40px; }
+body { font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif; font-size: 15px; color: rgb(38, 38, 38); background: rgb(243, 243, 243) none repeat scroll 0% 0%; }
+.App-main { display: block; }
+.Card { margin-bottom: 10px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; overflow: hidden; border-radius: 2px; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1); box-sizing: border-box; }
+.Card:last-child { margin-bottom: 0px; }
+.Mask { position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 1; transition: opacity 0.2s ease-in 0s; }
+.Mask-mask { position: absolute; z-index: -1; width: 100%; height: 100%; opacity: 0.4; box-sizing: border-box; }
+.Mask-mask--black { background: rgb(0, 0, 0) none repeat scroll 0% 0%; }
+.Mask-content { position: absolute; top: 50%; left: 50%; z-index: 5; color: rgb(255, 255, 255); text-align: center; transform: translate(-50%, -50%); }
+.UserAvatar { display: inline-block; overflow: hidden; border: 4px solid rgb(255, 255, 255); border-radius: 8px; }
+.UserAvatar, .UserAvatar-inner { vertical-align: top; }
+.UserAvatarEditor { cursor: pointer; position: relative; }
+.UserAvatarEditor-maskInner { z-index: 4; border: 4px solid rgb(255, 255, 255); border-radius: 8px; }
+.UserAvatarEditor-maskInnerText { white-space: nowrap; }
+.UserAvatarEditor-cameraIcon { margin-bottom: 14px; fill: rgb(255, 255, 255); }
+.UserCover { position: relative; height: 240px; overflow: hidden; background: rgb(247, 248, 250) none repeat scroll 0% 0%; border-top-right-radius: 1px; border-top-left-radius: 1px; transition: height 0.3s ease 0s; }
+.DynamicColorButton { color: rgb(204, 216, 225); transition: color 0s ease 0s, border-color 0.3s ease 0s; }
+.DynamicColorButton svg { fill: currentcolor; }
+.UserCoverGuide { position: absolute; z-index: 2; width: 100%; height: 100%; overflow: hidden; border-top-right-radius: 1px; border-top-left-radius: 1px; }
+.UserCoverGuide-inner { position: relative; z-index: 2; float: right; padding: 24px; }
+.UserCoverGuide-buttonContainer { margin-bottom: 14px; text-align: right; }
+.UserCoverGuide-dialog { position: relative; width: 286px; padding: 22px 16px; background-color: rgb(255, 255, 255); border-radius: 4px; opacity: 0; transform: translateY(-10px); transition: opacity 0.3s ease 0s, transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s; }
+.UserCoverGuide-dialog::after { position: absolute; right: 60px; bottom: 100%; border-color: transparent transparent rgb(255, 255, 255); border-style: solid; border-width: 7px; content: ""; }
+.UserCoverGuide-dialogContent { font-size: 14px; line-height: 1.7; }
+.UserCoverGuide-dialogContent a { color: rgb(23, 81, 153); cursor: pointer; }
+.UserCoverGuide-dialogContent a:hover { text-decoration: underline; }
+.UserCoverGuide-dialogDescription, .UserCoverGuide-dialogHead { margin: 0px 0px 6px; }
+.UserCoverGuide-item, .UserCoverGuide-items { width: 100%; height: 100%; }
+.UserCoverGuide-item { position: absolute; background-position: 50% center; background-repeat: no-repeat; background-size: cover; opacity: 0; transition: opacity 0.5s ease 0s; }
+.UserCoverEditor { position: relative; }
+.ProfileHeader-main { position: relative; margin: 0px 20px 24px; }
+.ProfileHeader-avatar { position: absolute; top: -25px; left: 0px; z-index: 4; }
+.ProfileHeader-content { padding-top: 16px; padding-left: 32px; border-left: 164px solid transparent; }
+.ProfileHeader-contentHead { position: relative; padding-right: 106px; margin-bottom: 16px; }
+.ProfileHeader-contentHead .Button--plain { position: absolute; top: 50%; right: 0px; transform: translateY(-50%); }
+.ProfileHeader-contentHead .Button--plain:hover { color: rgb(122, 133, 153); }
+.ProfileHeader-contentHead .Button--plain:hover .Icon { fill: rgb(149, 161, 186); }
+.ProfileHeader-title { -moz-box-flex: 1; flex: 1 1 0%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ProfileHeader-name { font-size: 26px; font-weight: 700; line-height: 30px; }
+@media (min-width: 690px) {
+}
+@media (max-width: 320px) {
+}
+@media (max-width: 320px) {
+}
+@media (max-width: 660px) {
+}
+@media (max-width: 660px) {
+}
+@media (max-width: 660px) {
+}
+@media (max-width: 660px) {
+}
+@media (max-width: 660px) {
+}
+@media (max-width: 660px) {
+}
+@media (max-width: 660px) {
+}
+@media (max-width: 660px) {
+}
+@media (max-width: 660px) {
+}
+@keyframes fsFadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+@keyframes fsFadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+@keyframes fsFadeOut {
+0% { opacity: 1; }
+100% { opacity: 0; }
+}
+@keyframes fsFadeOut {
+0% { opacity: 1; }
+100% { opacity: 0; }
+}
+@keyframes fsSlideUp {
+0% { opacity: 0; transform: translateY(40px); }
+100% { opacity: 1; transform: translateY(0px); }
+}
+@keyframes fsSlideUp {
+0% { opacity: 0; transform: translateY(40px); }
+100% { opacity: 1; transform: translateY(0px); }
+}
+@keyframes fsSlideDown {
+0% { opacity: 1; transform: translateY(0px); }
+100% { opacity: 0; transform: translateY(40px); }
+}
+@keyframes fsSlideDown {
+0% { opacity: 1; transform: translateY(0px); }
+100% { opacity: 0; transform: translateY(40px); }
+}
+@keyframes rotate {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(1turn); }
+}
+@keyframes rotate {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(1turn); }
+}
+.Field { padding: 30px 0px; border-bottom: 1px solid rgb(235, 238, 245); }
+.Field-label { position: absolute; font-size: 15px; font-weight: 700; line-height: 36px; color: rgb(51, 51, 51); }
+.Field-content { padding: 0px 64px 0px 140px; line-height: 36px; }
+.Field-list { margin: 20px -10px 0px; }
+.Field-modify { position: absolute; margin-left: 16px; line-height: inherit; transition: opacity 0.1s ease 0s; }
+.Field-modify-hidden:not(:focus) { opacity: 0; }
+.AddButton { font-size: 15px; }
+.AddButton-icon { fill: rgb(62, 122, 194); vertical-align: -4px; }
+.DescriptionField-content { word-break: break-all; }
+.ProfileEdit { width: 1000px; padding: 0px 16px; margin: 14px auto; font-size: 15px; color: rgb(38, 38, 38); }
+.ProfileEdit-fields { padding-bottom: 100px; margin-top: 10px; }
+.ProfileEdit-expandActions { bottom: auto; }
+.ProfileEdit-arrowIcon { margin: 0px 4px 0px 8px; transform: rotate(-90deg); }
+@media (max-width: 690px) {
+}
+@keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+@keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+@keyframes fadeInUp {
+0% { opacity: 0; transform: translateY(20px); }
+100% { opacity: 1; transform: none; }
+}
+@keyframes fadeInUp {
+0% { opacity: 0; transform: translateY(20px); }
+100% { opacity: 1; transform: none; }
+}
+@keyframes fadeOut {
+0% { opacity: 1; }
+100% { opacity: 0; }
+}
+@keyframes fadeOut {
+0% { opacity: 1; }
+100% { opacity: 0; }
+}
+@keyframes fadeOutDown {
+0% { opacity: 1; }
+100% { opacity: 0; transform: translateY(20px); }
+}
+@keyframes fadeOutDown {
+0% { opacity: 1; }
+100% { opacity: 0; transform: translateY(20px); }
+}
+@media (max-width: 690px) {
+}
+@media (max-width: 690px) {
+}

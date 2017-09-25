@@ -1,0 +1,14 @@
+/* Code tidied up by ScrapBook */
+.face-item { position: relative; z-index: 888; }
+.face-item .face-btn a { display: block; text-indent: -9999px; overflow: hidden; height: 24px; width: 36px; background: rgba(0, 0, 0, 0) url("btn_face_001.gif") no-repeat scroll 0px 0px; }
+.face-item .face-btn a:hover { background-position: 0px -24px; }
+.face-item .face-icon-box { width: 358px; position: absolute; top: 27px; left: -3px; }
+.face-item .face-icon-box-t, .face-item .face-icon-box-c, .face-item .face-icon-box-b { background: rgba(0, 0, 0, 0) url("face_icon_border.png") no-repeat scroll 0px 0px; }
+.face-item .face-icon-box-t { width: 358px; overflow: hidden; height: 11px; }
+.face-item .face-icon-box-c { width: 358px; background-position: -358px 0px; background-repeat: repeat-y; }
+.face-item .face-icon-box-b { width: 358px; height: 4px; background-position: 0px -11px; }
+.face-item .face-icon { width: 320px; float: left; padding: 5px 2px 2px 9px; }
+.face-item .face-icon li { float: left; margin: 0px 4px 3px 0px; display: inline; padding: 3px; border: 1px dashed rgb(219, 229, 236); }
+.face-item .face-icon li img { display: block; }
+.face-item .facelayer_close a { display: block; width: 15px; height: 20px; text-indent: -9999px; overflow: hidden; float: left; background: rgba(0, 0, 0, 0) url("face_icon_close.gif") no-repeat scroll 0px 0px; }
+.face-item .facelayer_close a:hover { background-position: 0px -20px; }

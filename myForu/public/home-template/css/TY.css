@@ -1,0 +1,54 @@
+/* Code tidied up by ScrapBook */
+html { color: rgb(0, 0, 0); }
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote { margin: 0px; padding: 0px; }
+fieldset, img { border: 0px none; }
+address, caption, cite, code, dfn, em, th, var, optgroup { font-style: inherit; font-weight: inherit; }
+li { list-style: outside none none; }
+input, button, textarea, select, optgroup, option { font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; }
+input, button, textarea, select {  }
+.fs12 { font-size: 12px; }
+.fl { float: left; display: inline; }
+.fr { float: right; display: inline; }
+.clearfix, .cf {  }
+.clearfix::after, .cf::after { content: ""; display: block; height: 0px; clear: both; visibility: hidden; }
+@-moz-document url-prefix("") {
+  .inputbtn { padding-bottom: 3px; }
+}
+.TY-login-window { width: 350px; font: 14px/1.5 Arial,Helvetica,"微软雅黑"; color: rgb(51, 51, 51); background: rgb(255, 255, 255) none repeat scroll 0% 0%; border-radius: 3px; overflow: hidden; }
+.TY-login-window * { font-family: Arial,Helvetica,"微软雅黑"; }
+.login-window-body { padding: 20px 40px 40px; }
+.loginWin-tab { position: relative; margin: -10px -30px 10px; height: 45px; }
+.loginWin-tab a { position: absolute; right: 0px; top: 0px; width: 42px; height: 42px; background: rgba(0, 0, 0, 0) url("loginWin_icons_v2_828f8e6.png") no-repeat scroll 0% 0%; text-decoration: none; }
+.loginWin-tab .normal-login-tab { background-position: 15px -164px; }
+.loginWin-tab .qrcode-login-tab { background-position: 0px -111px; }
+.loginWin-tab .qrcode-login-tab::after { content: "二维码登录更便捷"; position: absolute; top: 0px; right: 45px; width: 127px; height: 24px; text-align: center; font-size: 12px; line-height: 24px; color: rgb(51, 51, 51); background: rgba(0, 0, 0, 0) url("loginWin_icons_v2_828f8e6.png") no-repeat scroll 0px -67px; }
+.loginWin-form {  }
+.loginWin-login-form { line-height: 15px; }
+.loginWin-login-form a { color: rgb(51, 51, 51); text-decoration: none; }
+.loginWin-login-form a:hover { text-decoration: underline; }
+.loginWin-login-form label { color: rgb(153, 153, 153); }
+.loginWin-form-item { margin-bottom: 15px; }
+.loginWin-form-item .input-text { padding: 6px 10px; width: 248px; height: 26px; line-height: 26px; border: 1px solid rgb(224, 224, 224); border-radius: 3px; outline: 0px none; }
+.loginWin-form-item .input-text:focus { border-color: rgb(73, 134, 208); }
+.loginWin-form-item .input-checkbox { margin: -2px 4px 0px 0px; vertical-align: middle; outline: 0px none; }
+.loginWin-submit-btn { width: 270px; height: 40px; border: 0px none; line-height: 40px; font-size: 18px; color: rgb(255, 255, 255); text-align: center; background: rgb(73, 134, 208) none repeat scroll 0% 0%; border-radius: 3px; vertical-align: middle; cursor: pointer; outline: 0px none; }
+.loginWin-password-link { color: rgb(153, 153, 153) !important; }
+.loginWin-register-link { color: rgb(51, 51, 51) !important; }
+.switch-login-toggle, .normal-login-toggle { cursor: pointer; }
+.loginWin-third-list { margin-top: 25px; padding-top: 15px; border-top: 1px solid rgb(229, 229, 229); }
+.loginWin-third-list dt { float: left; display: inline; font-size: 12px; line-height: 24px; color: rgb(153, 153, 153); }
+.loginWin-third-list dd { float: left; display: inline; margin-right: 14px; width: 24px; height: 24px; }
+.loginWin-third-list dd a { display: block; width: 24px; height: 24px; background: rgba(0, 0, 0, 0) url("loginWin_icons_v2_828f8e6.png") no-repeat scroll 0% 0%; }
+.loginWin-third-list .weixin-login { background-position: 0px -209px; }
+.loginWin-third-list .qq-login { background-position: -44px -209px; }
+.loginWin-third-list .weibo-login { background-position: -88px -209px; }
+.loginWin-qrcode { margin-top: 30px; }
+.loginWin-qrcode a { text-decoration: none; }
+.loginWin-qrcode a:hover { text-decoration: underline; }
+.loginWin-qrcode-box { position: relative; height: 120px; }
+.loginWin-qrcode-img { position: absolute; left: 0px; top: 0px; width: 120px; height: 120px; transition: all 0.3s linear 0s; }
+.loginWin-qrcode-tips { position: absolute; right: 0px; top: 0px; width: 120px; height: 120px; background: rgba(0, 0, 0, 0) url("loginWin_qrcode_bg_b1b8c03.png") no-repeat scroll 0% 0%; text-align: center; transition: all 0.3s linear 0s; }
+.loginWin-app-download { margin-top: 15px; line-height: 20px; text-align: center; font-size: 14px; color: rgb(153, 153, 153); }
+.loginWin-qrcode-links { margin-top: 80px; line-height: 20px; font-size: 12px; }
+#loginWin_content_wrapper {  }
+.loginWin-normal-login-wrapper .loginWin-guide, .loginWin-normal-login-wrapper .loginWin-account, .loginWin-normal-login-wrapper .loginWin-qrcode, .loginWin-normal-login-wrapper .normal-login-tab, .loginWin-normal-login-wrapper .normal-login-toggle { display: none; }

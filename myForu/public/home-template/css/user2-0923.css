@@ -1,0 +1,76 @@
+/* Code tidied up by ScrapBook */
+.mem-opening { padding-top: 10px; }
+.mem-logo, .mem-vip .vip-logo, .pay-model dd a.current i, .pay-way dd a.current i, .payment .pay-btn, .screen-msg .go-opening-mem { background: rgba(0, 0, 0, 0) url("member.png") no-repeat scroll 0px 0px; }
+.mem-vip { height: 16px; padding-top: 32px; padding-left: 30px; margin-bottom: 10px; margin-top: 20px; }
+.mem-vip .vip-logo { display: block; width: 215px; height: 48px; float: left; margin: -32px 15px 0px 0px; font-size: 0px; text-indent: -9999px; background-position: 0px -183px; }
+.vip-member { border: 1px solid rgb(255, 213, 153); background-color: rgb(254, 254, 213); font-size: 14px; padding: 20px; margin: 20px 20px 0px; }
+.verification { border-width: medium 1px 1px; border-style: none solid solid; border-color: currentcolor rgb(255, 213, 153) rgb(255, 213, 153); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background-color: rgb(254, 254, 213); margin: 0px 30px 5px; padding: 6px 20px; }
+.mem-opening dl { line-height: 50px; }
+.mem-opening dt { padding-left: 10px; width: 95px; min-height: 50px; line-height: 50px; float: left; text-align: center; }
+.mem-opening dd { width: 560px; float: left; }
+.pay-model dd { margin-top: -5px; }
+.pay-model dd a { display: block; position: relative; margin-left: 1px; margin-top: 10px; height: 38px; line-height: 36px; font-size: 13px; text-align: center; margin-right: 10px; float: left; border: 1px solid rgb(247, 252, 255); }
+.pay-model dd a span { display: block; height: 36px; padding: 0px 23px; border: 1px solid rgb(184, 203, 219); background: rgb(245, 245, 245) none repeat scroll 0% 0%; }
+.pay-model dd a.current, .pay-way dd a.current { height: 38px; line-height: 36px; border: 1px solid rgb(242, 143, 44); }
+.pay-model dd a.current i, .pay-way dd a.current i { position: absolute; width: 13px; height: 13px; overflow: hidden; right: 0px; bottom: 0px; background-position: -108px -18px; }
+.pay-model dd a.current span { height: 36px; border: 1px solid rgb(242, 143, 44); background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+.pay-model dd a b { display: none; }
+.pay-model dd a.current b { position: absolute; display: block; color: rgb(255, 255, 255); font-weight: normal; border-radius: 2px; left: 10px; top: -10px; line-height: 16px; background: rgb(230, 57, 34) none repeat scroll 0% 0%; }
+.pay-way dd a { display: block; margin-top: 5px; border: 2px solid rgb(247, 252, 255); float: left; margin-right: 10px; position: relative; height: 38px; line-height: 38px; }
+.pay-way dd a.current { border: 2px solid rgb(242, 143, 44); }
+.open-up-time dd {  }
+.open-up-time input { width: 38px; height: 28px; line-height: 28px; padding: 0px 5px; margin-right: 10px; border: 1px solid rgb(184, 203, 219); vertical-align: middle; background-image: linear-gradient(to bottom, rgb(233, 236, 238) 0%, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 100%); }
+.mem-nian { color: rgb(124, 155, 178); }
+.logo-nian { display: inline-block; width: 16px; height: 16px; margin: 0px 5px -3px 25px; background-position: 0px -15px; }
+.mem-price { font-size: 30px; font-weight: bold; }
+.payment .pay-btn, .payment .pay-btn:visited { display: block; width: 202px; height: 50px; text-shadow: 0px -1px 0px rgb(204, 116, 36); font-size: 24px; line-height: 50px; color: rgb(255, 255, 255); text-align: center; background-position: 0px -81px; }
+.payment .pay-btn:hover { color: rgb(255, 255, 255); text-decoration: none; background-position: 0px -131px; }
+.payment p { display: block; line-height: 13px; margin-top: 13px; }
+.payment label input { vertical-align: middle; }
+.mp-desc { line-height: 24px; padding: 10px; margin-top: 20px; border: 1px solid rgb(225, 239, 251); }
+.mp-desc .t-t-in { text-indent: 15px; }
+.mp-desc .t-in { text-indent: 32px; }
+.mem-select-box {  }
+.no-con-msg { text-align: center; padding: 30px 0px; }
+.mem-transaction-records { padding-top: 15px; }
+.mtr-title { text-indent: 10px; }
+.mtr-page-n { text-align: right; margin-top: 23px; }
+.mem-buy-title li, .mem-buy-list li { text-align: center; }
+.mem-buy-list { border-bottom: 1px solid rgb(226, 239, 249); }
+.mem-buy-title .corder, .mem-buy-list .corder { width: 127px; }
+.mem-buy-title .cgoods, .mem-buy-list .cgoods { width: 107px; }
+.mem-buy-title .cprice, .mem-buy-list .cprice { width: 75px; }
+.mem-buy-title .ctime, .mem-buy-list .ctime { width: 173px; }
+.mem-buy-title .chandle, .mem-buy-list .chandle { width: 64px; }
+.mem-buy-title .cstate { width: 127px; }
+.mem-buy-list .cprice { font-weight: bold; }
+.mem-buy-list .cstate { width: 97px; padding: 0px 15px; text-align: left; }
+.mtr-buy-btn, .mtr-buy-btn:link, .mtr-buy-btn:visited { display: inline-block; height: 21px; padding: 0px 10px; margin-left: 5px; line-height: 21px; color: rgb(255, 255, 255); border: 1px solid rgb(255, 114, 0); border-radius: 3px; background-color: rgb(255, 126, 0); background-image: linear-gradient(to bottom, rgb(255, 126, 0) 0%, rgb(255, 91, 0) 100%); }
+.mtr-buy-btn:hover { color: rgb(255, 255, 255); text-decoration: none; background-color: rgb(255, 91, 0); background-image: linear-gradient(to bottom, rgb(255, 91, 0) 0%, rgb(255, 126, 0) 100%); }
+.mem-blacklist { padding-top: 33px; }
+.screen-msg { padding: 13px; margin-bottom: 10px; background: rgb(253, 253, 213) none repeat scroll 0% 0%; border: 1px solid rgb(255, 213, 153); }
+.screen-msg .go-opening-mem { display: inline-block; width: 122px; height: 26px; margin-left: 10px; color: rgb(255, 255, 255); text-decoration: none; line-height: 23px; vertical-align: middle; background-position: 0px -33px; text-shadow: 0px -1px 0px rgb(196, 116, 45); }
+.screen-msg .go-opening-mem img { height: 16px; margin: 0px 15px 0px 8px; }
+.tabs-black-box { padding-bottom: 10px; margin-top: 10px; border-bottom: 1px solid rgb(206, 227, 244); }
+.tabs-black li { float: left; margin-right: 5px; }
+.tabs-black li a { display: inline-block; line-height: 21px; padding: 0px 5px; border-radius: 3px; }
+.tabs-black li a:hover { text-decoration: none; }
+.tabs-black li a.current { color: rgb(255, 255, 255); background: rgb(30, 117, 195) none repeat scroll 0% 0%; }
+.follow-all li { width: 100%; border-bottom: 1px solid rgb(230, 245, 255); }
+.follow-all li .user-list { overflow: hidden; padding: 20px 0px; }
+.follow-all li .user-list dd { width: 620px; float: left; }
+.follow-all li .user-list .cancel a { margin: 3px 10px -5px 15px; display: inline-block; background: rgba(0, 0, 0, 0) url("icon_user_003.gif") no-repeat scroll 2px -98px; width: 16px; height: 16px; text-indent: -9999px; overflow: hidden; }
+.follow-all li .user-list .cancel a:hover { background-position: 2px -128px; }
+.follow-all li .user-list .handle-btn { display: inline; margin-right: 20px; }
+.follow-all li .msg-left { float: left; }
+.follow-all li .msg-right { float: right; line-height: 20px; padding-top: 10px; text-align: right; }
+.cformfieldtext { position: relative; }
+.label-msg-black-list { width: 205px; height: 21px; line-height: 22px; font-size: 14px; padding: 0px 0px 0px 5px; color: rgb(125, 156, 177); position: absolute; top: 0px; left: 0px; }
+.btn-controlpanel .pay-btn { font-weight: normal; }
+.mem-open-go { text-align: right; }
+.convert { float: left; width: 324px; text-align: center; line-height: 24px; margin: 20px 5px; }
+.convert .pic { width: 322px; height: 128px; margin-bottom: 10px; overflow: hidden; }
+.convert .btn-controlpanel { background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; padding: 0px; margin: 5px 0px; }
+.item-contvip { line-height: 18px; font-size: 12px; padding: 0px 30px; height: 430px; overflow: auto; margin: 15px 7px 0px 0px; }
+.item-contvip p { padding: 5px 0px; }
+.account-new { display: inline-block; vertical-align: top; width: 21px; height: 9px; background: rgba(0, 0, 0, 0) url("common_icon_b.gif") no-repeat scroll -60px 0px; }
